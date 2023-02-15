@@ -118,11 +118,106 @@ header {
 @media screen and (max-width: $tablet) {
 	header {
 		width: 100%;
-		#gnb {
-			display: none;
+		position: fixed;
+		z-index: 5;
+		text-align: center;
+		align-items: center;
+		background: #fff;
+		justify-content: space-between;
+		padding-top: 20px;
+		opacity: 90%;
+		.inner {
+			width: 100%;
+			margin: 5px auto;
+			padding-bottom: 10px;
+			h1 {
+				a {
+					font: bold 50px/1 'Lora';
+					color: #000;
+					letter-spacing: 5px;
+				}
+			}
+			#gnb {
+				display: none;
+				li {
+					width: 120px;
+					margin: 20px 30px 10px;
+
+					a {
+						display: block;
+						font: bold 15px 'Lora';
+						color: #000;
+						text-align: center;
+					}
+				}
+			}
+			#util {
+				display: none;
+			}
+			.fa-bars {
+				position: absolute;
+				top: 50%;
+				right: 30px;
+				transform: translateY(-50%);
+				width: 20px;
+				height: 20px;
+				display: none;
+			}
 		}
-		.fa-bars {
-			display: block;
+		&.main {
+			background: #fff;
+			//border-bottom: 1px solid #ccc;
+			.inner {
+				h1 {
+					a {
+						color: #000;
+					}
+				}
+				#gnb {
+					li {
+						a {
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+		&.sub {
+			width: 100%;
+			position: fixed;
+			z-index: 5;
+			text-align: center;
+			align-items: center;
+			background: #fff;
+			justify-content: space-between;
+			padding-top: 20px;
+			border-top: 25px solid #000;
+			.inner {
+				width: 100%;
+				margin: 5px auto;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #000;
+				h1 {
+					a {
+						font: bold 50px/1 'Lora';
+						color: #000;
+						letter-spacing: 5px;
+					}
+				}
+				#gnb {
+					display: none;
+					li {
+						width: 120px;
+						margin: 20px 30px 10px;
+						a {
+							display: block;
+							font: bold 15px 'Lora';
+							color: #000;
+							text-align: center;
+						}
+					}
+				}
+			}
 		}
 	}
 }

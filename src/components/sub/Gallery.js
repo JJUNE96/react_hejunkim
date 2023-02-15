@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 
 function Gallery() {
 	return (
-		<Layout name={'Gallery'}>
+		<Layout name={'Gallery / 갤러리'}>
 			<p>gallery</p>
 		</Layout>
 	);

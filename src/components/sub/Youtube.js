@@ -23,7 +23,7 @@ function Youtube() {
 	}, [Vids]);
 	return (
 		<>
-			<Layout name={'Youtube'}>
+			<Layout name={'Youtube / 유튜브'}>
 				{Vids.map((el, index) => {
 					const tit = el.snippet.title;
 					const desc = el.snippet.description;

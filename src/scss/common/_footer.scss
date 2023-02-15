@@ -2,6 +2,7 @@ footer {
 	width: 100%;
 	border-top: 1px solid #bbb;
 	padding: 100px 0px;
+	overflow: hidden;
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
@@ -28,9 +29,30 @@ footer {
 
 @media screen and (mex-width: $tablet) {
 	footer {
+		width: 70%;
+		border-top: 1px solid #bbb;
+		padding: 100px 0px;
 		.inner {
-			width: 100%;
-			padding: 0px 40px;
+			width: 1180px;
+			margin: 0 auto;
+			position: relative;
+			address {
+				float: left;
+				width: 40%;
+				font: 14px/1.3 'arial';
+				color: black;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				//border-top: 1px solid #888;
+				padding-top: 20px;
+				text-align: center;
+			}
+			p {
+				text-align: center;
+				font: 12px/1 'arial';
+				color: #000;
+				//letter-spacing: 2px;
+			}
 		}
 	}
 }

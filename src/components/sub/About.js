@@ -23,7 +23,7 @@ function About() {
 	}, [Members]);
 
 	return (
-		<Layout name={'About'}>
+		<Layout name={'About / 조직도'}>
 			{/* react에서 js문법을 사용할때 {}안에 적는다 */}
 			{Members.map((el, index) => {
 				return (
