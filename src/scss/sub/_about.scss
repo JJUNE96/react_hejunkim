@@ -1,0 +1,69 @@
+.About {
+	> .inner {
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		article {
+			width: calc(100% / 4);
+			float: left;
+			padding: 10px;
+			.inner {
+				width: 100%;
+				background: #000;
+				.pic {
+					width: 100%;
+					height: 300px;
+					background: #111;
+					margin-bottom: 20px;
+					transition: 0.5s;
+					filter: saturate(0.2);
+					&:hover {
+						filter: saturate(1.1);
+					}
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+				h3 {
+					padding: 20px;
+					font: 20px 'Lora';
+					padding-left: 20px;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.About {
+		> .inner {
+			article {
+				width: 50%;
+				.inner {
+					.pic {
+						height: 30vw;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.About {
+		> .inner {
+			article {
+				width: 100%;
+				.inner {
+					.pic {
+						height: 40vw;
+					}
+				}
+			}
+		}
+	}
+}

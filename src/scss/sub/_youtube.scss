@@ -1,0 +1,75 @@
+.Youtube {
+	article {
+		border-top: qpx solid #ddd;
+		padding: 20px 0px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		h3 {
+			width: 25%;
+			font-weight: bold;
+			font-size: 28px;
+			font-family: 'Lora';
+			color: #000;
+		}
+		.txt {
+			width: 38%;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: space-between;
+			p {
+				font: 14px/1.2 'Lora';
+				color: #000;
+			}
+			span {
+				font: 12px/1.2 'Lora';
+				color: #000;
+			}
+		}
+		.pic {
+			width: 35%;
+			height: 200px;
+			cursor: pointer;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Youtube {
+		article {
+			h3 {
+				width: 48%;
+			}
+			.txt {
+				width: 50%;
+			}
+			.pic {
+				width: 100%;
+				margin-bottom: 50px;
+				margin-top: 80px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Youtube {
+		article {
+			h3 {
+				width: 100%;
+			}
+			.txt {
+				width: 100%;
+			}
+			.pic {
+				margin-bottom: 30px;
+				margin-top: 40px;
+			}
+		}
+	}
+}
