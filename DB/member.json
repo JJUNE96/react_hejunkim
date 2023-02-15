@@ -1,0 +1,52 @@
+{
+    "members": [
+        {
+            "name": "JENNIE / 제니",
+            "pic": "제니.png"
+        },
+        {
+            "name": "JISOO / 지수",
+            "pic": "지수.jpg"
+        },
+        {
+            "name": "ROSE / 로제",
+            "pic": "로제.jpg"
+        },
+        {
+            "name": "LISA / 리사",
+            "pic": "리사.jpeg"
+        },
+        {
+            "name": "V / 뷔",
+            "pic": "뷔.jpg"
+        },
+        {
+            "name": "SUGAR / 슈가",
+            "pic": "슈가.jpeg"
+        },
+        {
+            "name": "JUNGKOK / 정국",
+            "pic": "정국.jpg"
+        },
+        {
+            "name": "JIN / 진",
+            "pic": "진.jpg"
+        },
+        {
+            "name": "JIMIN / 지민",
+            "pic": "지민.jpg"
+        },
+        {
+            "name": "JAEBUM / 재범",
+            "pic": "박재범.jpg"
+        },
+        {
+            "name": "GRAY / 그레이",
+            "pic": "그레이.jpg"
+        },
+        {
+            "name": "LOCO / 로꼬",
+            "pic": "로꼬.jpg"
+        }
+    ]
+}
