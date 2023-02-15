@@ -7,9 +7,9 @@ function Youtube() {
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
 	useEffect(() => {
-		const key = 'AIzaSyD62N3ObfAdS9fO3LIOtg5NYyfqE7sWmq4';
-		const playlistId = 'PLYOPkdUKSFgXYbcOjUe9vLiICa2gpg8Tc';
-		const num = 5;
+		const key = 'AIzaSyCmBr12Dx2_ZogVZDwezHZ3TDnPw6syC4Q';
+		const playlistId = 'PL3DX3fAees627svxgQJYNHQrosJBEm0uc';
+		const num = 12;
 		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
 
 		axios.get(url).then((json) => {
@@ -31,11 +31,6 @@ function Youtube() {
 
 					return (
 						<article key={el.id}>
-							<h3>{tit.length > 30 ? tit.substr(0, 30) + '...' : tit}</h3>
-							<div className='txt'>
-								<p>{desc.length > 100 ? desc.substr(0, 100) + '...' : desc}</p>
-								<span>{date.split('T')[0]}</span>
-							</div>
 							<div
 								className='pic'
 								onClick={() => {
@@ -44,6 +39,11 @@ function Youtube() {
 								}}
 							>
 								<img src={el.snippet.thumbnails.high.url} alt={el.snippet.title} />
+							</div>
+							<div className='txt'>
+								<h3>{tit.length > 20 ? tit.substr(0, 20) + '...' : tit}</h3>
+								<p>{desc.length > 60 ? desc.substr(0, 60) + '...' : desc}</p>
+								<span>{date.split('T')[0]}</span>
 							</div>
 						</article>
 					);
