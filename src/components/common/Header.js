@@ -10,7 +10,7 @@ activeStyle, activeClassName속성을 이용해서 스타일을 적용해주는�
 리액트 웹의 현재 url과 to가 가르키는 링크가 일치하면 활성화 되면서 적용되고, 그렇지 않으면 비활성화 되는 식의 적용방식
 */
 function Header(props) {
-	const active = { color: 'gray' };
+	const active = { color: 'black' };
 	return (
 		<header className={props.type}>
 			<div className='inner'>

@@ -9,7 +9,10 @@ $mobile: 539px;
 @import 'common/modal';
 //main
 @import 'main/visual';
-@import 'main/content';
+@import 'main/news';
+@import 'main/vids';
+@import 'main/pics';
+@import 'main/btns';
 
 //sub
 @import 'sub/board';

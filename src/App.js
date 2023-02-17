@@ -4,8 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 //main
-import Visual from './components/main/Visual';
-import Content from './components/main/Content';
+import Main from './components/main/Main';
 
 //sub
 import Board from './components/sub/Board';
@@ -26,15 +25,20 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/'>
+				<Route exact path='/' component={Main} />
+				<Route path='/' render={() => <Header type={'sub'} />}></Route>
+				{/* react-router에서 render이용해서 컴포넌트 보여주기 
+				원치 않는 재마운팅 없이 편리하게 인라인 렌더링이 가능하다
+				render을 사용하면 경로가 일치할때 호출할 함수를 전달할 수 있습니다 단, 위에처럼 render함수에 아무것도 전달하지 않으면 route관련 props를 받을 수는 없다
+				 */}
+				{/* <Route exact path='/'>
 					<Header type={'main'} />
-					<Visual />
-					<Content />
-				</Route>
+					<Main /> => 위에와 같은 말임
+				</Route> */}
 
-				<Route path='/'>
+				{/* <Route path='/'>
 					<Header type={'sub'} />
-				</Route>
+				</Route> */}
 			</Switch>
 
 			<Route path='/about'>
