@@ -4,23 +4,23 @@
 	background: #111;
 	border: solid 3px #000;
 }
-// .traffic {
-// 	float: right;
-// 	li {
-// 		float: right;
-// 		display: block;
-// 		width: 200px;
-// 		height: 40px;
-// 		background: #000;
-// 		font: bold 12px/40px '맑은 고딕';
-// 		color: #fff;
-// 		text-align: center;
-// 		border: 1px solid #000;
-// 		margin-left: 20px;
-// 		margin-top: 20px;
-// 		cursor: pointer;
-// 	}
-// }
+.traffic {
+	float: right;
+	button {
+		float: right;
+		display: block;
+		width: 200px;
+		height: 40px;
+		background: #000;
+		font: bold 12px/40px '맑은 고딕';
+		color: #fff;
+		text-align: center;
+		border: 1px solid #000;
+		margin-left: 20px;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+}
 
 @media screen and (max-width: $mobile) {
 	#map {

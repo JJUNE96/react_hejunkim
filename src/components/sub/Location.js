@@ -12,11 +12,20 @@ function Location() {
 		level: 3,
 	};
 
-	// const map = new kakao.maps.Map(container.current, option);
+	//const map = new kakao.maps.Map(container.current, option);
 
-	// const showTraffic = map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	// // const hideTraffic = map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 
-	// const hideTraffic = map.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	// const [Show, setShow] = map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+
+	// const showTraffic = new kakao.maps.Map(container.current, option).addOverlayMapTypeId(
+	// 	kakao.maps.MapTypeId.TRAFFIC
+	// );
+
+	// const closeTraffic = new kakao.maps.Map(
+	// 	container.current,
+	// 	option
+	// ).removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 
 	//마커 위치 인스턴스 생성
 	const markerPosition = option.center;
@@ -41,7 +50,7 @@ function Location() {
 		const zoomControl = new kakao.maps.ZoomControl();
 		mapInstance.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-		mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		// mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 
 		// function showTraffic() {
 		// 	mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
@@ -88,13 +97,28 @@ function Location() {
 		}
 	}, []);
 
+	function showTraffic() {
+		const mapInstance = new kakao.maps.Map(container.current, option);
+		mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		marker.setMap(mapInstance);
+	}
+
+	function closeTraffic() {
+		const mapInstance = new kakao.maps.Map(container.current, option);
+
+		mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		marker.setMap(mapInstance);
+	}
+
 	return (
 		<Layout name={'Location / 위치'}>
-			<div id='map' ref={container}></div>
-			{/* <ul className='traffic'>
-				<li> 교통정보 보기</li>
-				<li>교통정보 끄기</li>
-			</ul> */}
+			<>
+				<div id='map' ref={container}></div>
+				<div className='traffic'>
+					<button onClick={showTraffic}>교통정보 보기</button>
+					<button onClick={closeTraffic}>교통정보 끄기</button>
+				</div>
+			</>
 		</Layout>
 	);
 }
