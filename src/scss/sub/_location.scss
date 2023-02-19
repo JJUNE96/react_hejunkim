@@ -1,11 +1,13 @@
 #map {
 	width: 100%;
 	height: 500px;
-	background: #111;
+	background: #000;
 	border: solid 3px #000;
 }
 .traffic {
 	float: right;
+	margin-bottom: 100px;
+
 	button {
 		float: right;
 		display: block;
@@ -19,6 +21,10 @@
 		margin-left: 20px;
 		margin-top: 20px;
 		cursor: pointer;
+		&:nth-of-type(2) {
+			background: #fff;
+			color: #000;
+		}
 	}
 }
 
@@ -26,24 +32,26 @@
 	#map {
 		width: 100%;
 		height: 500px;
-		background: #111;
+		background: #000;
 		border: solid 3px #000;
 	}
-	// .traffic {
-	// 	float: right;
-	// 	li {
-	// 		float: right;
-	// 		display: block;
-	// 		width: 200px;
-	// 		height: 40px;
-	// 		background: #000;
-	// 		font: bold 12px/40px '맑은 고딕';
-	// 		color: #fff;
-	// 		text-align: center;
-	// 		border: 1px solid #000;
-	// 		margin-left: 20px;
-	// 		margin-top: 20px;
-	// 		cursor: pointer;
-	// 	}
-	// }
+	.traffic {
+		width: 100%;
+		float: right;
+		margin-left: 20px;
+		button {
+			display: inline-block;
+			width: 100%;
+			height: 120%;
+			background: #000;
+			font: bold 12px/40px '맑은 고딕';
+			color: #fff;
+			text-align: center;
+			border: 1px solid #000;
+			&:nth-of-type(2) {
+				background: #fff;
+				color: #000;
+			}
+		}
+	}
 }
