@@ -1,11 +1,13 @@
 .Join {
 	> .inner {
+		margin-right: 100px;
 		table {
-			width: 100%;
-			border: none;
-			border-top: 2px solid #333;
-			border-bottom: 2px solid #333;
-
+			width: 80%;
+			border-top: 1px solid #ddd;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 50px;
+			margin-top: 10px;
+			text-align: left;
 			th {
 				width: 20%;
 				border: none;
@@ -15,31 +17,146 @@
 
 				&:last-child {
 					text-align: center;
-
-					input[type='submit'],
-					input[type='reset'] {
-						border: 1px solid #333;
-						width: 150px;
-						height: 30px;
-						display: inline-flex;
-						justify-content: center;
-						align-items: center;
-						margin: 0px 10px;
+					width: 20%;
+					input[type='submit'] {
+						width: 80%;
+						height: 60px;
+						margin: 10px;
+						font: bold 18px/40px 'arial';
+						color: #fff;
+						background: #000;
 						cursor: pointer;
 					}
 				}
 			}
 			td {
+				width: 80%;
 				border: none;
-				border-bottom: 1px solid #bbb;
-				border-left: 1px solid #bbb;
-				padding: 15px 30px;
+				border-bottom: 1px solid #ddd;
+				padding: 15px 25px;
 
 				input[type='text'],
 				input[type='password'] {
-					width: 40%;
-					border: 1px solid #aaa;
-					padding: 6px 10px;
+					width: 100%;
+					background: rgba(0, 0, 0, 0.03);
+					padding: 10px;
+					border: 1px solid #fff;
+				}
+				span.err {
+					font: 12px/1 '맑은 고딕';
+					color: red;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Join {
+		> .inner {
+			margin-left: 100px;
+			table {
+				width: 500px;
+				border-top: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
+				margin-bottom: 50px;
+				margin-top: 10px;
+				text-align: left;
+				th {
+					width: 200px;
+					border: none;
+					border-bottom: 1px solid #bbb;
+					padding: 15px 30px;
+					text-align: left;
+
+					&:last-child {
+						text-align: center;
+						width: 20%;
+						input[type='submit'] {
+							width: 80%;
+							height: 60px;
+							margin: 10px;
+							font: bold 18px/40px 'arial';
+							color: #fff;
+							background: #000;
+							cursor: pointer;
+						}
+					}
+				}
+				td {
+					width: 800px;
+					border: none;
+					border-bottom: 1px solid #ddd;
+					padding: 15px 25px;
+
+					input[type='text'],
+					input[type='password'] {
+						width: 100%;
+						background: rgba(0, 0, 0, 0.03);
+						padding: 10px;
+						border: 1px solid #fff;
+					}
+					span.err {
+						font: 12px/1 '맑은 고딕';
+						color: red;
+						margin-left: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.Join {
+		> .inner {
+			margin-left: 10px;
+			table {
+				width: 100%;
+				border-top: 1px solid #ddd;
+				border-bottom: 1px solid #ddd;
+				margin-bottom: 50px;
+				margin-top: 10px;
+				text-align: left;
+				th {
+					width: 100px;
+					border: none;
+					border-bottom: 1px solid #bbb;
+					padding: 15px 30px;
+					text-align: left;
+
+					&:last-child {
+						text-align: center;
+						width: 200px;
+						input[type='submit'] {
+							width: 80%;
+							height: 60px;
+							margin: 10px;
+							font: bold 18px/40px 'arial';
+							color: #fff;
+							background: #000;
+							cursor: pointer;
+						}
+					}
+				}
+				td {
+					width: 200px;
+					border: none;
+					border-bottom: 1px solid #ddd;
+					padding: 15px 25px;
+
+					input[type='text'],
+					input[type='password'] {
+						width: 100%;
+						background: rgba(0, 0, 0, 0.03);
+						padding: 10px;
+						border: 1px solid #fff;
+					}
+					span.err {
+						font: 12px/1 '맑은 고딕';
+						color: red;
+						margin-left: 20px;
+					}
 				}
 			}
 		}
