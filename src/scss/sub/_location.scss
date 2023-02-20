@@ -3,6 +3,11 @@
 	height: 500px;
 	background: #000;
 	border: solid 3px #000;
+	// filter: saturate(0%) invert(0%) brightness(50%);
+	// transition: filter 0.5s;
+	// &:hover {
+	// 	filter: saturate(100%);
+	// }
 }
 .traffic {
 	float: right;
@@ -21,6 +26,11 @@
 		margin-left: 20px;
 		margin-top: 20px;
 		cursor: pointer;
+		//반응형으로 버튼 모양 만들기 수월함
+		// display: flex;
+		// justify-content: space-between;
+		// flex-wrap : wrap;
+		// align-content: flex-start;
 		&:nth-of-type(2) {
 			background: #fff;
 			color: #000;
