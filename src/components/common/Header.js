@@ -21,9 +21,6 @@ function Header(props) {
 				</h1>
 				<ul id='gnb'>
 					<li>
-						<NavLink to='/'>Home</NavLink>
-					</li>
-					<li>
 						<NavLink to='/about' activeStyle={active}>
 							About
 						</NavLink>
@@ -43,6 +40,11 @@ function Header(props) {
 							Youtube
 						</NavLink>
 					</li>
+					<li>
+						<NavLink to='/join' activeStyle={active}>
+							Join
+						</NavLink>
+					</li>
 				</ul>
 
 				<ul id='util'>
@@ -54,11 +56,6 @@ function Header(props) {
 					<li>
 						<NavLink to='/login' activeStyle={active}>
 							Login
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to='/join' activeStyle={active}>
-							Join
 						</NavLink>
 					</li>
 				</ul>

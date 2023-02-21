@@ -1,20 +1,31 @@
 import Layout from '../common/Layout';
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function Join() {
+	const history = useHistory();
+	// 회원가입 완료시 메인페이지로 이동시킴
 	const initVal = {
 		username: '',
 		userid: '',
 		pwd1: '',
 		pwd2: '',
 		email: '',
+		gender: false,
+		log: false,
+		comments: '',
+		edu: '',
 	};
 
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
 	const [Submit, setSubmit] = useState(false);
+	/*
+	매개변수(parameter) 특정값을 함수 내부로 전달해주는 통로명
+	인수(argument) 해당 통로를 통해서 전달되는 값
+	*/
 
-	//인증 체크함수
+	//3.인증 체크함수
 	const check = (value) => {
 		const errs = {};
 		const eng = /[a-zA-Z]/;
@@ -41,25 +52,68 @@ function Join() {
 		if (value.email.length < 8 || !/@/.test(value.email)) {
 			errs.email = '이메일은 8글자 이상 @를 포함하세요';
 		}
+		if (!value.gender) {
+			errs.gender = '성별을 선택하세요';
+		}
+		if (!value.log) {
+			errs.log = '1개 이상 선택하세요';
+		}
+		if (value.comments.length < 20) {
+			errs.comments = '20글자 이상 입력하세요';
+		}
+		if (value.edu === '') {
+			errs.edu = '최종학력을 선택하세요';
+		}
 		return errs;
 	};
 
+	//인풋 요소에 변화가 생길때마다 Val state 업데이트 함수
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setVal({ ...Val, [name]: value });
 	};
 
+	//라디오버튼 체크시 Val state 업데이트 함수
+	const handleRadio = (e) => {
+		const { name } = e.target;
+		const isChecked = e.target.checked;
+		setVal({ ...Val, [name]: isChecked });
+	};
+
+	//체크박스 체크시 Val state 업데이트 함수
+	const handleCheck = (e) => {
+		const { name } = e.target;
+		let isChecked = false;
+		const inputs = e.target.parentElement.querySelectorAll('input');
+
+		//모든 체크박스를 반복을 돌면서 하나라도 체크된게 있으면 true값으로 변경후 리턴
+		inputs.forEach((el) => el.checked && (isChecked = true));
+		setVal({ ...Val, [name]: isChecked });
+	};
+
+	//select요소 선택시 Val state 업데이트 함수
+	const handleSelect = (e) => {
+		const { name } = e.target;
+		const selected = e.target.value;
+		console.log(selected);
+		setVal({ ...Val, [name]: selected });
+	};
+
+	//1.전송 버튼 클릭시 인증 체크호출하고 에러메세지 생성 함수
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		//2 체크함수 호출
 		setErr(check(Val));
 	};
 
+	//4
 	useEffect(() => {
-		console.log(Err);
+		//Object.keys(객체) : 해당객체의 property만 뽑아서 배열로 반환
 		const len = Object.keys(Err).length;
 		if (len === 0 && Submit) {
 			alert('모든 인증을 통과했습니다.');
 			setVal(initVal);
+			history.push('/');
 		}
 	}, [Err]);
 
@@ -87,8 +141,8 @@ function Join() {
 									<span className='err'>{Err.username}</span>
 								</td>
 							</tr>
-							{/* user id */}
 
+							{/* user id */}
 							<tr>
 								<th scope='row'>
 									<label htmlFor='userid'>아이디</label>
@@ -157,6 +211,112 @@ function Join() {
 										value={Val.email}
 									/>
 									<span className='err'>{Err.email}</span>
+								</td>
+							</tr>
+
+							{/* gender */}
+							<tr>
+								<th scope='row'>성별</th>
+								<td>
+									<label htmlFor='male'>남성</label>
+									<input
+										type='radio'
+										name='gender'
+										value='male'
+										id='male'
+										onChange={handleRadio}
+									/>
+
+									<label htmlFor='female'>여성</label>
+									<input
+										type='radio'
+										name='gender'
+										value='female'
+										id='female'
+										onChange={handleRadio}
+									/>
+									<span className='err'>{Err.gender}</span>
+								</td>
+							</tr>
+
+							{/* log */}
+							<tr>
+								<th scope='row'>가입경로</th>
+								<td>
+									<label htmlFor='internet'>인터넷</label>
+									<input
+										type='checkbox'
+										id='internet'
+										value='internet'
+										name='log'
+										onChange={handleCheck}
+									/>
+
+									<label htmlFor='friend'>친구</label>
+
+									<input
+										type='checkbox'
+										id='friend'
+										value='friend'
+										name='log'
+										onChange={handleCheck}
+									/>
+
+									<label htmlFor='advertisement'>광고</label>
+
+									<input
+										type='checkbox'
+										id='advertisement'
+										value='advertisement'
+										name='log'
+										onChange={handleCheck}
+									/>
+
+									<label htmlFor='etc'>기타</label>
+
+									<input
+										type='checkbox'
+										id='etc'
+										value='etc'
+										name='log'
+										onChange={handleCheck}
+									/>
+									<span className='err'>{Err.log}</span>
+								</td>
+							</tr>
+
+							{/* edu */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='edu'>교육</label>
+								</th>
+								<td>
+									<select name='edu' id='edu' onChange={handleSelect}>
+										<option value=''>학력을 선택하세요</option>
+										<option value='elementary-school'>초등학교 졸업</option>
+										<option value='middle-school'>중학교 졸업</option>
+										<option value='high-school'>고등학교 졸업</option>
+										<option value='college'>대학교 졸업</option>
+									</select>
+									<span className='err'>{Err.edu}</span>
+								</td>
+							</tr>
+							{/* comments */}
+							<tr>
+								<th scope='row'>
+									<label htmlFor='comments'>Comments</label>
+								</th>
+								<td>
+									<textarea
+										name='comments'
+										id='comments'
+										cols='30'
+										rows='5'
+										placeholder='남기는 말을 입력하세요.'
+										onChange={handleChange}
+										value={Val.comments}
+									></textarea>
+									<span className='err'>{Err.comments}</span>
 								</td>
 							</tr>
 

@@ -23,3 +23,8 @@ fieldset {
 table {
 	border-collapse: collapse;
 }
+input[type='checkbox'],
+input[type='radio'] {
+	margin-left: 5px;
+	margin-right: 20px;
+}
