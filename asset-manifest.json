@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react_hejunkim/static/css/main.335a446b.css",
-    "main.js": "/react_hejunkim/static/js/main.d68f6c68.js",
+    "main.js": "/react_hejunkim/static/js/main.f09c5d0d.js",
     "index.html": "/react_hejunkim/index.html",
     "main.335a446b.css.map": "/react_hejunkim/static/css/main.335a446b.css.map",
-    "main.d68f6c68.js.map": "/react_hejunkim/static/js/main.d68f6c68.js.map"
+    "main.f09c5d0d.js.map": "/react_hejunkim/static/js/main.f09c5d0d.js.map"
   },
   "entrypoints": [
     "static/css/main.335a446b.css",
-    "static/js/main.d68f6c68.js"
+    "static/js/main.f09c5d0d.js"
   ]
 }
