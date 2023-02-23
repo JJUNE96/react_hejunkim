@@ -1,28 +1,50 @@
-import { useEffect } from 'react';
+import { forwardRef, useImperativeHandle, useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+//npm i framer-motion@6
+const Modal = forwardRef((props, ref) => {
+	const [Open, setOpen] = useState(false);
 
-function Modal(props) {
+	//모달을 여는 state변경함수를 부모 컴포넌트로 전달
+	useImperativeHandle(ref, () => {
+		return { setOpen: () => setOpen(true) };
+	});
+
 	useEffect(() => {
-		//모달 컴포넌트 마운트시에 스크롤을 비활성화
-		document.body.style.overflow = 'hidden';
-		return () => {
-			//모달 컴포넌트 언마운트시에  클린업함수로 없애서 스크롤 기능 다시 활성화
-			document.body.style.overflow = 'auto';
-		};
-	}, []);
+		Open
+			? (document.body.style.overflow = 'hidden')
+			: (document.body.style.overflow = 'auto');
+	}, [Open]);
 
 	return (
-		<aside className='modal'>
-			<div className='con'>{props.children}</div>
-			<span
-				className='close'
-				onClick={() => {
-					props.setOpen(false);
-				}}
-			>
-				Close
-			</span>
-		</aside>
+		<AnimatePresence>
+			{Open && (
+				<motion.aside
+					className='modal'
+					initial={{ opacity: 0, scale: 0, rotate: 45 }}
+					animate={{ opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.6 } }}
+					exit={{ opacity: 0, x: 300, transition: { duration: 0.5 } }}
+				>
+					<motion.div
+						className='con'
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1, transition: { delay: 0.6 } }}
+						exit={{ opacity: 0 }}
+					>
+						{props.children}
+					</motion.div>
+					<motion.span
+						className='close'
+						onClick={() => setOpen(false)}
+						initial={{ x: 100, opacity: 0 }}
+						animate={{ x: 0, opacity: 1, transition: { delay: 0.7 } }}
+						exit={{ x: 100, opacity: 0 }}
+					>
+						Close
+					</motion.span>
+				</motion.aside>
+			)}
+		</AnimatePresence>
 	);
-}
+});
 
 export default Modal;

@@ -1,11 +1,12 @@
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 function Youtube() {
+	const open = useRef(null);
 	const [Vids, setVids] = useState([]);
-	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
+
 	useEffect(() => {
 		const key = 'AIzaSyCmBr12Dx2_ZogVZDwezHZ3TDnPw6syC4Q';
 		const playlistId = 'PL3DX3fAees627svxgQJYNHQrosJBEm0uc';
@@ -34,7 +35,7 @@ function Youtube() {
 							<div
 								className='pic'
 								onClick={() => {
-									setOpen(true);
+									open.current.setOpen();
 									setIndex(index);
 								}}
 							>
@@ -49,15 +50,15 @@ function Youtube() {
 					);
 				})}
 			</Layout>
-			{Open && (
-				<Modal setOpen={setOpen}>
-					<iframe
-						title={Vids[0].id}
-						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}
-					></iframe>
-					{/* Modal.js의 props.children으로 들어가는 값 */}
-				</Modal>
-			)}
+
+			{/* 모달을 여는 함수를 open참조객체에 연결 */}
+			<Modal ref={open}>
+				{/* youtube 컴포넌트 첨 마운트시 Modal컴포넌트 자체는 동작되기 때문에 첫번쨰 랜더링 싸이클일때 Vids[Index]값이 비어있으므로 에러 따라서 Optional Chaining으로 해당 객체값이 비어있을떄는 id값을 읽지 않고 값이 담겨 있을때만 실행 */}
+				<iframe
+					title={Vids[0]?.id}
+					src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}
+				></iframe>
+			</Modal>
 			{/* open이 참이면 && 뒤의 부분이 실행 */}
 		</>
 	);

@@ -73,6 +73,7 @@
 				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 				.pic {
 					width: 100%;
+					cursor: pointer;
 
 					img {
 						width: 100%;
@@ -125,6 +126,48 @@
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		.controls {
+			width: 100%;
+			padding: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.searchBox {
+				input {
+					width: 200px;
+					height: 28px;
+					padding: 10px;
+					border: 1px solid #bbb;
+				}
+
+				button {
+					width: 80px;
+					height: 28px;
+					border: none;
+					background: #000;
+					font: 14px/1 'Lora';
+					color: #fff;
+					cursor: pointer;
+					margin-left: 0px;
+					margin-top: -2px;
+				}
+			}
+
+			> nav {
+				display: inline-flex;
+				button {
+					width: 130px;
+					height: 28px;
+					border: none;
+					color: #fff;
+					margin-left: 10px;
+					background: #000;
+					font: 14px/1 'Lora';
+					cursor: pointer;
+				}
+			}
 		}
 		.frame {
 			opacity: 0;
@@ -186,6 +229,45 @@
 			top: 0;
 			left: 50%;
 			transform: translateX(-50%);
+		}
+		.controls {
+			width: 100%;
+			padding: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.searchBox {
+				input {
+					width: 150px;
+					height: 28px;
+					padding: 10px;
+					border: 1px solid #bbb;
+				}
+
+				button {
+					width: 60px;
+					height: 28px;
+					border: none;
+					background: #000;
+					font: 14px/1 'Lora';
+					color: #fff;
+					cursor: pointer;
+					margin-left: 0px;
+					margin-top: -2px;
+				}
+			}
+
+			> nav {
+				width: 100%;
+				margin-top: 20px;
+				display: flex;
+				justify-content: space-between;
+				button {
+					width: 48%;
+					margin-left: 0px;
+				}
+			}
 		}
 		.frame {
 			opacity: 0;

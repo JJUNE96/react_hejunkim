@@ -1,15 +1,19 @@
 import Layout from '../common/Layout';
+import Modal from '../common/Modal';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
 //npm i react-masonry-component
-
+//npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
+//npm i framer-motion@6
 function Gallery() {
+	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
 	const [Items, setItems] = useState([]);
+	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
-
+	//const intervals = intervalCall(1000);
 	const getFlicker = async (opt) => {
 		const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
 		const key = '317a304fd6fe37a1323995ca69db0b06';
@@ -74,76 +78,94 @@ function Gallery() {
 		setLoading(true);
 		getFlicker({ type: 'search', tags: result });
 	};
+	let handleKeyUp = (e) => {
+		e.key === 'Enter' && showSearch();
+	};
+	//handleKeyUp = intervals(handleKeyUp);
 
 	useEffect(() => {
-		getFlicker({ type: 'interest' });
+		//getFlicker({ type: 'interest' });
 		//getFlicker({ type: 'search', tags: '하늘' });
-		//getFlicker({ type: 'user', user: '197645453@N02' });
+		getFlicker({ type: 'user', user: '197645453@N02' });
 	}, []);
 
 	return (
-		<Layout name='Gallery'>
-			<div className='controls'>
-				<div className='searchBox'>
-					{/* input요소에서 키보드 이벤트 발생시 이벤트가 발생한 키이름이 'Enter'면 showSearch 함수 호출*/}
-					<input
-						type='text'
-						placeholder='검색어를 입력하세요.'
-						ref={input}
-						onKeyUp={(e) => e.key === 'Enter' && showSearch()}
-					/>
-					<button onClick={showSearch}>Search</button>
+		<>
+			<Layout name='Gallery'>
+				<div className='controls'>
+					<div className='searchBox'>
+						{/* input요소에서 키보드 이벤트 발생시 이벤트가 발생한 키이름이 'Enter'면 showSearch 함수 호출*/}
+						<input
+							type='text'
+							placeholder='검색어를 입력하세요.'
+							ref={input}
+							onKeyPress={handleKeyUp}
+						/>
+						<button onClick={showSearch}>Search</button>
+					</div>
+
+					<nav>
+						<button onClick={showInterest}>Interest Gallery</button>
+						<button onClick={showMine}>My Gallery</button>
+					</nav>
 				</div>
 
-				<nav>
-					<button onClick={showInterest}>Interest Gallery</button>
-					<button onClick={showMine}>My Gallery</button>
-				</nav>
-			</div>
+				{Loading && (
+					<img
+						className='loader'
+						src={`${process.env.PUBLIC_URL}/img/load3.png`}
+						alt='loading'
+					/>
+				)}
 
-			{Loading && (
-				<img
-					className='loader'
-					src={`${process.env.PUBLIC_URL}/img/load3.png`}
-					alt='loading'
-				/>
-			)}
-
-			<div className='frame' ref={frame}>
-				{/* 반복볼면서 float된 article요소들을 Masomry컴포넌트로 wrapping후 elementType지정 */}
-				<Masonry elementType={'div'} options={{ transitionDuration: '0.3s' }}>
-					{Items.map((item, idx) => {
-						return (
-							<article key={idx}>
-								<div className='inner'>
-									<div className='pic'>
-										<img
-											src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-											alt={item.title}
-										/>
-									</div>
-									<h2>{item.title}</h2>
-									<div className='profile'>
-										<img
-											src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-											alt={item.owner}
-											//해당 이미지에 에러 발생시 해당 이미지의 src속성값을 대체이미지url로 변경
-											onError={(e) => {
-												e.target.setAttribute(
-													'src',
-													'https://www.flickr.com/images/buddyicon.gif'
-												);
+				<div className='frame' ref={frame}>
+					{/* 반복볼면서 float된 article요소들을 Masomry컴포넌트로 wrapping후 elementType지정 */}
+					<Masonry elementType={'div'} options={{ transitionDuration: '0.3s' }}>
+						{Items.map((item, idx) => {
+							return (
+								<article key={idx}>
+									<div className='inner'>
+										<div
+											className='pic'
+											onClick={() => {
+												open.current.setOpen();
+												setIndex(idx);
 											}}
-										/>
-										<span onClick={showUser}>{item.owner}</span>
+										>
+											<img
+												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
+												alt={item.title}
+											/>
+										</div>
+										<h2>{item.title}</h2>
+										<div className='profile'>
+											<img
+												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+												alt={item.owner}
+												//해당 이미지에 에러 발생시 해당 이미지의 src속성값을 대체이미지url로 변경
+												onError={(e) => {
+													e.target.setAttribute(
+														'src',
+														'https://www.flickr.com/images/buddyicon.gif'
+													);
+												}}
+											/>
+											<span onClick={showUser}>{item.owner}</span>
+										</div>
 									</div>
-								</div>
-							</article>
-						);
-					})}
-				</Masonry>
-			</div>
-		</Layout>
+								</article>
+							);
+						})}
+					</Masonry>
+				</div>
+			</Layout>
+			<Modal ref={open}>
+				<img
+					src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_m.jpg`}
+					alt={Items[Index]?.title}
+				/>
+			</Modal>
+		</>
 	);
 }
 
