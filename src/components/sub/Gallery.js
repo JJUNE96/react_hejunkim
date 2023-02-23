@@ -59,6 +59,13 @@ function Gallery() {
 		getFlicker({ type: 'user', user: '197645453@N02' });
 	};
 
+	const showUser = (e) => {
+		frame.current.classList.remove('on');
+		setLoading(true);
+		//사용자 아이디 클릭시 해당 span요소의 아이디명을 가져와서 user키값에 등록후 데이터 요청
+		getFlicker({ type: 'user', user: e.target.innerText });
+	};
+
 	const showSearch = () => {
 		const result = input.current.value.trim();
 		if (!result) return alert('검색어를입력하세요.');
@@ -116,6 +123,20 @@ function Gallery() {
 										/>
 									</div>
 									<h2>{item.title}</h2>
+									<div className='profile'>
+										<img
+											src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+											alt={item.owner}
+											//해당 이미지에 에러 발생시 해당 이미지의 src속성값을 대체이미지url로 변경
+											onError={(e) => {
+												e.target.setAttribute(
+													'src',
+													'https://www.flickr.com/images/buddyicon.gif'
+												);
+											}}
+										/>
+										<span onClick={showUser}>{item.owner}</span>
+									</div>
 								</div>
 							</article>
 						);
