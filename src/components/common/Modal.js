@@ -20,9 +20,14 @@ const Modal = forwardRef((props, ref) => {
 			{Open && (
 				<motion.aside
 					className='modal'
-					initial={{ opacity: 0, scale: 0, rotate: 45 }}
-					animate={{ opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.6 } }}
-					exit={{ opacity: 0, x: 300, transition: { duration: 0.5 } }}
+					initial={{ scale: 0 }}
+					animate={{ rotate: 360, scale: 1 }}
+					transition={{
+						type: 'spring',
+						stiffness: 260,
+						damping: 20,
+					}}
+					exit={{ opacity: 0, y: 300, transition: { duration: 0.5 } }}
 				>
 					<motion.div
 						className='con'
@@ -35,9 +40,9 @@ const Modal = forwardRef((props, ref) => {
 					<motion.span
 						className='close'
 						onClick={() => setOpen(false)}
-						initial={{ x: 100, opacity: 0 }}
-						animate={{ x: 0, opacity: 1, transition: { delay: 0.7 } }}
-						exit={{ x: 100, opacity: 0 }}
+						initial={{ y: 100, opacity: 0 }}
+						animate={{ y: 0, opacity: 1, transition: { delay: 0.7 } }}
+						exit={{ y: 100, opacity: 0 }}
 					>
 						Close
 					</motion.span>
