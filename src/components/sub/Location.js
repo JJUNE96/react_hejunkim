@@ -11,10 +11,16 @@ function Location() {
 		level: 3,
 	};
 
+	const imageSrc = `${process.env.PUBLIC_URL}/img/map.png`;
+	const imageSize = new kakao.maps.Size(120, 60);
+	const imageOption = { offset: new kakao.maps.Point(50, 62) };
+
+	const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 	const markerPosition = option.center;
 
 	const marker = new kakao.maps.Marker({
 		position: markerPosition,
+		image: markerImage,
 	});
 
 	useEffect(() => {
