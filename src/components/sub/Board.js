@@ -22,6 +22,7 @@ function Board() {
 		const data = localStorage.getItem('post');
 		return JSON.parse(data);
 	};
+
 	const input = useRef(null);
 	const textarea = useRef(null);
 	//수정모드에서의 input, textarea가 담길 참조객체

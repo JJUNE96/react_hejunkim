@@ -5,12 +5,13 @@ function News({ Scrolled, Pos }) {
 	//로컬스토리지의 값이 있으면 해당 값을 다시 json형태로 변경해서 반환
 	//로컬스토리지의 값이 없으면 빈 배열을 반환
 	const getLocalData = () => {
-		const data = localStorage.getItem('post');
 		const dummys = [
-			{ title: 'Article1', content: 'Here comes descriptionin detail' },
-			{ title: 'Article2', content: 'Here comes descriptionin detail' },
-			{ title: 'Article3', content: 'Here comes descriptionin detail' },
+			{ title: 'Hello3', content: 'Here comes description in detail.' },
+			{ title: 'Hello2', content: 'Here comes description in detail.' },
+			{ title: 'Hello1', content: 'Here comes description in detail.' },
 		];
+		const data = localStorage.getItem('post');
+
 		if (data) return JSON.parse(data);
 		else return dummys;
 	};
@@ -19,7 +20,7 @@ function News({ Scrolled, Pos }) {
 
 	useEffect(() => {
 		localStorage.setItem('post', JSON.stringify(Posts));
-	}, []);
+	}, [Posts]);
 
 	return (
 		<section id='news' className='myScroll'>

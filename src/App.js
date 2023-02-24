@@ -1,8 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
-
+import { useRef } from 'react';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
+import Menu from './components/common/Menu';
 //main
 import Main from './components/main/Main';
 
@@ -22,11 +23,15 @@ switch는 좀더 자세하게 적은 (exact) 내용을 먼저 채택하고 예�
 
 */
 function App() {
+	const menu = useRef(null);
+
 	return (
 		<>
 			<Switch>
-				<Route exact path='/' component={Main} />
-				<Route path='/' render={() => <Header type={'sub'} />}></Route>
+				{/*  메뉴 컴포넌트에서 전달된 참조객체를 다시  메인 전용 헤더 컴포넌트에 전달하기위해 우선 메인컴포넌트  props로 전달  */}
+				<Route exact path='/' render={() => <Main menu={menu} />} />
+				{/* 메뉴 컴포넌트에서 전달된 참조객체를 다시  Header컴포넌트에서 props로 전달 */}
+				<Route path='/' render={() => <Header type={'sub'} menu={menu} />}></Route>
 				{/* react-router에서 render이용해서 컴포넌트 보여주기 
 				원치 않는 재마운팅 없이 편리하게 인라인 렌더링이 가능하다
 				render을 사용하면 경로가 일치할때 호출할 함수를 전달할 수 있습니다 단, 위에처럼 render함수에 아무것도 전달하지 않으면 route관련 props를 받을 수는 없다
@@ -70,6 +75,7 @@ function App() {
 			</Route>
 
 			<Footer />
+			<Menu ref={menu} />
 		</>
 	);
 }

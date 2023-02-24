@@ -14,13 +14,14 @@ Btns에서 만들어지는 scroll값을 형제 컴포넌트인 News에 전달하
 순서3-그렇게 저장된 state값을 다시 자식인 News컴포넌트에 전달
 */
 //rfce
-function Main() {
+function Main(props) {
 	const [Scrolled, setScrolled] = useState(0);
 	const [Pos, setPos] = useState([]);
 
 	return (
 		<main>
-			<Header type={'main'} />
+			{/* 특정 값을 직계자식이 아닌 자손 컴포넌트에 전달하기 위해 불필요하게 중간 컴포넌트에 props를 전달 : prop drilling */}
+			<Header type={'main'} menu={props.menu} />
 			<Visual />
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 			<Pics />

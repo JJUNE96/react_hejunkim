@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
 function Join() {
@@ -19,7 +19,11 @@ function Join() {
 
 	const [Val, setVal] = useState(initVal);
 	const [Err, setErr] = useState({});
-	const [Submit, setSubmit] = useState(false);
+	//const [Submit, setSubmit] = useState(false);
+	const Submit = useRef(false);
+	//Submit버튼을 클릭했는지 확인하는 Submit정보를 기존처럼 State로 처리하면
+	//아래 useEffect에 의존성 배열로 등록을 해야되고 의존성 배열 등록시 처음 컴포넌트 마운트시에 호출되며 전송버튼 클릭전에 회원가입 성공 경고창이 뜸
+	//해당 문제를 막기 위해 submit을 의존성 배열에 등록하지 않아도 되도록 useRef로 값지정
 	/*
 	매개변수(parameter) 특정값을 함수 내부로 전달해주는 통로명
 	인수(argument) 해당 통로를 통해서 전달되는 값
@@ -110,12 +114,11 @@ function Join() {
 	useEffect(() => {
 		//Object.keys(객체) : 해당객체의 property만 뽑아서 배열로 반환
 		const len = Object.keys(Err).length;
-		if (len === 0 && Submit) {
+		if (len === 0 && Submit.current) {
 			alert('모든 인증을 통과했습니다.');
-			setVal(initVal);
 			history.push('/');
 		}
-	}, [Err]);
+	}, [Err, history]);
 
 	return (
 		<Layout name={'Join / 회원가입'}>
@@ -327,7 +330,7 @@ function Join() {
 									<input
 										type='submit'
 										value='Create an account'
-										onClick={() => setSubmit(true)}
+										onClick={() => (Submit.current = true)}
 									/>
 								</th>
 							</tr>

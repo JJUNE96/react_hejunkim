@@ -6,10 +6,12 @@ import Masonry from 'react-masonry-component';
 //npm i react-masonry-component
 //npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
 //npm i framer-motion@6
+
 function Gallery() {
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
+
 	const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);

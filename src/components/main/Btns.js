@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import Anim from '../../asset/Anime';
 function Btns({ setScrolled, setPos }) {
 	const btnRef = useRef(null);
@@ -11,16 +11,16 @@ function Btns({ setScrolled, setPos }) {
 	- 가상돔 요소를 참조해서 재활용할때
 	- 컴포넌트가 재랜더링되더라도 특정 값을 유지할때, 컴포넌트 리랜더링을 방지
 */
-	const getPos = () => {
+	const getPos = useCallback(() => {
 		pos.current = [];
 
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		for (let el of secs) pos.current.push(el.offsetTop);
 
 		setPos(pos.current);
-	};
+	}, [setPos]);
 
-	const activation = () => {
+	const activation = useCallback(() => {
 		const btns = btnRef.current.children;
 		const secs = btnRef.current.parentElement.querySelectorAll('.myScroll');
 		const scroll = window.scrollY;
@@ -34,8 +34,7 @@ function Btns({ setScrolled, setPos }) {
 				secs[index].classList.add('on');
 			}
 		});
-	};
-
+	}, [setScrolled]);
 	/*
 		if (scroll >= pos.current[0]) {
 			for (const btn of btns) btn.classList.remove('on');
@@ -78,7 +77,14 @@ function Btns({ setScrolled, setPos }) {
 			window.removeEventListener('resize', getPos);
 			window.removeEventListener('scroll', activation);
 		};
-	}, []);
+	}, [getPos, activation]);
+	//getPos,activation을 그냥 의존성 배열에 등록하면 내부적으로 무한루프에 빠지지만
+	//해당 함수를 useCallback으로 메모이제이션 처리해서 반복호출되지 않아서 무한루프 문제 해결
+
+	//eslint가 의존성 배열에 getPos, activation을 등록하라고 권고문구를 띄우는 이유
+	//useEffect 내부에서 getPos, activation이라는 외부함수를 사용하고 있으므로 리액트 입장에서는 해당함수가 바뀔수도 있을때를 대비해서 의존성 배열에 등록하라고 권고
+	//이때 getPos, activation을 의존성 배열에 등록하면 해당 컴포넌트가 업데이트 될때마다 같은 함수임에도 불구하고 getPos, activation을 계속해서 읽게 되므로 불필요한 리소스가 낭비됨
+	//추후 useCallback을 이용해서 해당 getPos, activation함수를 미리 메모이제이션 (메모리에 강제로 특정 값을 할당해서 저장처리)해서 컴포넌트가 재 랜더링 되더라도 미리 메모이제이션 처리한 함수를 재사용 (추후 useMemo, useCallback에서 자세하게 다룰 내용)
 
 	return (
 		<ul className='scroll_navi' ref={btnRef}>
