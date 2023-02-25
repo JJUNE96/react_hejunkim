@@ -4,8 +4,8 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #000;
-	opacity: 1;
+	background: #fff;
+	//opacity: 1;
 	padding: 50px 30px;
 	z-index: 5;
 	display: flex;
@@ -18,8 +18,8 @@
 		margin-bottom: 30px;
 
 		a {
-			font: bold 30px/1 'arial';
-			color: #fff;
+			font: bold 30px/1 'Lora';
+			color: #000;
 		}
 	}
 
@@ -31,9 +31,9 @@
 			a {
 				display: block;
 				height: 50px;
-				font: 16px/50px 'arial';
-				color: #bbb;
-				border-bottom: 1px solid #fff;
+				font: 16px/50px 'Lora';
+				color: #000;
+				border-bottom: 1px solid #000;
 				padding-left: 10px;
 			}
 		}
@@ -43,18 +43,18 @@
 		width: 100%;
 		display: flex;
 		justify-content: flex-start;
-		gap: 20px;
+		gap: 30px;
 		padding-left: 20px;
 
 		li {
 			width: 30px;
 			height: 30px;
-			border: 1px solid #fff;
+			//border: 1px solid #000;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: #fff;
-			font-size: 14px;
+			color: #000;
+			font-size: 25px;
 		}
 	}
 }
