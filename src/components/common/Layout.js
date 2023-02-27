@@ -17,7 +17,6 @@ import { useEffect, useRef } from 'react';
 function Layout(props) {
 	//props는 부모로 부터 전달받은 인수값
 	const frame = useRef(null);
-	console.log(frame);
 
 	useEffect(() => {
 		frame.current.classList.add('on');

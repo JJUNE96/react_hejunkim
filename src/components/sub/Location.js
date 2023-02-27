@@ -1,5 +1,5 @@
 import Layout from '../common/Layout';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 
 function Location() {
 	const container = useRef(null);
@@ -13,16 +13,23 @@ function Location() {
 	};
 
 	const imageSrc = `${process.env.PUBLIC_URL}/img/map.png`;
-	const imageSize = new kakao.maps.Size(120, 60);
-	const imageOption = { offset: new kakao.maps.Point(50, 62) };
+	const imageSize = useMemo(() => new kakao.maps.Size(120, 60), [kakao]);
+	const imageOption = useMemo(() => new kakao.maps.Point(50, 62), [kakao]);
 
-	const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	const markerImage = useMemo(
+		() => new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+		[kakao, imageSrc, imageOption, imageSize]
+	);
 	const markerPosition = option.current.center;
 
-	const marker = new kakao.maps.Marker({
-		position: markerPosition,
-		image: markerImage,
-	});
+	const marker = useMemo(
+		() =>
+			new kakao.maps.Marker({
+				position: markerPosition,
+				image: markerImage,
+			}),
+		[kakao, markerImage, markerPosition]
+	);
 
 	useEffect(() => {
 		mapInstance.current = new kakao.maps.Map(container.current, option.current);
@@ -37,27 +44,27 @@ function Location() {
 
 		function getInfo() {
 			// 지도의 현재 중심좌표를 얻어옵니다
-			var center = mapInstance.current.getCenter();
+			let center = mapInstance.current.getCenter();
 
 			// 지도의 현재 레벨을 얻어옵니다
-			var level = mapInstance.current.getLevel();
+			let level = mapInstance.current.getLevel();
 
 			// 지도타입을 얻어옵니다
-			var mapTypeId = mapInstance.current.getMapTypeId();
+			let mapTypeId = mapInstance.current.getMapTypeId();
 
 			// 지도의 현재 영역을 얻어옵니다
-			var bounds = mapInstance.current.getBounds();
+			let bounds = mapInstance.current.getBounds();
 
 			// 영역의 남서쪽 좌표를 얻어옵니다
-			var swLatLng = bounds.getSouthWest();
+			let swLatLng = bounds.getSouthWest();
 
 			// 영역의 북동쪽 좌표를 얻어옵니다
-			var neLatLng = bounds.getNorthEast();
+			let neLatLng = bounds.getNorthEast();
 
 			// 영역정보를 문자열로 얻어옵니다. ((남,서), (북,동)) 형식입니다
-			var boundsStr = bounds.toString();
+			//let boundsStr = bounds.toString();
 
-			var message = '지도 중심좌표는 위도 ' + center.getLat() + ', <br>';
+			let message = '지도 중심좌표는 위도 ' + center.getLat() + ', <br>';
 			message += '경도 ' + center.getLng() + ' 이고 <br>';
 			message += '지도 레벨은 ' + level + ' 입니다 <br> <br>';
 			message += '지도 타입은 ' + mapTypeId + ' 이고 <br> ';
@@ -70,6 +77,7 @@ function Location() {
 			message +=
 				'북동쪽 좌표는 ' + neLatLng.getLat() + ', ' + neLatLng.getLng() + ' 입니다';
 		}
+
 		//지도 가운데 이동 함수
 		const setCenter = () => {
 			let moveLatLon = new kakao.maps.LatLng(35.1631139, 129.1635509);
@@ -85,7 +93,7 @@ function Location() {
 		return () => {
 			window.removeEventListener('resize', setCenter);
 		};
-	}, []);
+	}, [kakao, marker]);
 
 	function showTraffic() {
 		mapInstance.current = new kakao.maps.Map(container.current, option.current);

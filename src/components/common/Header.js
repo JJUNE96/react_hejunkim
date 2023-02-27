@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
+import { memo } from 'react';
 import Menu from './Menu';
 /*
 Link는 컴포넌트를 이용한 페이지 이동을 해준다
@@ -71,7 +72,7 @@ function Header(props) {
 	);
 }
 
-export default Header;
+export default memo(Header);
 
 //리액트는 기본이 js문법아래있기 때문에 class라는 문법이 존재합니다
 //class는 사용할수 없기 때문에 className으로 사용한다

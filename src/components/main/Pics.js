@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function Pics() {
 	return (
 		<section id='pics' className='myScroll'>
@@ -6,4 +8,4 @@ function Pics() {
 	);
 }
 
-export default Pics;
+export default memo(Pics);
