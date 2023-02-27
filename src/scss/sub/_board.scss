@@ -1,37 +1,8 @@
 .Board {
 	> .inner {
-		.inputBox {
-			width: 100%;
-			border: 1px solid #000;
-			padding: 50px;
-			margin-bottom: 50px;
-
-			input[type='text'],
-			textarea {
-				width: 50%;
-				padding: 8px 10px;
-				border: 1px solid #000;
-				resize: none;
-				margin-bottom: 10px;
-			}
-
-			.btnSet {
-				button {
-					width: 150px;
-					height: 30px;
-					display: inline-block;
-					border: none;
-					background: #000;
-					margin-right: 20px;
-					color: #fff;
-					cursor: pointer;
-				}
-			}
-		}
-
 		.showBox {
 			width: 100%;
-			border: 1px solid #000;
+			//border: 1px solid #000;
 			padding: 50px;
 
 			article {
@@ -42,7 +13,8 @@
 				justify-content: space-between;
 				align-content: center;
 				flex-wrap: wrap;
-
+				font-family: 'Lora';
+				border-bottom: 1px solid #000;
 				.txt {
 					width: 80%;
 					h2 {
@@ -73,13 +45,50 @@
 						border: none;
 						background: transparent;
 						cursor: pointer;
+						font-family: 'Lora';
+						&:hover {
+							color: palevioletred;
+						}
+					}
+				}
+			}
+		}
 
-						&:nth-of-type(1) {
-							color: red;
-						}
-						&:nth-of-type(2) {
-							color: #000;
-						}
+		.inputBox {
+			width: 100%;
+			//border: 1px solid #000;
+			padding: 50px;
+			margin-bottom: 50px;
+
+			input[type='text'] {
+				width: 100%;
+				padding: 10px 10px;
+				border: 1px solid #000;
+				resize: none;
+				margin-bottom: 10px;
+			}
+			textarea {
+				width: 100%;
+				padding: 50px 10px;
+				border: 1px solid #000;
+				resize: none;
+				margin-bottom: 10px;
+			}
+
+			.btnSet {
+				button {
+					width: 150px;
+					height: 30px;
+					display: inline-block;
+					border: none;
+					background: #000;
+					margin-right: 20px;
+					font-family: 'Lora';
+
+					color: #fff;
+					cursor: pointer;
+					&:hover {
+						color: palevioletred;
 					}
 				}
 			}
@@ -89,8 +98,20 @@
 @media screen and (max-width: $tablet) {
 	.Board {
 		> .inner {
+			.showBox {
+				article {
+					.txt,
+					.btnSet {
+						width: 100%;
+						margin-top: 20px;
+					}
+				}
+			}
+
 			.inputBox {
-				input[type='text'],
+				input[type='text'] {
+					width: 100%;
+				}
 				textarea {
 					width: 100%;
 				}
@@ -103,16 +124,6 @@
 					button {
 						width: 47%;
 						margin-right: 0;
-					}
-				}
-			}
-
-			.showBox {
-				article {
-					.txt,
-					.btnSet {
-						width: 100%;
-						margin-top: 20px;
 					}
 				}
 			}

@@ -1,6 +1,6 @@
 import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
 
@@ -57,6 +57,11 @@ const Menu = forwardRef((props, ref) => {
 						<li>
 							<NavLink to='/join' activeStyle={active}>
 								Join
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/location' activeStyle={active}>
+								Location
 							</NavLink>
 						</li>
 					</ul>

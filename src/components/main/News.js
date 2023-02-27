@@ -6,9 +6,15 @@ function News({ Scrolled, Pos }) {
 	//로컬스토리지의 값이 없으면 빈 배열을 반환
 	const getLocalData = () => {
 		const dummys = [
-			{ title: 'Hello3', content: 'Here comes description in detail.' },
-			{ title: 'Hello2', content: 'Here comes description in detail.' },
-			{ title: 'Hello1', content: 'Here comes description in detail.' },
+			{ title: 'Article9', content: 'Here comes description in detail.' },
+			{ title: 'Article8', content: 'Here comes description in detail.' },
+			{ title: 'Article7', content: 'Here comes description in detail.' },
+			{ title: 'Article6', content: 'Here comes description in detail.' },
+			{ title: 'Article5', content: 'Here comes description in detail.' },
+			{ title: 'Article4', content: 'Here comes description in detail.' },
+			{ title: 'Article3', content: 'Here comes description in detail.' },
+			{ title: 'Article2', content: 'Here comes description in detail.' },
+			{ title: 'Article1', content: 'Here comes description in detail.' },
 		];
 		const data = localStorage.getItem('post');
 

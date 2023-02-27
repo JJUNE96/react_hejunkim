@@ -99,7 +99,6 @@ function Join() {
 	const handleSelect = (e) => {
 		const { name } = e.target;
 		const selected = e.target.value;
-		console.log(selected);
 		setVal({ ...Val, [name]: selected });
 	};
 

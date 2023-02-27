@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 /*
 local storage
 -각 브라우저에 있는 로컬 저장공간
--문자값만 저장가능 (문자값이 아니닏 ㅔ이터 json -> 문자화해서 저장)
+-문자값만 저장가능 (문자값이 아니나 데이터 json -> 문자화해서 저장)
 -5MB까지만 저장 가능한 경량의 저장공간
 -{key:'문자값'}
 -localStorage: setItem({key:'문자값'}) - 값 저장
@@ -120,23 +120,6 @@ function Board() {
 
 	return (
 		<Layout name={'Board / 게시판'}>
-			<div className='inputBox'>
-				<input type='text' placeholder='제목을 입력하세요' ref={input} />
-				<br />
-				<textarea
-					cols='30'
-					rows='3'
-					placeholder='본문을 입력하세요.'
-					ref={textarea}
-				></textarea>
-				<br />
-
-				<div className='btnSet'>
-					<button onClick={resetForm}>CANCEL</button>
-					<button onClick={createPost}>WRITE</button>
-				</div>
-			</div>
-
 			<div className='showBox'>
 				{Posts.map((post, idx) => {
 					return (
@@ -181,6 +164,23 @@ function Board() {
 						</article>
 					);
 				})}
+			</div>
+
+			<div className='inputBox'>
+				<input type='text' placeholder='제목을 입력하세요' ref={input} />
+				<br />
+				<textarea
+					cols='30'
+					rows='3'
+					placeholder='본문을 입력하세요.'
+					ref={textarea}
+				></textarea>
+				<br />
+
+				<div className='btnSet'>
+					<button onClick={resetForm}>CANCEL</button>
+					<button onClick={createPost}>WRITE</button>
+				</div>
 			</div>
 		</Layout>
 	);

@@ -3,10 +3,11 @@ import { useRef, useEffect } from 'react';
 
 function Location() {
 	const container = useRef(null);
-
+	const mapInstance = useRef(null);
+	const option = useRef(null);
 	const { kakao } = window;
 
-	const option = {
+	option.current = {
 		center: new kakao.maps.LatLng(35.1631139, 129.1635509),
 		level: 3,
 	};
@@ -16,7 +17,7 @@ function Location() {
 	const imageOption = { offset: new kakao.maps.Point(50, 62) };
 
 	const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-	const markerPosition = option.center;
+	const markerPosition = option.current.center;
 
 	const marker = new kakao.maps.Marker({
 		position: markerPosition,
@@ -24,28 +25,28 @@ function Location() {
 	});
 
 	useEffect(() => {
-		const mapInstance = new kakao.maps.Map(container.current, option);
+		mapInstance.current = new kakao.maps.Map(container.current, option.current);
 		const mapTypeControl = new kakao.maps.MapTypeControl();
 
-		mapInstance.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+		mapInstance.current.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-		marker.setMap(mapInstance);
+		marker.setMap(mapInstance.current);
 
 		const zoomControl = new kakao.maps.ZoomControl();
-		mapInstance.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+		mapInstance.current.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 		function getInfo() {
 			// 지도의 현재 중심좌표를 얻어옵니다
-			var center = mapInstance.getCenter();
+			var center = mapInstance.current.getCenter();
 
 			// 지도의 현재 레벨을 얻어옵니다
-			var level = mapInstance.getLevel();
+			var level = mapInstance.current.getLevel();
 
 			// 지도타입을 얻어옵니다
-			var mapTypeId = mapInstance.getMapTypeId();
+			var mapTypeId = mapInstance.current.getMapTypeId();
 
 			// 지도의 현재 영역을 얻어옵니다
-			var bounds = mapInstance.getBounds();
+			var bounds = mapInstance.current.getBounds();
 
 			// 영역의 남서쪽 좌표를 얻어옵니다
 			var swLatLng = bounds.getSouthWest();
@@ -73,9 +74,9 @@ function Location() {
 		const setCenter = () => {
 			let moveLatLon = new kakao.maps.LatLng(35.1631139, 129.1635509);
 
-			mapInstance.setCenter(moveLatLon);
+			mapInstance.current.setCenter(moveLatLon);
 		};
-		mapInstance.setZoomable(false);
+		mapInstance.current.setZoomable(false);
 
 		//브라우저 리사이즈 될떄마다 마커 가운데 위치시키는 함수 호출
 		window.addEventListener('resize', setCenter);
@@ -87,16 +88,16 @@ function Location() {
 	}, []);
 
 	function showTraffic() {
-		const mapInstance = new kakao.maps.Map(container.current, option);
-		mapInstance.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-		marker.setMap(mapInstance);
+		mapInstance.current = new kakao.maps.Map(container.current, option.current);
+		mapInstance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		marker.setMap(mapInstance.current);
 	}
 
 	function closeTraffic() {
-		const mapInstance = new kakao.maps.Map(container.current, option);
+		mapInstance.current = new kakao.maps.Map(container.current, option.current);
 
-		mapInstance.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
-		marker.setMap(mapInstance);
+		mapInstance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+		marker.setMap(mapInstance.current);
 	}
 
 	return (
