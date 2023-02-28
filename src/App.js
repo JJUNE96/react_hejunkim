@@ -1,8 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import { useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import axios from 'axios';
-
+import { useRef } from 'react';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
@@ -21,35 +18,13 @@ import Login from './components/sub/Login';
 
 //sass
 import './scss/style.scss';
-import { useCallback } from 'react';
 /*
 switch는 좀더 자세하게 적은 (exact) 내용을 먼저 채택하고 예외로 그렇지 않는 내용을 처리
 
 */
 function App() {
-	const dispatch = useDispatch();
 	const menu = useRef(null);
 
-	//전역 데이터를 효율적으로 관리하기 위해서 해당 프로젝트에서 필요한 데이터는 모두 루트 컴포넌트인 App에서 데이터를 받아서
-	//dispatch로 리듀서에 전달하고 전역 store에 저장
-	//장점: 루트 컴포넌트에서 한눈에 해당 프로젝트에서 관리되는 전역 데이터들을 효율적으로 관리할 수 있다.
-	//fetchYoutube함수를 useCallback으로 메모이제이션 처리한뒤
-	//useEffect에 의존성 배열에 등록후 호출
-	const fetchYoutube = useCallback(async () => {
-		const key = 'AIzaSyCmBr12Dx2_ZogVZDwezHZ3TDnPw6syC4Q';
-		const playlistId = 'PL3DX3fAees627svxgQJYNHQrosJBEm0uc';
-		const num = 12;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-		const result = await axios.get(url);
-		//컴포넌트가 마운트되고 axios가 비동기 데이터를 가져오면 해당 값을 액션객체에 담아서
-		//dispatch로 reducer함수에 전달
-		dispatch({ type: 'SET_YOUTUBE', payload: result.data.items });
-	}, [dispatch]);
-
-	useEffect(() => {
-		fetchYoutube();
-	}, [fetchYoutube]);
 	return (
 		<>
 			<Switch>
