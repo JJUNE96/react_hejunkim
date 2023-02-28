@@ -3,9 +3,6 @@ import Modal from '../common/Modal';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
-//npm i react-masonry-component
-//npm i interval-call (일정시간동안 중복되는 요청을 무시하고 첫번째 이벤트요청만 발생시켜주는 라이브러리)
-//npm i framer-motion@6
 
 function Gallery() {
 	const open = useRef(null);
@@ -23,7 +20,6 @@ function Gallery() {
 		const method_search = 'flickr.photos.search';
 		const method_user = 'flickr.people.getPhotos';
 		const num = 9;
-		// const url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
 		let url = '';
 
 		if (opt.type === 'interest')
@@ -33,13 +29,8 @@ function Gallery() {
 		if (opt.type === 'user')
 			url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
 
-		// axios.get(url).then((json) => {
-		// 	setItems(json.data.photos.photo);
-		// });
-		//Promise then 보다 async await방식 동기화 함수를 많이 사용
 		const result = await axios.get(url);
 
-		//flickr로 반환한 데이터 배열값이 0개일때 (결과 이미지가 없을때) 기존 Items state를 변경하지 않고 이전 갤러리화면 다시 보이게 처리
 		if (result.data.photos.photo.length === 0) {
 			frame.current.classList.add('on');
 			setLoading(false);
@@ -68,7 +59,7 @@ function Gallery() {
 	const showUser = (e) => {
 		frame.current.classList.remove('on');
 		setLoading(true);
-		//사용자 아이디 클릭시 해당 span요소의 아이디명을 가져와서 user키값에 등록후 데이터 요청
+
 		getFlicker({ type: 'user', user: e.target.innerText });
 	};
 
@@ -83,7 +74,6 @@ function Gallery() {
 	let handleKeyUp = (e) => {
 		e.key === 'Enter' && showSearch();
 	};
-	//handleKeyUp = intervals(handleKeyUp);
 
 	useEffect(() => {
 		//getFlicker({ type: 'interest' });
@@ -96,7 +86,6 @@ function Gallery() {
 			<Layout name='Gallery'>
 				<div className='controls'>
 					<div className='searchBox'>
-						{/* input요소에서 키보드 이벤트 발생시 이벤트가 발생한 키이름이 'Enter'면 showSearch 함수 호출*/}
 						<input
 							type='text'
 							placeholder='검색어를 입력하세요.'
@@ -121,7 +110,6 @@ function Gallery() {
 				)}
 
 				<div className='frame' ref={frame}>
-					{/* 반복볼면서 float된 article요소들을 Masomry컴포넌트로 wrapping후 elementType지정 */}
 					<Masonry elementType={'div'} options={{ transitionDuration: '0.3s' }}>
 						{Items.map((item, idx) => {
 							return (
@@ -144,7 +132,6 @@ function Gallery() {
 											<img
 												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
 												alt={item.owner}
-												//해당 이미지에 에러 발생시 해당 이미지의 src속성값을 대체이미지url로 변경
 												onError={(e) => {
 													e.target.setAttribute(
 														'src',

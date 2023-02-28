@@ -1,10 +1,8 @@
 import { forwardRef, useImperativeHandle, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-//npm i framer-motion@6
 const Modal = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
 
-	//모달을 여는 state변경함수를 부모 컴포넌트로 전달
 	useImperativeHandle(ref, () => {
 		return { setOpen: () => setOpen(true) };
 	});
