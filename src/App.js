@@ -1,5 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import * as types from './redux/actionType.js';
 //common
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
@@ -18,12 +20,20 @@ import Login from './components/sub/Login';
 
 //sass
 import './scss/style.scss';
+import { useEffect } from 'react';
 /*
 switch는 좀더 자세하게 적은 (exact) 내용을 먼저 채택하고 예외로 그렇지 않는 내용을 처리
 
 */
 function App() {
 	const menu = useRef(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch({ type: types.YOUTUBE.start });
+		//초기 데이터 호출시 내 갤러리 opt값을 전달하기 위해서 다음과 같이 액션객체 전달
+		dispatch({ type: types.FLICKER.start, Opt: { type: 'user', user: '197645453@N02' } });
+	}, [dispatch]);
 
 	return (
 		<>

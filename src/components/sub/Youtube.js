@@ -1,28 +1,18 @@
 import Layout from '../common/Layout';
 import Modal from '../common/Modal';
-import axios from 'axios';
 import { useState, useEffect, useRef } from 'react';
-
+import { useSelector } from 'react-redux';
 function Youtube() {
 	//컴포넌트 마운트시 일단 전역 state에 있는 빈 배열값을 가져옴
 	//추후 useEffect axios가 유튜브 데이터를 가져오면 dispatch로 데이터가 이듀서로 전달되고
 	//두번째 렌더링 사이클에서 해당 데이터로 유튜브 데이터 랜더링
 	//console.log(Vids);
 	const open = useRef(null);
-	const [Vids, setVids] = useState([]);
+	//순서9 전역에 전달되는 store데이터를 호출
+	const Vids = useSelector((store) => store.youtubeReducer.youtube);
 	const [Index, setIndex] = useState(0);
 
-	useEffect(() => {
-		const key = 'AIzaSyCmBr12Dx2_ZogVZDwezHZ3TDnPw6syC4Q';
-		const playlistId = 'PL3DX3fAees627svxgQJYNHQrosJBEm0uc';
-		const num = 12;
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlistId}&maxResults=${num}`;
-
-		axios.get(url).then((json) => {
-			// console.log(json);
-			setVids(json.data.items);
-		});
-	}, []);
+	useEffect(() => {}, []);
 	return (
 		<>
 			<Layout name={'Youtube / 유튜브'}>
