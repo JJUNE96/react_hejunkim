@@ -15,13 +15,16 @@ ReactDOM.render(
 //npm i redux react-redux
 
 /*
---redux--
-store: 어떤 컴포넌트에서든 자유롭게 데이터를 가져다 쓸 수 있는 컴포넌트 외부의 독립적인 전역 데이터 공간
-reducer: store의 데이터를 변경하는 변형자 (dispatch로 전달되는 action 객체를 통해서만 store데이터를 변경 가능)
-action : 컴포넌트에서 reducer에 데이터 변경 요청을 할 때 쓰이는 특별한 객체
+redux-saga vs redux-thunk
 
+redux-saga :
+-비동기 데이터의 호출 및 리듀서 상태변화 관련 함수를 saga에서 generator함수로 동기화 처리
+-컴포넌트 외부에서 독립적으로 비동기 데이터를 전역관리하기 위한 라이브러리
 
---react-redux--
-useSelector: 컴포넌트에서 store전역 데이터를 가져올때 쓰는 함수
-useDispatch: 컴포넌트에서 reducer에 데이터변경 요청을 위해 action객체를 전달해주는 함수
+redux-thunk :
+-action 객체 안쪽에 비동기 데이터 호출 함수 및 리듀서 상태변화 관리 함수를 같이 등록
+
+redux-toolkit :
+-redux-thunk 기반의 통합 라이브러리
+-기존의 action개채 생성을 slice라는 파일 형태로 컴포넌트 외부에서 간단하게 설정 가능
 */
