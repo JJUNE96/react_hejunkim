@@ -2,11 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-dom';
+import { configureStore } from '@reduxjs/toolkit';
+import youtubeReducer from './redux/youtubeSlice';
 
+const store = configureStore({
+	reducer: {
+		youtube: youtubeReducer,
+	},
+});
 ReactDOM.render(
 	<React.StrictMode>
 		<HashRouter>
-			<App />
+			<Provider store={store}>
+				<App />
+			</Provider>
 		</HashRouter>
 	</React.StrictMode>,
 	document.getElementById('root')

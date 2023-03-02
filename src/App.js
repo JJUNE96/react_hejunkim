@@ -18,12 +18,20 @@ import Login from './components/sub/Login';
 
 //sass
 import './scss/style.scss';
+import { fetchYoutube } from './redux/youtubeSlice';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 /*
 switch는 좀더 자세하게 적은 (exact) 내용을 먼저 채택하고 예외로 그렇지 않는 내용을 처리
 
 */
 function App() {
 	const menu = useRef(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchYoutube());
+	}, [dispatch]);
 
 	return (
 		<>
