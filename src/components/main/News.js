@@ -31,11 +31,12 @@ function News({ Scrolled, Pos }) {
 			<h2 style={{ transform: `translateX(${(Scrolled - Pos) / 3}px)` }}>NEWS</h2>
 
 			{Posts.map((post, idx) => {
+				const con = post.content;
 				if (idx >= 4) return null;
 				return (
 					<article key={idx}>
 						<h3>{post.title}</h3>
-						<p>{post.content}</p>
+						<p>{post.content >= 50 ? con.substr(0, 50) + '...' : post.content}</p>
 					</article>
 				);
 			})}

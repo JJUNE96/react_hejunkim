@@ -19,6 +19,7 @@ import Login from './components/sub/Login';
 //sass
 import './scss/style.scss';
 import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchFlickr } from './redux/flickrSlice';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 /*
@@ -31,6 +32,7 @@ function App() {
 
 	useEffect(() => {
 		dispatch(fetchYoutube());
+		dispatch(fetchFlickr({ type: 'user', user: '197645453@N02' }));
 	}, [dispatch]);
 
 	return (

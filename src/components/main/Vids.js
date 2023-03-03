@@ -1,13 +1,50 @@
-import { memo } from 'react';
+import { memo, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+function BtnRolling() {
+	const swiper = useSwiper();
+	const btnRun = useRef(null);
+	const btnPause = useRef(null);
+
+	// swiper.on('autoplayPaused', () => {
+	// 	btnRun.current.classList.remove('on');
+	// 	btnPause.current.classList.add('on');
+	// });
+	return (
+		<nav className='controls'>
+			<FontAwesomeIcon
+				className='on'
+				ref={btnRun}
+				icon={faPlay}
+				onClick={() => {
+					if (!swiper.autoplay.paused) return;
+					swiper.autoplay.run();
+					btnRun.current.classList.add('on');
+					btnPause.current.classList.remove('on');
+				}}
+			/>
+			<FontAwesomeIcon
+				ref={btnPause}
+				icon={faPause}
+				onClick={() => {
+					if (swiper.autoplay.paused) return;
+					swiper.autoplay.pause();
+					btnRun.current.classList.remove('on');
+					btnPause.current.classList.add('on');
+				}}
+			/>
+		</nav>
+	);
+}
 function Vids() {
 	const Vids = useSelector((store) => store.youtube.data);
 
@@ -17,18 +54,26 @@ function Vids() {
 				navigation={true}
 				grabCursor={true}
 				modules={[Autoplay, Navigation, Pagination]}
-				//slidesPerView={3}
+				slidesPerView={1}
 				spaceBetween={50}
 				loop={true}
 				centeredSlides={true}
 				pagination={{ clickable: true }}
 				autoplay={{
-					delay: 2000,
+					delay: 4000,
 					disableOnInteraction: true,
 				}}
-				observer={true}
-				observeParents={true}
+				// breakpoints={{
+				// 	1200: {
+				// 		slidesPerView: 3,
+				// 		spaceBetween: 50,
+				// 	},
+				// }}
 			>
+				<li>
+					<NavLink to='/youtube'>VIEW OUR YOUTUBE</NavLink>
+				</li>
+				<BtnRolling />
 				{Vids.map((vid, idx) => {
 					if (idx >= 6) return null;
 
@@ -48,9 +93,6 @@ function Vids() {
 										? vid.snippet.description.substr(0, 150) + '...'
 										: vid.snippet.description}
 								</p>
-								<li>
-									<NavLink to='/youtube'>VIEW OUR YOUTUBE</NavLink>
-								</li>
 							</div>
 						</SwiperSlide>
 					);
