@@ -1,32 +1,34 @@
-import { forwardRef, useState, useImperativeHandle, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { close } from '../../redux/menuSlice';
 
-const Menu = forwardRef((props, ref) => {
-	const [Open, setOpen] = useState(false);
+function Menu() {
 	const active = { color: 'palevioletred' };
-
-	useImperativeHandle(ref, () => {
-		return { setToggle: () => setOpen(!Open) };
-	});
+	const dispatch = useDispatch();
+	const menu = useSelector((store) => store.menu.open);
 
 	useEffect(() => {
 		window.addEventListener('resize', () => {
-			if (window.innerWidth >= 1180) setOpen(false);
+			//브라우저 폭이 늘어나면 close 함수로 전역 state값을 false로 변경후 dispatch로 리듀서에 전달
+			if (window.innerWidth >= 1180) dispatch(close());
 		});
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<AnimatePresence>
-			{Open && (
+			{/* 전역 state값이 true일떄만 메뉴패널 호출 */}
+			{menu && (
+				//해당 패널 클릭시 close 함수로 전역 state값을 false로 변경후 dispatch로 리듀서에 전달
 				<motion.nav
 					id='mobilePanel'
 					initial={{ x: -270, opacity: 0 }}
 					animate={{ x: 0, opacity: 1, transition: { duration: 0.3 } }}
 					exit={{ x: -270, opacity: 0 }}
-					onClick={() => setOpen(false)}
+					onClick={() => dispatch(close())}
 				>
 					<ul id='gnbMo'>
 						<li>
@@ -76,6 +78,6 @@ const Menu = forwardRef((props, ref) => {
 			)}
 		</AnimatePresence>
 	);
-});
+}
 
 export default Menu;

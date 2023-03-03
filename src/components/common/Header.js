@@ -1,12 +1,15 @@
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import { memo } from 'react';
 import Menu from './Menu';
+import { useDispatch } from 'react-redux';
+import { toggle } from '../../redux/menuSlice';
 
 function Header(props) {
-	const menu = useRef(null);
+	//const menu = useSelector((store) => store.menu.open);
+	const dispatch = useDispatch();
 	const active = { color: 'black' };
 	return (
 		<>
@@ -42,7 +45,7 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul>
-
+					{/* 토글메뉴 클릭시 toggle함수로 기존 전역 state값을 반전시킨 뒤 dispatch리듀서에 전달 */}
 					<ul id='util'>
 						<li>
 							<NavLink to='/location' activeStyle={active}>
@@ -55,11 +58,11 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul>
-					<FontAwesomeIcon icon={faBars} onClick={() => props.menu.current.setToggle()} />
+					<FontAwesomeIcon icon={faBars} onClick={() => dispatch(toggle())} />
 				</div>
 			</header>
 
-			<Menu ref={menu} />
+			<Menu />
 		</>
 	);
 }
