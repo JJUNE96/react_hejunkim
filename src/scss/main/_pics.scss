@@ -5,4 +5,13 @@
 	position: relative;
 	padding: 10vw;
 	overflow: hidden;
+
+	ul {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+		cursor: pointer;
+	}
 }

@@ -51,8 +51,8 @@ function Gallery() {
 	};
 
 	useEffect(() => {
-		//init.currnet의 값이 false이고 그와 동시에 검색 결과가 없을때만 경고장 출력
-		if (Items.length === 0) {
+		//init.current 값이 false이고 그와 동시에 검색 결과가 없을때만 경고장 출력
+		if (Items.length === 0 && !init.current) {
 			dispatch(fetchFlickr({ type: 'user', user: '197645453@N02' }));
 			frame.current.classList.remove('on');
 			setLoading(true);
