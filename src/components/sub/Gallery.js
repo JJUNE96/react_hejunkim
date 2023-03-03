@@ -2,72 +2,39 @@ import Layout from '../common/Layout';
 import Modal from '../common/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFlickr } from '../../redux/flickrSlice';
-// import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
 
 function Gallery() {
 	const dispatch = useDispatch(null);
+	//검색결과가 없는지 판단시 처음 컴포넌트가 마운트되서 결과값이 없는지 검색후의 결과가 없는지의 구문을 위한 참조객체
+	//초기엔 true, 만약 검색 함수가 실행되면 false로 변경
+	const init = useRef(true);
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
 
-	// const [Items, setItems] = useState([]);
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
-	//const intervals = intervalCall(1000);
-	// const getFlicker = async (opt) => {
-	// 	const baseURL = 'https://www.flickr.com/services/rest/?format=json&nojsoncallback=1';
-	// 	const key = '317a304fd6fe37a1323995ca69db0b06';
-	// 	const method_interest = 'flickr.interestingness.getList';
-	// 	const method_search = 'flickr.photos.search';
-	// 	const method_user = 'flickr.people.getPhotos';
-	// 	const num = 9;
-	// 	let url = '';
 
-	// 	if (opt.type === 'interest')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_interest}&per_page=${num}`;
-	// 	if (opt.type === 'search')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_search}&per_page=${num}&tags=${opt.tags}`;
-	// 	if (opt.type === 'user')
-	// 		url = `${baseURL}&api_key=${key}&method=${method_user}&per_page=${num}&user_id=${opt.user}`;
-
-	// 	const result = await axios.get(url);
-
-	// 	if (result.data.photos.photo.length === 0) {
-	// 		frame.current.classList.add('on');
-	// 		setLoading(false);
-	// 		return alert('해당 검색어의 결과 이미지가 없습니다.');
-	// 	}
-	// 	setItems(result.data.photos.photo);
-
-	// 	setTimeout(() => {
-	// 		setLoading(false);
-	// 		frame.current.classList.add('on');
-	// 	}, 500);
-	// };
 	const Items = useSelector((store) => store.flickr.data);
 
 	const showInterest = () => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		dispatch(fetchFlickr({ type: 'interest' }));
-		// getFlicker({ type: 'interest' });
 	};
 
 	const showMine = () => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		dispatch(fetchFlickr({ type: 'user', user: '197645453@N02' }));
-		// getFlicker({ type: 'user', user: '197645453@N02' });
 	};
 
 	const showUser = (e) => {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		dispatch(fetchFlickr({ type: 'user', user: e.target.innerText }));
-
-		// getFlicker({ type: 'user', user: e.target.innerText });
 	};
 
 	const showSearch = () => {
@@ -77,19 +44,26 @@ function Gallery() {
 		frame.current.classList.remove('on');
 		setLoading(true);
 		dispatch(fetchFlickr({ type: 'search', tags: result }));
-
-		// getFlicker({ type: 'search', tags: result });
+		init.current(false);
 	};
 	let handleKeyUp = (e) => {
 		e.key === 'Enter' && showSearch();
 	};
 
 	useEffect(() => {
+		//init.currnet의 값이 false이고 그와 동시에 검색 결과가 없을때만 경고장 출력
+		if (Items.length === 0) {
+			dispatch(fetchFlickr({ type: 'user', user: '197645453@N02' }));
+			frame.current.classList.remove('on');
+			setLoading(true);
+			return alert('검색어의 결과 이미지가 없습니다.');
+		}
+
 		setTimeout(() => {
 			frame.current.classList.add('on');
 			setLoading(false);
 		}, 500);
-	}, [Items]);
+	}, [Items, dispatch]);
 
 	return (
 		<>

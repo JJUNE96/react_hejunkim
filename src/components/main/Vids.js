@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,7 +24,7 @@ function BtnRolling() {
 			<FontAwesomeIcon
 				className='on'
 				ref={btnRun}
-				icon={faPlay}
+				icon={faCirclePlay}
 				onClick={() => {
 					if (!swiper.autoplay.paused) return;
 					swiper.autoplay.run();
