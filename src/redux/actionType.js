@@ -4,8 +4,8 @@ export const YOUTUBE = {
 	fail: 'YOUTUBE_FAIL',
 };
 
-export const FLICKER = {
-	start: 'FLICKER_START',
-	success: 'FLICKER_SUCCESS',
-	fail: 'FLICKER_FAIL',
+export const FLICKR = {
+	start: 'FLICKR_START',
+	success: 'FLICKR_SUCCESS',
+	fail: 'FLICKR_FAIL',
 };

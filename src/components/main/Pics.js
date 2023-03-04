@@ -1,12 +1,12 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 function Pics() {
-	const { flicker } = useSelector((store) => store.flickerReducer);
-	console.log(flicker);
+	const { flickr } = useSelector((store) => store.flickrReducer);
+	console.log(flickr);
 	return (
 		<section id='pics' className='myScroll'>
-			<h1>Flicker</h1>
-			{flicker.map((pic, idx) => {
+			<h1>flickr</h1>
+			{flickr.map((pic, idx) => {
 				if (idx >= 4) return null;
 				return (
 					<img

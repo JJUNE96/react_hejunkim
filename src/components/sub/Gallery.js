@@ -1,17 +1,16 @@
 import Layout from '../common/Layout';
-import Modal from '../common/Modal';
 import { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Masonry from 'react-masonry-component';
-import { useDispatch, useSelector } from 'react-redux';
+import Modal from '../common/Modal';
 import * as types from '../../redux/actionType';
 
 function Gallery() {
 	const dispatch = useDispatch();
-	const Items = useSelector((store) => store.FlickerReducer.flicker);
+	const Items = useSelector((store) => store.flickrReducer.flickr);
 	const open = useRef(null);
 	const frame = useRef(null);
 	const input = useRef(null);
-
 	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
 	const [Opt, setOpt] = useState({ type: 'user', user: '197645453@N02' });
@@ -36,26 +35,28 @@ function Gallery() {
 
 	const showSearch = () => {
 		const result = input.current.value.trim();
-		if (!result) return alert('검색어를입력하세요.');
+		if (!result) return alert('검색어를 입력하세요.');
 		input.current.value = '';
 		frame.current.classList.remove('on');
 		setLoading(true);
 		setOpt({ type: 'search', tags: result });
 	};
+
 	let handleKeyUp = (e) => {
 		e.key === 'Enter' && showSearch();
 	};
 
 	useEffect(() => {
-		dispatchEvent({ type: types.FLICKER.start, Opt });
+		dispatch({ type: types.FLICKR.start, Opt });
 	}, [Opt, dispatch]);
 
 	useEffect(() => {
 		setTimeout(() => {
 			frame.current.classList.add('on');
 			setLoading(false);
-		});
+		}, 500);
 	}, [Items]);
+
 	return (
 		<>
 			<Layout name='Gallery'>
@@ -79,13 +80,13 @@ function Gallery() {
 				{Loading && (
 					<img
 						className='loader'
-						src={`${process.env.PUBLIC_URL}/img/load3.png`}
+						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
 						alt='loading'
 					/>
 				)}
 
 				<div className='frame' ref={frame}>
-					<Masonry elementType={'div'} options={{ transitionDuration: '0.3s' }}>
+					<Masonry elementType={'div'} options={{ transitionDuration: '0.5s' }}>
 						{Items.map((item, idx) => {
 							return (
 								<article key={idx}>
@@ -103,6 +104,7 @@ function Gallery() {
 											/>
 										</div>
 										<h2>{item.title}</h2>
+
 										<div className='profile'>
 											<img
 												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
@@ -123,9 +125,10 @@ function Gallery() {
 					</Masonry>
 				</div>
 			</Layout>
+
 			<Modal ref={open}>
 				<img
-					src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_m.jpg`}
+					src={`https://live.staticflickr.com/${Items[Index]?.server}/${Items[Index]?.id}_${Items[Index]?.secret}_b.jpg`}
 					alt={Items[Index]?.title}
 				/>
 			</Modal>

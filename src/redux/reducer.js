@@ -28,20 +28,20 @@ const youtubeReducer = (state = { youtube: [] }, action) => {
 	}
 };
 
-const flickerReducer = (state = { flicker: [] }, action) => {
+const flickrReducer = (state = { flickr: [] }, action) => {
 	switch (action.type) {
-		case types.FLICKER.start:
+		case types.FLICKR.start:
 			return state;
 
-		case types.FLICKER.success:
-			return { ...state, flicker: action.payload };
+		case types.FLICKR.success:
+			return { ...state, flickr: action.payload };
 
-		case types.FLICKER.fail:
-			return { ...state, flicker: action.payload };
+		case types.FLICKR.fail:
+			return { ...state, flickr: action.payload };
 		default:
 			return state;
 	}
 };
 
-const reducers = combineReducers({ youtubeReducer, flickerReducer });
+const reducers = combineReducers({ youtubeReducer, flickrReducer });
 export default reducers;
