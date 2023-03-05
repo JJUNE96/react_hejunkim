@@ -20,6 +20,9 @@
 		a {
 			font: bold 30px/1 'Lora';
 			color: rgba(252, 247, 236, 1);
+			&:hover {
+				font: bold 30px/1 'Cinzel';
+			}
 		}
 	}
 
@@ -35,6 +38,9 @@
 				color: rgba(252, 247, 236, 1);
 				border-bottom: 1px solid rgba(252, 247, 236, 1);
 				padding-left: 10px;
+				&:hover {
+					font: normal 16px/50px 'Cinzel';
+				}
 			}
 		}
 	}
