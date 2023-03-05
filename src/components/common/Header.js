@@ -1,21 +1,21 @@
 import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
 import { memo } from 'react';
 import Menu from './Menu';
 
 function Header(props) {
 	const menu = useRef(null);
-	const active = { color: 'black' };
+	//const active = { color: 'black' };
 	return (
 		<>
 			<header className={props.type}>
 				<div className='inner'>
 					<h1>
-						<Link to='/'>JUNE</Link>
+						<Link to='/'>HEJUN</Link>
 					</h1>
-					<ul id='gnb'>
+					{/* <ul id='gnb'>
 						<li>
 							<NavLink to='/about' activeStyle={active}>
 								About
@@ -41,9 +41,6 @@ function Header(props) {
 								Join
 							</NavLink>
 						</li>
-					</ul>
-
-					<ul id='util'>
 						<li>
 							<NavLink to='/location' activeStyle={active}>
 								Location
@@ -54,11 +51,26 @@ function Header(props) {
 								Login
 							</NavLink>
 						</li>
-					</ul>
-					<FontAwesomeIcon icon={faBars} onClick={() => props.menu.current.setToggle()} />
+					</ul> */}
+
+					{/* <ul id='util'>
+						<li>
+							<NavLink to='/location' activeStyle={active}>
+								Location
+							</NavLink>
+						</li>
+						<li>
+							<NavLink to='/login' activeStyle={active}>
+								Login
+							</NavLink>
+						</li>
+					</ul> */}
+					<FontAwesomeIcon
+						icon={faBarsStaggered}
+						onClick={() => props.menu.current.setToggle()}
+					/>
 				</div>
 			</header>
-
 			<Menu ref={menu} />
 		</>
 	);

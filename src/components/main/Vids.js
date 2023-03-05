@@ -37,13 +37,13 @@ function Vids() {
 	return (
 		<>
 			<section id='vids' className='myScroll'>
-				<h1>YOUTUBE</h1>
+				{/* <h1>YOUTUBE</h1>
 				<h2>GET INSPIRED BY EVERYDAY DREAMERS</h2>
 				<p>
 					the third story templates are created for dreamers & entrepreneurs who dare to
 					be irresistible.
 					<br /> the templates can be used and tailored to any business, in any industry.
-				</p>
+				</p> */}
 				<Swiper
 					slidesPerView={3}
 					spaceBetween={50}
