@@ -2,8 +2,73 @@ footer {
 	width: 100%;
 	background: rgba(63, 70, 56, 1);
 	border-top: 1px solid #bbb;
-	padding: 100px 0px;
+	//padding: 100px 0px;
 	overflow: hidden;
+	#gnb {
+		width: 40%;
+		height: 509px;
+		float: left;
+		padding: 80px;
+		font-size: 30px;
+		//padding-left: 260px;
+		border: 1px solid rgba(252, 247, 236, 1);
+		li {
+			display: block;
+			width: 200px;
+			padding: 7px;
+			a {
+				font: normal 30px 'Cinzel';
+				padding: 20px;
+				//padding-left: 200px;
+				color: rgba(252, 247, 236, 1);
+				text-align: center;
+				z-index: 100;
+				&:hover {
+					font: normal 30px 'Lora';
+				}
+			}
+		}
+	}
+	.photo {
+		border: 1px solid rgba(252, 247, 236, 1);
+		float: left;
+		width: 60%;
+		height: 509px;
+		p {
+			color: rgba(252, 247, 236, 1);
+			padding: 20px;
+			text-align: center;
+			font: normal 30px 'Cinzel';
+		}
+		h2 {
+			padding: 10px;
+			text-align: center;
+			font: normal 40px 'Cinzel';
+			color: rgba(252, 247, 236, 1);
+		}
+		img {
+			margin: 10px;
+			margin-left: 80px;
+			object-fit: cover;
+		}
+		.brands {
+			display: flex;
+			padding: 20px;
+			//margin-left: 20px;
+			font-size: 35px;
+			border-top: 1px solid rgba(252, 247, 236, 1);
+			color: rgba(252, 247, 236, 1);
+			text-align: center;
+			li {
+				padding: 20px;
+				padding-left: 30px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-content: center;
+			}
+		}
+	}
 	.inner {
 		width: 1180px;
 		margin: 0 auto;
@@ -22,6 +87,8 @@ footer {
 		p {
 			text-align: center;
 			font: 12px/1 'arial';
+			padding-bottom: 20px;
+
 			color: rgba(252, 247, 236, 1);
 			//letter-spacing: 2px;
 		}
