@@ -80,7 +80,7 @@ function Gallery() {
 				{Loading && (
 					<img
 						className='loader'
-						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
+						src={`${process.env.PUBLIC_URL}/img/load1.png`}
 						alt='loading'
 					/>
 				)}

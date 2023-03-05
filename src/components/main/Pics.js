@@ -1,48 +1,61 @@
-import { memo } from 'react';
-import { useState, useRef } from 'react';
+import { memo, useState, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { useSelector } from 'react-redux';
 import Modal from '../common/Modal';
+import { Keyboard, Pagination, Navigation } from 'swiper';
 
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 function Pics() {
 	const [Index, setIndex] = useState(0);
 	const open = useRef(null);
 
 	const { flickr } = useSelector((store) => store.flickrReducer);
-	console.log(flickr);
 
 	return (
 		<>
 			<section id='pics' className='myScroll'>
-				<h1>Flickr</h1>
-
-				{flickr.map((pic, idx) => {
-					if (idx >= 4) return null;
-					return (
-						<article key={idx}>
-							<div className='inner'>
-								<div
-									className='pic'
-									onClick={() => {
-										open.current.setOpen();
-										setIndex(idx);
-									}}
-								>
-									<img
-										key={idx}
-										src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-										alt={pic.title}
-									/>
+				<h1>EDITORIAL</h1>
+				<Swiper
+					slidesPerView={3}
+					spaceBetween={50}
+					loop={true}
+					centeredSlides={true}
+					navigation={true}
+					pagination={{ clickable: true }}
+					modules={[Keyboard, Pagination, Navigation]}
+				>
+					<nav className='controls'></nav>
+					{flickr.map((pic, idx) => {
+						if (idx >= 4) return null;
+						return (
+							<SwiperSlide key={idx}>
+								<div className='inner'>
+									<div
+										className='pic'
+										onClick={() => {
+											setIndex(idx);
+											open.current.setOpen();
+										}}
+									>
+										<img
+											key={idx}
+											src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+											alt={pic.title}
+										/>
+									</div>
 								</div>
-							</div>
-						</article>
-						// <img
-						// 	key={idx}
-						// 	src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-						// 	alt={pic.title}
-						// />
-					);
-				})}
+							</SwiperSlide>
+							// <img
+							// 	key={idx}
+							// 	src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+							// 	alt={pic.title}
+							// />
+						);
+					})}
+				</Swiper>
 			</section>
 
 			<Modal ref={open}>

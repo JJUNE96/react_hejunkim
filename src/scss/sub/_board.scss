@@ -60,13 +60,14 @@
 			//border: 1px solid #000;
 			padding: 50px;
 			margin-bottom: 50px;
-
+			background: rgba(252, 247, 236, 1);
 			input[type='text'] {
 				width: 100%;
 				padding: 10px 10px;
 				border: 1px solid #000;
 				resize: none;
 				margin-bottom: 10px;
+				background: rgba(252, 247, 236, 1);
 			}
 			textarea {
 				width: 100%;
@@ -74,6 +75,7 @@
 				border: 1px solid #000;
 				resize: none;
 				margin-bottom: 10px;
+				background: rgba(252, 247, 236, 1);
 			}
 
 			.btnSet {
