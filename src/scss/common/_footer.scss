@@ -1,7 +1,7 @@
 footer {
 	width: 100%;
-	background: rgba(63, 70, 56, 1);
-	border-top: 1px solid #bbb;
+	background: rgba(68, 46, 24, 1);
+	//border-top: 1px solid #bbb;
 	//padding: 100px 0px;
 	overflow: hidden;
 	#gnb {
@@ -11,7 +11,7 @@ footer {
 		padding: 80px;
 		font-size: 30px;
 		//padding-left: 260px;
-		border: 1px solid rgba(252, 247, 236, 1);
+		border: 1px solid rgba(243, 239, 227, 1);
 		li {
 			display: block;
 			width: 200px;
@@ -20,7 +20,7 @@ footer {
 				font: normal 30px 'Cinzel';
 				padding: 20px;
 				//padding-left: 200px;
-				color: rgba(252, 247, 236, 1);
+				color: rgba(243, 239, 227, 1);
 				text-align: center;
 				z-index: 100;
 				&:hover {
@@ -31,11 +31,11 @@ footer {
 	}
 	.photo {
 		height: 55vh;
-		border: 1px solid rgba(252, 247, 236, 1);
+		border: 1px solid rgba(243, 239, 227, 1);
 		float: left;
 		width: 60%;
 		p {
-			color: rgba(252, 247, 236, 1);
+			color: rgba(243, 239, 227, 1);
 			padding: 20px;
 			text-align: center;
 			font: normal 30px 'Cinzel';
@@ -44,7 +44,7 @@ footer {
 			padding: 10px;
 			text-align: center;
 			font: normal 40px 'Cinzel';
-			color: rgba(252, 247, 236, 1);
+			color: rgba(243, 239, 227, 1);
 		}
 		img {
 			width: calc(100% / 6);
@@ -57,8 +57,8 @@ footer {
 			display: flex;
 			padding: 20px;
 			font-size: 35px;
-			border-top: 1px solid rgba(252, 247, 236, 1);
-			color: rgba(252, 247, 236, 1);
+			border-top: 1px solid rgba(243, 239, 227, 1);
+			color: rgba(243, 239, 227, 1);
 			text-align: center;
 			li {
 				//padding: 20px;

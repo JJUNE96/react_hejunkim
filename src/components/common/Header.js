@@ -7,51 +7,39 @@ import Menu from './Menu';
 
 function Header(props) {
 	const menu = useRef(null);
-	//const active = { color: 'black' };
+	// const active = { color: 'pink' };
 	return (
 		<>
 			<header className={props.type}>
 				<div className='inner'>
-					<h1>
-						<Link to='/'>HEJUN</Link>
-					</h1>
-					{/* <ul id='gnb'>
+					<ul id='gnb'>
 						<li>
-							<NavLink to='/about' activeStyle={active}>
-								About
-							</NavLink>
+							<NavLink to='/about'>About</NavLink>
 						</li>
 						<li>
-							<NavLink to='/gallery' activeStyle={active}>
-								Gallery
-							</NavLink>
+							<NavLink to='/gallery'>Gallery</NavLink>
 						</li>
 						<li>
-							<NavLink to='/board' activeStyle={active}>
-								Board
-							</NavLink>
+							<NavLink to='/board'>Board</NavLink>
+						</li>
+						<h1>
+							<Link to='/'>SUNDAYMUSE</Link>
+						</h1>
+						<li>
+							<NavLink to='/youtube'>Youtube</NavLink>
 						</li>
 						<li>
-							<NavLink to='/youtube' activeStyle={active}>
-								Youtube
-							</NavLink>
+							<NavLink to='/join'>Join</NavLink>
 						</li>
 						<li>
-							<NavLink to='/join' activeStyle={active}>
-								Join
-							</NavLink>
+							<NavLink to='/location'>Location</NavLink>
 						</li>
-						<li>
-							<NavLink to='/location' activeStyle={active}>
-								Location
-							</NavLink>
-						</li>
-						<li>
+						{/* <li>
 							<NavLink to='/login' activeStyle={active}>
 								Login
 							</NavLink>
-						</li>
-					</ul> */}
+						</li> */}
+					</ul>
 
 					{/* <ul id='util'>
 						<li>

@@ -1,5 +1,6 @@
 import Header from '../common/Header';
 import Vids from './Vids';
+import Joy from './Joy';
 import Pics from './Pics';
 import Visual from './Visual';
 import News from './News';
@@ -23,8 +24,11 @@ function Main(props) {
 			{/* 특정 값을 직계자식이 아닌 자손 컴포넌트에 전달하기 위해 불필요하게 중간 컴포넌트에 props를 전달 : prop drilling */}
 			<Header type={'main'} menu={props.menu} />
 			<Visual />
+
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
+
 			<Pics />
+			<Joy />
 			<Vids />
 			{/* setScrolled state변경함수를 Btns 컴포넌트 전달 */}
 			<Btns setScrolled={setScrolled} setPos={setPos} />
