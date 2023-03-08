@@ -2,8 +2,9 @@ import { memo, useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../common/Modal';
+import { NavLink } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -106,21 +107,28 @@ function Vids() {
 											document.querySelector('.fa-pause').classList.add('on');
 										}}
 									>
+										{/* <p>CATEGORY TITLE</p> */}
 										<img
 											src={vid.snippet.thumbnails.maxres.url}
 											alt={vid.snippet.title}
 										/>
 									</div>
 									<h2>
-										{vid.snippet.title.length >= 30
-											? vid.snippet.title.substr(0, 40) + '...'
+										{vid.snippet.title.length >= 90
+											? vid.snippet.title.substr(0, 90) + '...'
 											: vid.snippet.title}
 									</h2>
-									<p>
+									{/* <p>
 										{vid.snippet.description.length >= 100
 											? vid.snippet.description.substr(0, 100) + '...'
 											: vid.snippet.description}
-									</p>
+									</p> */}
+									<NavLink to='/youtube'>
+										Learn more&nbsp;&nbsp;
+										<FontAwesomeIcon icon={faArrowRightLong}>
+											{faArrowRightLong}
+										</FontAwesomeIcon>
+									</NavLink>
 								</div>
 							</SwiperSlide>
 						);

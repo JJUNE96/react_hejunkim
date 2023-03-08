@@ -24,7 +24,9 @@ footer {
 				text-align: center;
 				z-index: 100;
 				&:hover {
-					font: normal 30px 'Libre Caslon Text', serif;
+					text-decoration-line: underline;
+					text-underline-position: under;
+					color: rgba(192, 127, 87, 1);
 				}
 			}
 		}

@@ -87,6 +87,9 @@
 				color: rgba(68, 46, 24, 1);
 
 				font: 15px/1.5 'Libre Baskerville', serif;
+				&:hover {
+					color: rgba(192, 127, 87, 1);
+				}
 			}
 
 			> img {

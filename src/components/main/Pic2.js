@@ -8,7 +8,6 @@ import image4 from '../../image/news1.png';
 import image5 from '../../image/news2.png';
 import image6 from '../../image/news3.png';
 import { NavLink } from 'react-router-dom';
-
 function Pic2() {
 	const [currentTab, clickTab] = useState(0);
 	const menuArr = [
