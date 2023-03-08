@@ -7,7 +7,7 @@
 	overflow: hidden;
 	h1 {
 		text-align: center;
-		font: normal 60px/1 'Cinzel';
+		font: normal 60px/1 'Libre Caslon Text', serif;
 	}
 	.swiper {
 		//margin-top: 150px;
@@ -30,6 +30,7 @@
 				transform: scale(0.8);
 				transition: opacity 0.5s, transform 0.5s;
 				cursor: pointer;
+				opacity: 50%;
 				.pic {
 					width: 100%;
 					height: 60%;

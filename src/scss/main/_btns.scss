@@ -10,14 +10,14 @@
 	li {
 		width: 10px;
 		height: 10px;
-		background: #fff;
-		border: 3px solid #000;
+		background: rgba(241, 223, 199, 1);
+
 		border-radius: 5px;
 		cursor: pointer;
 		transition: height 0.5s, background 0.5s;
 		&.on {
 			height: 100px;
-			background: #000;
+			background: rgb(86, 63, 41);
 		}
 	}
 }

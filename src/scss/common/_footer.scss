@@ -17,14 +17,14 @@ footer {
 			width: 200px;
 			padding: 7px;
 			a {
-				font: normal 30px 'Cinzel';
+				font: normal 30px 'Libre Baskerville', serif;
 				padding: 20px;
 				//padding-left: 200px;
 				color: rgba(243, 239, 227, 1);
 				text-align: center;
 				z-index: 100;
 				&:hover {
-					font: normal 30px 'Lora';
+					font: normal 30px 'Libre Caslon Text', serif;
 				}
 			}
 		}
