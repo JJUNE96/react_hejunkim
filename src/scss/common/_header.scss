@@ -29,6 +29,11 @@ header {
 					text-align: center;
 					font: normal 20px 'Libre Caslon Text', serif;
 					font-family: 'Libre Caslon Text', serif;
+					&:hover {
+						text-decoration-line: underline;
+						text-underline-position: under;
+						color: rgba(192, 127, 87, 1);
+					}
 				}
 			}
 
@@ -36,7 +41,6 @@ header {
 				margin: 0px 45px;
 				a {
 					letter-spacing: -5px;
-
 					font: normal 50px 'Libre Caslon Text', serif;
 					color: rgba(241, 223, 199, 1);
 				}
@@ -88,6 +92,11 @@ header {
 						color: rgba(241, 223, 199, 1);
 						text-align: center;
 						font: normal 20px 'Libre Baskerville', serif;
+						&:hover {
+							text-decoration-line: underline;
+							text-underline-position: under;
+							color: rgba(192, 127, 87, 1);
+						}
 					}
 				}
 
