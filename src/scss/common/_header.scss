@@ -35,9 +35,10 @@ header {
 			h1 {
 				margin: 0px 45px;
 				a {
+					letter-spacing: -5px;
+
 					font: normal 50px 'Libre Caslon Text', serif;
 					color: rgba(241, 223, 199, 1);
-					letter-spacing: 5px;
 				}
 			}
 		}
@@ -92,10 +93,12 @@ header {
 
 				h1 {
 					margin: 0px 45px;
+
 					a {
+						letter-spacing: -5rem;
 						font: normal 50px 'Libre Caslon Text', serif;
 						color: rgba(241, 223, 199, 1);
-						letter-spacing: 5px;
+						letter-spacing: -5px;
 					}
 				}
 			}
