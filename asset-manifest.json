@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react_hejunkim/static/css/main.f3a24d5a.css",
-    "main.js": "/react_hejunkim/static/js/main.52b104e9.js",
+    "main.css": "/react_hejunkim/static/css/main.6cdafc03.css",
+    "main.js": "/react_hejunkim/static/js/main.ca6acd3a.js",
     "static/media/main.mp4": "/react_hejunkim/static/media/main.59f6f5aaa3fc2c47fc06.mp4",
     "static/media/joy1.png": "/react_hejunkim/static/media/joy1.a4c1f5d1ecc4588db788.png",
     "static/media/news3.png": "/react_hejunkim/static/media/news3.ce7a955b329eaba12893.png",
@@ -11,11 +11,11 @@
     "static/media/news1.png": "/react_hejunkim/static/media/news1.4fad8f640b587bc7cacd.png",
     "static/media/joy3.png": "/react_hejunkim/static/media/joy3.ad0f4a108f0e60e64862.png",
     "index.html": "/react_hejunkim/index.html",
-    "main.f3a24d5a.css.map": "/react_hejunkim/static/css/main.f3a24d5a.css.map",
-    "main.52b104e9.js.map": "/react_hejunkim/static/js/main.52b104e9.js.map"
+    "main.6cdafc03.css.map": "/react_hejunkim/static/css/main.6cdafc03.css.map",
+    "main.ca6acd3a.js.map": "/react_hejunkim/static/js/main.ca6acd3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3a24d5a.css",
-    "static/js/main.52b104e9.js"
+    "static/css/main.6cdafc03.css",
+    "static/js/main.ca6acd3a.js"
   ]
 }
