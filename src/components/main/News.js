@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 function News() {
 	return (
 		<article className='news'>
@@ -22,7 +23,10 @@ function News() {
 			</p>
 
 			<li>
-				<NavLink to='/board'>Learn More </NavLink>
+				<NavLink to='/board'>
+					Learn More&nbsp;&nbsp;
+					<FontAwesomeIcon icon={faArrowRightLong}>{faArrowRightLong}</FontAwesomeIcon>
+				</NavLink>
 			</li>
 			<img id='news2' src={`${process.env.PUBLIC_URL}/img/news1.png`} alt='news' />
 			<img id='news3' src={`${process.env.PUBLIC_URL}/img/news2.png`} alt='news' />

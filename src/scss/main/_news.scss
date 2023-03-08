@@ -37,7 +37,7 @@
 	h1 {
 		width: 100%;
 		color: rgba(68, 46, 24, 1);
-		font: normal 80px/1.3 'Lora';
+		font: normal 80px/1.3 'Libre Baskerville', serif;
 		flex-wrap: wrap;
 		display: flex;
 		justify-content: center;
@@ -67,10 +67,11 @@
 	}
 	li {
 		a {
-			font: 15px/2 'Lora';
+			font: 15px/2 'Libre Baskerville', serif;
 			width: 100%;
 			color: rgba(68, 46, 24, 1);
 			margin-left: 500px;
+
 			&:hover {
 				color: rgba(192, 127, 87, 1);
 			}

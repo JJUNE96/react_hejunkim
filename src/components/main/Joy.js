@@ -5,9 +5,9 @@ import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 function Joy() {
 	return (
 		<article className='joy'>
-			<div className='quote'>
-				<FontAwesomeIcon>icon={faQuoteLeft}</FontAwesomeIcon>
-			</div>
+			{/* <div className='quote'>
+				<FontAwesomeIcon icon={faQuoteLeft}>{faQuoteLeft}</FontAwesomeIcon>
+			</div> */}
 			<h2>
 				“I WONDER WHAT IT WOULD BE <br />
 				LIKE TO LIVE IN A WORLD WHERE IT WAS

@@ -7,7 +7,7 @@ import Menu from './Menu';
 
 function Header(props) {
 	const menu = useRef(null);
-	// const active = { color: 'pink' };
+	//const active = { color: 'pink' };
 	return (
 		<>
 			<header className={props.type}>

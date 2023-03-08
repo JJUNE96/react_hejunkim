@@ -16,24 +16,27 @@ header {
 
 		#gnb {
 			display: inline-flex;
-			color: rgba(243, 239, 227, 1);
+			color: rgba(241, 223, 199, 1);
+			font: normal 20px 'Abhaya Libre ', cursive;
+
 			li {
 				width: 120px;
 				margin: 20px 0px 5px;
 
 				a {
 					display: block;
-					color: rgba(243, 239, 227, 1);
+					color: rgba(241, 223, 199, 1);
 					text-align: center;
-					font: normal 20px 'Abhaya Libre ';
+					font: normal 20px 'Libre Caslon Text', serif;
+					font-family: 'Libre Caslon Text', serif;
 				}
 			}
 
 			h1 {
 				margin: 0px 45px;
 				a {
-					font: normal 70px/1 'Abhaya Libre';
-					color: rgba(243, 239, 227, 1);
+					font: normal 50px 'Libre Caslon Text', serif;
+					color: rgba(241, 223, 199, 1);
 					letter-spacing: 5px;
 				}
 			}
@@ -75,21 +78,27 @@ header {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 0px;
-			h1 {
-				a {
-					font: normal 70px/1 'Cinzel';
-					color: #000;
-					letter-spacing: 5px;
+
+			#gnb {
+				right: 5vw;
+				li {
+					a {
+						display: block;
+						color: rgba(241, 223, 199, 1);
+						text-align: center;
+						font: normal 20px 'Libre Baskerville', serif;
+					}
+				}
+
+				h1 {
+					margin: 0px 45px;
+					a {
+						font: normal 50px 'Libre Caslon Text', serif;
+						color: rgba(241, 223, 199, 1);
+						letter-spacing: 5px;
+					}
 				}
 			}
-			// #gnb {
-			// 	right: 5vw;
-			// 	li {
-			// 		a {
-			// 			color: #000;
-			// 		}
-			// 	}
-			// }
 			.fa-bars-staggered {
 				color: #000;
 				display: none;

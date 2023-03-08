@@ -2,6 +2,7 @@ import Header from '../common/Header';
 import Vids from './Vids';
 import Joy from './Joy';
 import Pics from './Pics';
+import Pic2 from './Pic2';
 import Visual from './Visual';
 import News from './News';
 import Btns from './Btns';
@@ -28,6 +29,7 @@ function Main(props) {
 			<News Scrolled={Scrolled} Pos={Pos[1]} />
 
 			<Pics />
+			<Pic2 />
 			<Joy />
 			<Vids />
 			{/* setScrolled state변경함수를 Btns 컴포넌트 전달 */}
