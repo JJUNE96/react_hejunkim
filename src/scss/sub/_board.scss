@@ -1,12 +1,12 @@
 .Board {
 	background: rgba(252, 247, 236, 1);
 	> .inner {
-		.showBox {
+		> .showBox {
 			width: 100%;
 			//border: 1px solid #000;
 			padding: 50px;
 
-			article {
+			> article {
 				background: rgba(252, 247, 236, 1);
 				padding: 30px;
 				margin-bottom: 40px;
@@ -55,7 +55,7 @@
 			}
 		}
 
-		.inputBox {
+		> .inputBox {
 			width: 100%;
 			//border: 1px solid #000;
 			padding: 50px;

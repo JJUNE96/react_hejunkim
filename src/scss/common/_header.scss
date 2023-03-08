@@ -19,11 +19,11 @@ header {
 			color: rgba(241, 223, 199, 1);
 			font: normal 20px 'Abhaya Libre ', cursive;
 
-			li {
+			> li {
 				width: 120px;
 				margin: 20px 0px 5px;
 
-				a {
+				> a {
 					display: block;
 					color: rgba(241, 223, 199, 1);
 					text-align: center;
@@ -37,9 +37,9 @@ header {
 				}
 			}
 
-			h1 {
+			> h1 {
 				margin: 0px 45px;
-				a {
+				> a {
 					letter-spacing: -5px;
 					font: normal 50px 'Libre Caslon Text', serif;
 					color: rgba(241, 223, 199, 1);
@@ -86,8 +86,8 @@ header {
 
 			#gnb {
 				right: 5vw;
-				li {
-					a {
+				> li {
+					> a {
 						display: block;
 						color: rgba(241, 223, 199, 1);
 						text-align: center;
@@ -100,10 +100,10 @@ header {
 					}
 				}
 
-				h1 {
+				> h1 {
 					margin: 0px 45px;
 
-					a {
+					> a {
 						letter-spacing: -5rem;
 						font: normal 50px 'Libre Caslon Text', serif;
 						color: rgba(241, 223, 199, 1);

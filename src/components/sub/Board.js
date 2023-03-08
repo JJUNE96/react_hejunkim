@@ -19,8 +19,21 @@ Delete: 글삭제
 
 function Board() {
 	const getLocalData = () => {
+		const dummys = [
+			{ title: 'Article9', content: 'Here comes description in detail.' },
+			{ title: 'Article8', content: 'Here comes description in detail.' },
+			{ title: 'Article7', content: 'Here comes description in detail.' },
+			{ title: 'Article6', content: 'Here comes description in detail.' },
+			{ title: 'Article5', content: 'Here comes description in detail.' },
+			{ title: 'Article4', content: 'Here comes description in detail.' },
+			{ title: 'Article3', content: 'Here comes description in detail.' },
+			{ title: 'Article2', content: 'Here comes description in detail.' },
+			{ title: 'Article1', content: 'Here comes description in detail.' },
+		];
 		const data = localStorage.getItem('post');
-		return JSON.parse(data);
+
+		if (data) return JSON.parse(data);
+		else return dummys;
 	};
 
 	const input = useRef(null);

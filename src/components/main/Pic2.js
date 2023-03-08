@@ -16,7 +16,7 @@ function Pic2() {
 			name: '01',
 			image: image1,
 			image2: image4,
-			content:
+			text1:
 				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do. This is a great opportunity to connect.',
 		},
 		{
@@ -24,15 +24,15 @@ function Pic2() {
 			image: image2,
 			image2: image5,
 
-			content:
+			text1:
 				'Got a hobby? Share that with your audience.This is an opportunity to show common ground with your audience and allow them to fall in love with you and say "Yes! I totally resonate." Connection matters.',
 		},
 		{
 			name: '03',
 			image: image3,
 			image2: image6,
-			content:
-				'Here you can add another fun or interesting fact about yourself.Tell your audience something interesting that relates to your line of work such as why you love doing what you do. This is a great opportunity to connect.',
+			text1:
+				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do. This is a great opportunity to connect.',
 		},
 	];
 
@@ -68,7 +68,7 @@ function Pic2() {
 							</FontAwesomeIcon>
 						</NavLink>
 						<img src={menuArr[currentTab].image2} alt='' />
-						<p>{menuArr[currentTab].content}</p>
+						<p>{menuArr[currentTab].text1}</p>
 					</div>
 
 					<img src={menuArr[currentTab].image} alt='' />
