@@ -15,7 +15,7 @@ function Youtube() {
 	useEffect(() => {}, []);
 	return (
 		<>
-			<Layout name={'Youtube / 유튜브'}>
+			<Layout name={'Youtube'}>
 				{Vids.map((el, index) => {
 					const tit = el.snippet.title;
 					const desc = el.snippet.description;

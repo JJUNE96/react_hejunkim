@@ -14,7 +14,7 @@
 				justify-content: space-between;
 				align-content: center;
 				flex-wrap: wrap;
-				font-family: 'Lora';
+				font: normal 16px/1 'Libre Baskerville', serif;
 				border-bottom: 1px solid #000;
 				.txt {
 					width: 80%;
@@ -46,9 +46,9 @@
 						border: none;
 						background: transparent;
 						cursor: pointer;
-						font-family: 'Lora';
+						font: normal 20px/1 'Libre Baskerville', serif;
 						&:hover {
-							color: palevioletred;
+							color: rgba(241, 223, 199, 1);
 						}
 					}
 				}
@@ -84,14 +84,14 @@
 					height: 30px;
 					display: inline-block;
 					border: none;
-					background: #000;
-					margin-right: 20px;
-					font-family: 'Lora';
-
-					color: #fff;
+					background: rgba(252, 247, 236, 1);
+					font: normal 20px/1 'Libre Baskerville', serif;
+					text-decoration-line: underline;
+					text-underline-position: under;
+					color: rgba(68, 46, 24, 1);
 					cursor: pointer;
 					&:hover {
-						color: palevioletred;
+						color: rgba(241, 223, 199, 1);
 					}
 				}
 			}

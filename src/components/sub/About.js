@@ -18,7 +18,7 @@ function About() {
 	}, [Members]);
 
 	return (
-		<Layout name={'About / 조직도'}>
+		<Layout name={'About'}>
 			{Members.map((el, index) => {
 				return (
 					<article key={index}>

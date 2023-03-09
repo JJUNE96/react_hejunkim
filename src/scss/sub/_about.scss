@@ -12,7 +12,8 @@
 			padding: 10px;
 			.inner {
 				width: 100%;
-				background: #fff;
+
+				//background: #fff;
 				.pic {
 					width: 100%;
 					height: 300px;
@@ -29,11 +30,12 @@
 					}
 				}
 				h3 {
-					background: #000;
+					//background: #000;
+					//border-left: 2px solid rgba(68, 46, 24, 1);
 					padding: 20px;
-					font: 20px 'Lora';
+					font: 20px 'Libre Baskerville', serif;
 					padding-left: 20px;
-					color: #fff;
+					color: rgba(68, 46, 24, 1);
 				}
 			}
 		}

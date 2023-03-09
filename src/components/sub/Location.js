@@ -103,18 +103,17 @@ function Location() {
 
 	function closeTraffic() {
 		mapInstance.current = new kakao.maps.Map(container.current, option.current);
-
 		mapInstance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 		marker.setMap(mapInstance.current);
 	}
 
 	return (
-		<Layout name={'Location / 위치'}>
+		<Layout name={'Location'}>
 			<>
 				<div id='map' ref={container}></div>
 				<div className='traffic'>
-					<button onClick={showTraffic}>교통정보 보기</button>
-					<button onClick={closeTraffic}>교통정보 끄기</button>
+					<button onClick={showTraffic}>TRAFFIC</button>
+					<button onClick={closeTraffic}>OFF TRAFFIC </button>
 				</div>
 			</>
 		</Layout>

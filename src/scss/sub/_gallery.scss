@@ -19,16 +19,16 @@
 				width: 200px;
 				height: 28px;
 				padding: 10px;
-				border: 1px solid #bbb;
+				border: 1px solid rgba(68, 46, 24, 1);
 			}
 
 			button {
 				width: 80px;
 				height: 28px;
 				border: none;
-				background: #000;
-				font: 14px/1 'Lora';
-				color: #fff;
+				background: rgba(68, 46, 24, 1);
+				font: 16px/1 'Libre Baskerville', serif;
+				color: rgba(241, 223, 199, 1);
 				cursor: pointer;
 				margin-left: 0px;
 				margin-top: -2px;
@@ -41,11 +41,16 @@
 				width: 130px;
 				height: 28px;
 				border: none;
-				color: #fff;
+				color: rgba(68, 46, 24, 1);
 				margin-left: 10px;
-				background: #000;
-				font: 14px/1 'Lora';
+				background: rgba(252, 247, 236, 1);
+				text-decoration-line: underline;
+				text-underline-position: under;
+				font: 16px/1 'Libre Baskerville', serif;
 				cursor: pointer;
+				&:hover {
+					color: rgba(241, 223, 199, 1);
+				}
 			}
 		}
 	}
@@ -67,12 +72,12 @@
 			width: calc(100% / 3);
 			padding: 10px;
 			float: left;
-			font-family: 'Lora';
+			font-family: 'Libre Baskerville', serif;
 			.inner {
 				width: 100%;
-				//background: #000;
+				background: #fff;
 				padding: 14px;
-				//box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 				.pic {
 					width: 100%;
 					cursor: pointer;
@@ -80,18 +85,20 @@
 					img {
 						width: 100%;
 						//border-radius: 5%;
+						//filter: grayscale(100%);
 						transition: 0.3s;
-						border: 3px solid #000;
+						border: 5px solid #fff;
 						cursor: pointer;
 					}
 					&:hover {
 						> img {
+							//filter: grayscale(0%);
 							transform: scale(1.1);
 						}
 					}
 				}
 				h2 {
-					font: nornal 12px /1.2 'Inter';
+					font: nornal 14px /1.2 'Lora';
 					color: #000;
 					margin-bottom: 30px;
 					margin-top: 10px;

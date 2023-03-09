@@ -132,7 +132,7 @@ function Board() {
 	}, [Posts]);
 
 	return (
-		<Layout name={'Board / 게시판'}>
+		<Layout name={'Board'}>
 			<div className='showBox'>
 				{Posts.map((post, idx) => {
 					return (
@@ -153,8 +153,8 @@ function Board() {
 									</div>
 
 									<div className='btnSet'>
-										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
-										<button onClick={() => updatePost(idx)}>UPDATE</button>
+										<button onClick={() => disableUpdate(idx)}>cancel</button>
+										<button onClick={() => updatePost(idx)}>update</button>
 									</div>
 								</>
 							) : (
@@ -168,9 +168,9 @@ function Board() {
 
 									<div className='btnSet'>
 										{/* 수정버튼 클릭시 수정할 글의 순번을 enableUpdate */}
-										<button onClick={() => enableUpdate(idx)}>EDIT</button>
+										<button onClick={() => enableUpdate(idx)}>edit</button>
 										{/* 삭제버튼 클릭시 삭제할 글의 순번을 deletePost함수의 인수로 전달 */}
-										<button onClick={() => deletePost(idx)}>DELETE</button>
+										<button onClick={() => deletePost(idx)}>delete</button>
 									</div>
 								</>
 							)}
@@ -191,8 +191,8 @@ function Board() {
 				<br />
 
 				<div className='btnSet'>
-					<button onClick={resetForm}>CANCEL</button>
-					<button onClick={createPost}>WRITE</button>
+					<button onClick={resetForm}>cancel</button>
+					<button onClick={createPost}>write</button>
 				</div>
 			</div>
 		</Layout>

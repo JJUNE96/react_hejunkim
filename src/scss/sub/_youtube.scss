@@ -16,12 +16,12 @@
 		.pic {
 			display: block;
 			width: 100%;
-			height: 60%;
+			height: 57%;
 			cursor: pointer;
 			img {
 				width: 100%;
 				height: 100%;
-				border-radius: 5%;
+				//border-radius: 5%;
 				object-fit: cover;
 			}
 		}
@@ -31,17 +31,17 @@
 			height: 20%;
 			padding: 20px;
 			h3 {
-				font: bold 20px/1.2 'Lora';
+				font: bold 20px/1.2 'Libre Baskerville', serif;
 				color: #000;
 				margin-bottom: 15px;
 			}
 			p {
-				font: 14px/1.4 'Lora';
+				font: 14px/1.4 'Libre Caslon Text', serif;
 				color: #000;
 				margin-bottom: 20px;
 			}
 			span {
-				font: bold 16px/1 'Lora';
+				font: bold 16px/1 'Libre Baskerville', serif;
 				float: right;
 				color: #000;
 			}

@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 
 function Login() {
 	return (
-		<Layout name={'Login / 로그인'}>
+		<Layout name={'Login'}>
 			<p>Login</p>
 		</Layout>
 	);

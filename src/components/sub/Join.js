@@ -120,7 +120,7 @@ function Join() {
 	}, [Err, history]);
 
 	return (
-		<Layout name={'Join / 회원가입'}>
+		<Layout name={'Join'}>
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
