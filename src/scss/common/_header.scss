@@ -30,8 +30,6 @@ header {
 					font: normal 20px 'Libre Caslon Text', serif;
 					font-family: 'Libre Caslon Text', serif;
 					&:hover {
-						text-decoration-line: underline;
-						text-underline-position: under;
 						color: rgba(192, 127, 87, 1);
 					}
 				}
@@ -93,8 +91,6 @@ header {
 						text-align: center;
 						font: normal 20px 'Libre Baskerville', serif;
 						&:hover {
-							text-decoration-line: underline;
-							text-underline-position: under;
 							color: rgba(192, 127, 87, 1);
 						}
 					}

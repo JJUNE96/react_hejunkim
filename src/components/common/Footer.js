@@ -8,7 +8,7 @@ import {
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 function Footer(props) {
-	const active = { color: 'black' };
+	const active = { color: '#bd875e' };
 	return (
 		<footer className={props.type}>
 			<>

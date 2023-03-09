@@ -119,10 +119,10 @@ function Vids() {
 											: vid.snippet.title}
 									</h2>
 									{/* <p>
-										{vid.snippet.description.length >= 100
-											? vid.snippet.description.substr(0, 100) + '...'
-											: vid.snippet.description}
-									</p> */}
+											{vid.snippet.description.length >= 100
+												? vid.snippet.description.substr(0, 100) + '...'
+												: vid.snippet.description}
+										</p> */}
 									<NavLink to='/youtube'>
 										Learn more&nbsp;&nbsp;
 										<FontAwesomeIcon icon={faArrowRightLong}>
