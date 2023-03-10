@@ -10,7 +10,7 @@
 			margin-bottom: 50px;
 			margin-top: 10px;
 			text-align: left;
-			font-family: 'Lora';
+			font-family: 'Libre Caslon Text', serif;
 			th {
 				width: 20%;
 				border: none;
@@ -25,7 +25,7 @@
 						width: 80%;
 						height: 60px;
 						margin: 10px;
-						font: bold 18px/40px 'Libre Caslon Text', serif;
+						font: bold 18px/40px 'Libre Baskerville', serif;
 						color: rgba(241, 223, 199, 1);
 						background: rgba(68, 46, 24, 1);
 						cursor: pointer;
@@ -50,7 +50,7 @@
 					// background: rgb(232, 238, 238);
 				}
 				span.err {
-					font: 12px/1 '맑은 고딕';
+					font: 12px/1 'Libre Caslon Text', serif;
 					color: red;
 					margin-left: 20px;
 				}
@@ -84,7 +84,7 @@
 							width: 80%;
 							height: 60px;
 							margin: 10px;
-							font: bold 18px/40px 'Lora';
+							font: bold 18px/40px 'Libre Caslon Text', serif;
 							color: #fff;
 							background: #000;
 							cursor: pointer;
@@ -105,7 +105,7 @@
 						border: 1px solid #fff;
 					}
 					span.err {
-						font: 12px/1 'Lora';
+						font: 12px/1 'Libre Caslon Text', serif;
 						color: red;
 						width: 100%;
 						margin-left: 0px;

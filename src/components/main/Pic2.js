@@ -45,20 +45,21 @@ function Pic2() {
 			<div className='pic2'>
 				<p>BASED IN JOSHUA TREE, CALIFORNIA</p>
 				<h2>MEET SUNDAY</h2>
-				<tabmenu className='inner'>
+				<div className='inner'>
 					{/* <li className='submenu'>{menuArr[0].name}</li>
 					<li className='submenu'>{menuArr[1].name}</li>
 					<li className='submenu'>{menuArr[2].name}</li> */}
 					{menuArr.map((el, index) => (
 						<li
+							key={index}
 							className={index === currentTab ? 'submenu focused' : 'submenu'}
 							onClick={() => selectMenuHandler(index)}
 						>
 							{el.name}
 						</li>
 					))}
-				</tabmenu>
-				<desc className='content'>
+				</div>
+				<div className='content'>
 					<div className='inner2'>
 						<NavLink to='/about'>
 							get to know me &nbsp;
@@ -71,7 +72,7 @@ function Pic2() {
 					</div>
 
 					<img src={menuArr[currentTab].image} alt='' />
-				</desc>
+				</div>
 				<h1>
 					The Dreamer Behind
 					<br /> The Magic

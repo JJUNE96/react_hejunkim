@@ -64,7 +64,7 @@ function Gallery() {
 					<div className='searchBox'>
 						<input
 							type='text'
-							placeholder='검색어를 입력하세요.'
+							placeholder='Enter search term.'
 							ref={input}
 							onKeyPress={handleKeyUp}
 						/>

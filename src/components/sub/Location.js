@@ -13,8 +13,8 @@ function Location() {
 	};
 
 	const imageSrc = `${process.env.PUBLIC_URL}/img/map.png`;
-	const imageSize = useMemo(() => new kakao.maps.Size(120, 60), [kakao]);
-	const imageOption = useMemo(() => new kakao.maps.Point(50, 62), [kakao]);
+	const imageSize = useMemo(() => new kakao.maps.Size(200, 230), [kakao]);
+	const imageOption = useMemo(() => new kakao.maps.Point(18, 140), [kakao]);
 
 	const markerImage = useMemo(
 		() => new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),

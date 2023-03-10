@@ -55,7 +55,7 @@ function Board() {
 		//trim() 빈 문자값을 제거해줌
 		if (!input.current.value.trim() || !textarea.current.value.trim()) {
 			resetForm();
-			return alert('제목과 본문을 모두 입력하세요');
+			return alert('Please enter both title and body');
 		}
 		setPosts([{ title: input.current.value, content: textarea.current.value }, ...Posts]);
 		resetForm();
@@ -70,7 +70,7 @@ function Board() {
 		//window.confirm은 true, flase의 boolean값을 반환
 		//경고창에서 확인 클릭시 tur반환되면서 해당 if문의 return이 무시되고 아래쪽의 글 삭제문이 시행됨
 		//
-		if (!window.confirm('해당 게시글을 삭제하시겠습니까?'));
+		if (!window.confirm('Do you want to delete this post?'));
 		setPosts(Posts.fillter((_, idx) => idx !== index));
 	};
 
@@ -105,7 +105,7 @@ function Board() {
 	//post 수정함수
 	const updatePost = (updateIndex) => {
 		if (!inputEdit.current.value.trim() || !textareaEdit.current.value.trim()) {
-			return alert('수정할 제목과 본문을 모두 입력하세요.');
+			return alert('Please enter both title and body to edit');
 		}
 
 		setPosts(
@@ -180,19 +180,19 @@ function Board() {
 			</div>
 
 			<div className='inputBox'>
-				<input type='text' placeholder='제목을 입력하세요' ref={input} />
+				<input type='text' placeholder='Enter the title' ref={input} />
 				<br />
 				<textarea
 					cols='30'
 					rows='3'
-					placeholder='본문을 입력하세요.'
+					placeholder='Enter the body'
 					ref={textarea}
 				></textarea>
 				<br />
 
 				<div className='btnSet'>
-					<button onClick={resetForm}>cancel</button>
-					<button onClick={createPost}>write</button>
+					<button onClick={resetForm}>Cancel</button>
+					<button onClick={createPost}>Write</button>
 				</div>
 			</div>
 		</Layout>

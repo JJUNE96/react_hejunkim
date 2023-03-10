@@ -129,33 +129,33 @@ header {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 0px;
-			h1 {
-				a {
-					font: normal 70px/1 'Cinzel';
-					color: #000;
-					letter-spacing: 5px;
+
+			#gnb {
+				right: 5vw;
+				> li {
+					> a {
+						display: block;
+						color: rgba(241, 223, 199, 1);
+						text-align: center;
+						font: normal 20px 'Libre Baskerville', serif;
+						&:hover {
+							color: rgba(192, 127, 87, 1);
+						}
+					}
+				}
+
+				> h1 {
+					margin: 0px 45px;
+
+					> a {
+						letter-spacing: -5rem;
+						font: normal 50px 'Libre Caslon Text', serif;
+						color: rgba(241, 223, 199, 1);
+						letter-spacing: -5px;
+					}
 				}
 			}
-			// #gnb {
-			// 	display: inline-flex;
-			// 	//display: none;
-			// 	color: #000;
-			// }
-			// #util {
-			// 	position: absolute;
-			// 	top: 20px;
-			// 	right: 40px;
-			// 	li {
-			// 		float: left;
-			// 		margin-right: 20px;
-			// 		a {
-			// 			font: 12px/1 'Lora';
-			// 			color: #000;
-			// 		}
-			// 	}
-			// }
 			.fa-bars-staggered {
-				bottom: 48px;
 				color: #000;
 				display: none;
 			}
@@ -180,7 +180,7 @@ header {
 			padding-bottom: 10px;
 			h1 {
 				a {
-					font: bold 50px/1 'Lora';
+					font: bold 50px/1 '' Libre Caslon Text ', serif;';
 					color: #000;
 					letter-spacing: 5px;
 				}

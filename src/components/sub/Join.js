@@ -37,10 +37,10 @@ function Join() {
 		const spc = /[~!@#$%^&*)]/;
 
 		if (value.username.length < 2) {
-			errs.username = '이름을 2글자 이상 입력하세요';
+			errs.username = 'Please enter a name with at least 2 characters';
 		}
 		if (value.userid.length < 5) {
-			errs.userid = '아이디를 5글자 이상 입력하세요';
+			errs.userid = 'Please enter a id with at least 5 characters';
 		}
 		if (
 			value.pwd1.length < 5 ||
@@ -48,25 +48,27 @@ function Join() {
 			!num.test(value.pwd1) ||
 			!spc.test(value.pwd1)
 		) {
-			errs.pwd1 = '비밀번호는 5글자 이상, 영문, 숫자, 특수문자를 모두 포함하세요';
+			errs.pwd1 =
+				'Your password must be at least 5 characters long and include a combination of uppercase and lowercase letters, numbers, and special characters';
 		}
 		if (value.pwd1 !== value.pwd2 || !value.pwd2) {
-			errs.pwd2 = '두개의 비밀번호를 동일하게 입력하세요';
+			errs.pwd2 = 'Please enter the same password twice';
 		}
 		if (value.email.length < 8 || !/@/.test(value.email)) {
-			errs.email = '이메일은 8글자 이상 @를 포함하세요';
+			errs.email =
+				'Your email should be at least 8 characters long and include the @ symbol';
 		}
 		if (!value.gender) {
-			errs.gender = '성별을 선택하세요';
+			errs.gender = 'Select your gender';
 		}
 		if (!value.log) {
-			errs.log = '1개 이상 선택하세요';
+			errs.log = 'Select one or more';
 		}
 		if (value.comments.length < 20) {
-			errs.comments = '20글자 이상 입력하세요';
+			errs.comments = 'Select your highest education level';
 		}
 		if (value.edu === '') {
-			errs.edu = '최종학력을 선택하세요';
+			errs.edu = 'Please enter at least 20 characters';
 		}
 		return errs;
 	};
@@ -129,14 +131,14 @@ function Join() {
 							{/* user name */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='username'>이름</label>
+									<label htmlFor='username'>Name</label>
 								</th>
 								<td>
 									<input
 										type='text'
 										name='username'
 										id='username'
-										placeholder='이름을 입력하세요.'
+										placeholder='Enter your name.'
 										onChange={handleChange}
 										value={Val.username}
 									/>
@@ -147,14 +149,14 @@ function Join() {
 							{/* user id */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='userid'>아이디</label>
+									<label htmlFor='userid'>Id</label>
 								</th>
 								<td>
 									<input
 										type='text'
 										name='userid'
 										id='userid'
-										placeholder='아이디를 입력하세요.'
+										placeholder='Enter your id.'
 										onChange={handleChange}
 										value={Val.userid}
 									/>
@@ -165,14 +167,14 @@ function Join() {
 							{/* passowrd */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='pwd1'>비밀번호</label>
+									<label htmlFor='pwd1'>Password</label>
 								</th>
 								<td>
 									<input
 										type='password'
 										name='pwd1'
 										id='pwd1'
-										placeholder='비밀번호를 입력하세요.'
+										placeholder='Enter your password.'
 										onChange={handleChange}
 										value={Val.pwd1}
 									/>
@@ -183,14 +185,14 @@ function Join() {
 							{/* re passowrd */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='pwd2'>비밀번호 재확인</label>
+									<label htmlFor='pwd2'>Password Check</label>
 								</th>
 								<td>
 									<input
 										type='password'
 										name='pwd2'
 										id='pwd2'
-										placeholder='비밀번호를 재입력하세요.'
+										placeholder='Enter your password again.'
 										onChange={handleChange}
 										value={Val.pwd2}
 									/>
@@ -201,14 +203,14 @@ function Join() {
 							{/* email */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='email'>이메일</label>
+									<label htmlFor='email'>E-mail</label>
 								</th>
 								<td>
 									<input
 										type='text'
 										name='email'
 										id='email'
-										placeholder='이메일 주소를 입력하세요.'
+										placeholder='Enter your email.'
 										onChange={handleChange}
 										value={Val.email}
 									/>
@@ -218,9 +220,9 @@ function Join() {
 
 							{/* gender */}
 							<tr>
-								<th scope='row'>성별</th>
+								<th scope='row'>Gender</th>
 								<td>
-									<label htmlFor='male'>남성</label>
+									<label htmlFor='male'>Male</label>
 									<input
 										type='radio'
 										name='gender'
@@ -229,7 +231,7 @@ function Join() {
 										onChange={handleRadio}
 									/>
 
-									<label htmlFor='female'>여성</label>
+									<label htmlFor='female'>Female</label>
 									<input
 										type='radio'
 										name='gender'
@@ -243,9 +245,9 @@ function Join() {
 
 							{/* log */}
 							<tr>
-								<th scope='row'>가입경로</th>
+								<th scope='row'>Sign-up Method</th>
 								<td>
-									<label htmlFor='internet'>인터넷</label>
+									<label htmlFor='internet'>Internet</label>
 									<input
 										type='checkbox'
 										id='internet'
@@ -254,7 +256,7 @@ function Join() {
 										onChange={handleCheck}
 									/>
 
-									<label htmlFor='friend'>친구</label>
+									<label htmlFor='friend'>Friends</label>
 
 									<input
 										type='checkbox'
@@ -264,7 +266,7 @@ function Join() {
 										onChange={handleCheck}
 									/>
 
-									<label htmlFor='advertisement'>광고</label>
+									<label htmlFor='advertisement'>Advertisement</label>
 
 									<input
 										type='checkbox'
@@ -274,7 +276,7 @@ function Join() {
 										onChange={handleCheck}
 									/>
 
-									<label htmlFor='etc'>기타</label>
+									<label htmlFor='etc'>Etc</label>
 
 									<input
 										type='checkbox'
@@ -290,15 +292,15 @@ function Join() {
 							{/* edu */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='edu'>교육</label>
+									<label htmlFor='edu'>Education</label>
 								</th>
 								<td>
 									<select name='edu' id='edu' onChange={handleSelect}>
-										<option value=''>학력을 선택하세요</option>
-										<option value='elementary-school'>초등학교 졸업</option>
-										<option value='middle-school'>중학교 졸업</option>
-										<option value='high-school'>고등학교 졸업</option>
-										<option value='college'>대학교 졸업</option>
+										<option value=''>Select your education level</option>
+										<option value='elementary-school'>Elementary school</option>
+										<option value='middle-school'>Middle school</option>
+										<option value='high-school'>High school</option>
+										<option value='college'>University</option>
 									</select>
 									<span className='err'>{Err.edu}</span>
 								</td>
@@ -314,7 +316,7 @@ function Join() {
 										id='comments'
 										cols='30'
 										rows='5'
-										placeholder='남기는 말을 입력하세요.'
+										placeholder='leave a message.'
 										onChange={handleChange}
 										value={Val.comments}
 									></textarea>
