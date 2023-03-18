@@ -66,13 +66,12 @@
 					display: inline-block;
 					width: 100%;
 					height: 120%;
-					background: #000;
-					font: bold 12px/40px '맑은 고딕';
-					color: #fff;
+					background: rgba(252, 247, 236, 1);
+					font: 16px/1 'Libre Caslon Text', serif;
+					color: rgba(68, 46, 24, 1);
 					text-align: center;
-					&:nth-of-type(2) {
-						background: #fff;
-						color: #000;
+					&:hover {
+						color: rgba(241, 223, 199, 1);
 					}
 				}
 			}

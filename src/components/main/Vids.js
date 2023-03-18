@@ -108,16 +108,9 @@ function Vids() {
 										}}
 									>
 										{/* <p>CATEGORY TITLE</p> */}
-										<img
-											src={vid.snippet.thumbnails.maxres.url}
-											alt={vid.snippet.title}
-										/>
+										<img src={vid.snippet.thumbnails.maxres.url} alt={vid.snippet.title} />
 									</div>
-									<h2>
-										{vid.snippet.title.length >= 90
-											? vid.snippet.title.substr(0, 90) + '...'
-											: vid.snippet.title}
-									</h2>
+									<h2>{vid.snippet.title.length >= 90 ? vid.snippet.title.substr(0, 90) + '...' : vid.snippet.title}</h2>
 									{/* <p>
 											{vid.snippet.description.length >= 100
 												? vid.snippet.description.substr(0, 100) + '...'
@@ -125,9 +118,7 @@ function Vids() {
 										</p> */}
 									<NavLink to='/youtube'>
 										Learn more&nbsp;&nbsp;
-										<FontAwesomeIcon icon={faArrowRightLong}>
-											{faArrowRightLong}
-										</FontAwesomeIcon>
+										<FontAwesomeIcon icon={faArrowRightLong}>{faArrowRightLong}</FontAwesomeIcon>
 									</NavLink>
 								</div>
 							</SwiperSlide>
@@ -137,10 +128,7 @@ function Vids() {
 			</section>
 
 			<Modal ref={open}>
-				<iframe
-					title={Vids[Index]?.id}
-					src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}
-				></iframe>
+				<iframe title={Vids[Index]?.id} src={`https://www.youtube.com/embed/${Vids[Index]?.snippet.resourceId.videoId}`}></iframe>
 			</Modal>
 		</>
 	);

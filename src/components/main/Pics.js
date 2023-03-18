@@ -1,6 +1,6 @@
 import { memo, useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Modal from '../common/Modal';
 import { Keyboard, Pagination, Navigation } from 'swiper';
@@ -17,45 +17,51 @@ function Pics() {
 	return (
 		<>
 			<section id='pics' className='myScroll'>
-				<h1>EDITORIAL</h1>
-				<Swiper
-					slidesPerView={3}
-					spaceBetween={50}
-					loop={true}
-					centeredSlides={true}
-					navigation={true}
-					pagination={{ clickable: true }}
-					modules={[Keyboard, Pagination, Navigation]}
-				>
-					<nav className='controls'></nav>
-					{flickr.map((pic, idx) => {
-						if (idx >= 4) return null;
-						return (
-							<SwiperSlide key={idx}>
-								<div className='inner'>
-									<div
-										className='pic'
-										onClick={() => {
-											setIndex(idx);
-											open.current.setOpen();
-										}}
-									>
-										<img
-											key={idx}
-											src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-											alt={pic.title}
-										/>
-									</div>
-								</div>
-							</SwiperSlide>
-							// <img
-							// 	key={idx}
-							// 	src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
-							// 	alt={pic.title}
-							// />
-						);
-					})}
-				</Swiper>
+				<h1>SUNDAYMUSE</h1>
+				<h2> Best decision you've Ever had</h2>
+				<>
+					<Swiper
+						slidesPerView={4}
+						spaceBetween={50}
+						loop={true}
+						centeredSlides={true}
+						navigation={true}
+						pagination={{ clickable: true }}
+						modules={[Keyboard, Pagination, Navigation]}
+					>
+						<nav className='controls'></nav>
+						{flickr.map((pic, idx) => {
+							if (idx >= 7) return null;
+							return (
+								<>
+									<SwiperSlide key={idx}>
+										<div className='inner'>
+											<div
+												className='pic'
+												onClick={() => {
+													setIndex(idx);
+													open.current.setOpen();
+												}}
+											>
+												<img
+													key={idx}
+													src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+													alt={pic.title}
+												/>
+											</div>
+										</div>
+									</SwiperSlide>
+								</>
+								// <img
+								// 	key={idx}
+								// 	src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+								// 	alt={pic.title}
+								// />
+							);
+						})}
+					</Swiper>
+					<NavLink to='/about'>LIST MORE</NavLink>
+				</>
 			</section>
 
 			<Modal ref={open}>

@@ -1,15 +1,251 @@
-#visual {
+// #visual {
+// 	width: 100%;
+// 	// height: calc(100vh - 121px);
+// 	height: 100vh;
+// 	margin: 0 auto;
+// 	background: rgba(68, 46, 24, 1);
+// 	position: relative;
+// 	z-index: 1;
+// 	overflow: hidden;
+
+// 	img {
+// 		width: 100%;
+// 		height: 100%;
+// 		object-fit: cover;
+// 		filter: sepia(40%);
+// 	}
+// }
+
+figure {
 	width: 100%;
-	height: calc(100vh - 121px);
-	margin: 0 auto;
-	background: rgba(68, 46, 24, 1);
+	height: 100vh;
 	position: relative;
-	z-index: 1;
 	overflow: hidden;
-	video {
+
+	.frame {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		//opacity: 0.4;
+		position: relative;
+
+		article {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+
+			.bg {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-repeat: no-repeat;
+				background-position: 99999;
+				background-size: cover;
+
+				> div {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: -100%;
+					left: 0;
+					opacity: 0;
+					background-image: inherit;
+					background-size: inherit;
+					background-repeat: inherit;
+					background-position: center;
+					transition-property: top, opacity;
+					transition-duration: 0.5s;
+				}
+			}
+			.line {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				> div {
+					//width는 스크립트에서 처리
+					height: 100%;
+					position: absolute;
+					top: 0;
+					//left는 script에서 처리
+					border-right: 1px solid#fff;
+					opacity: 0.2;
+				}
+			}
+			.txt {
+				width: 80%;
+				left: 10%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				overflow: hidden;
+				z-index: 2;
+
+				h2 {
+					font: bold 6vw/1 'arial';
+					color: rgba(255, 255, 255, 0.9);
+					transform: translateX(-100%);
+					text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+					transition: 0.5s 0s;
+				}
+				p {
+					width: 40%;
+					font: 16px/1.2 'arial';
+					color: #fff;
+					padding: 10px;
+					opacity: 0.7;
+					transform: translateX(-100%);
+					transition: 0.5s 0s;
+				}
+				.bar {
+					width: 100%;
+					margin-top: 15vh;
+					position: relative;
+
+					&::before {
+						content: '';
+						height: 2px;
+						background: #fff;
+						position: absolute;
+						bottom: 0;
+						left: 0%;
+						width: 0%;
+						transition: 0.5s 0s;
+					}
+					ul {
+						width: calc(100% / 8 * 2);
+						height: 40px;
+						display: flex;
+						position: absolute;
+						right: calc(100% / 8);
+						bottom: 0;
+
+						li {
+							width: 50%;
+							height: 100%;
+							display: flex;
+							align-items: center;
+							font: bold 12px/1 'arial';
+							color: #fff;
+							padding-left: 5px;
+							overflow: hidden;
+							span {
+								display: inline-block;
+								transform: translateX(-110%);
+								transition-duration: 0.5s;
+								transition-delay: 0s;
+							}
+						}
+					}
+
+					button {
+						width: calc(100% / 8);
+						height: 0px;
+						background: #fff;
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						border: none;
+						font: bold 10px/1 'arial';
+						color: #555;
+						cursor: pointer;
+						overflow: hidden;
+						transition: 0.5s 0s;
+					}
+				}
+			}
+		}
+
+		//패널 활성화
+		article.on {
+			z-index: 3;
+			.bg {
+				> div {
+					top: 0%;
+					opacity: 0.7;
+				}
+			}
+			.txt {
+				h2 {
+					transform: translateX(0%);
+					transition: 1s 0.5s;
+				}
+				p {
+					transform: translateX(0%);
+					transition: 1s 1.2s;
+				}
+				.bar {
+					&::before {
+						width: 100%;
+						transition: 1s 2s;
+					}
+					ul li {
+						span {
+							transform: translateX(0%);
+						}
+						&:nth-of-type(1) span {
+							transition-delay: 3.2s;
+						}
+						&:nth-of-type(2) span {
+							transition-delay: 3.6s;
+						}
+					}
+					button {
+						height: 40px;
+						transition: 0.5s 3s;
+					}
+				}
+			}
+		}
+	}
+	.btns {
+		width: 30%;
+		position: absolute;
+		bottom: 6vh;
+		right: 10%;
+		font-size: 0;
+		z-index: 3;
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			width: calc(100% / 3);
+			height: 50px;
+			font: bold 14px/1 'arial';
+			padding-left: 5px;
+
+			a {
+				display: inline-block;
+				color: #999;
+				cursor: pointer;
+				padding-bottom: 10px;
+				position: relative;
+				transition: 0.5s;
+
+				&::after {
+					content: absolute;
+					width: 0%;
+					height: 2px;
+					background: #fff;
+					bottom: 0;
+					left: 0;
+					transition: 0.5s;
+				}
+			}
+
+			&.on {
+				a {
+					color: #fff;
+					&::after {
+						width: 100%;
+					}
+				}
+			}
+		}
 	}
 }

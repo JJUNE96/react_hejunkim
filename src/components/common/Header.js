@@ -14,6 +14,9 @@ function Header(props) {
 		<>
 			<header className={props.type}>
 				<div className='inner'>
+					<h1>
+						<NavLink to='/'>SUNDAYMUSE</NavLink>
+					</h1>
 					<ul id='gnb'>
 						<li>
 							<NavLink to='/about' activeStyle={active}>
@@ -30,9 +33,7 @@ function Header(props) {
 								Board
 							</NavLink>
 						</li>
-						<h1>
-							<Link to='/'>SUNDAYMUSE</Link>
-						</h1>
+
 						<li>
 							<NavLink to='/youtube' activeStyle={active}>
 								Youtube
@@ -67,10 +68,7 @@ function Header(props) {
 							</NavLink>
 						</li>
 					</ul> */}
-					<FontAwesomeIcon
-						icon={faBarsStaggered}
-						onClick={() => props.menu.current.setToggle()}
-					/>
+					<FontAwesomeIcon icon={faBarsStaggered} onClick={() => props.menu.current.setToggle()} />
 				</div>
 			</header>
 			<Menu ref={menu} />

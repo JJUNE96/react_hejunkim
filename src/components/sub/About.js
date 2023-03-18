@@ -25,7 +25,17 @@ function About() {
 						<div className='inner'>
 							<div className='pic'>
 								<img src={`${process.env.PUBLIC_URL}/img/${el.pic}`} alt={el.name} />
+								<div className='contents'>
+									{el.name}
+									<br />
+									{el.height}
+									<br />
+									{el.Shoes}
+									<br />
+									{el.hair}
+								</div>
 							</div>
+
 							<h3>{el.name}</h3>
 							<p>{el.position}</p>
 						</div>

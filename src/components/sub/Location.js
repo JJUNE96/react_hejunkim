@@ -13,8 +13,8 @@ function Location() {
 	};
 
 	const imageSrc = `${process.env.PUBLIC_URL}/img/map.png`;
-	const imageSize = useMemo(() => new kakao.maps.Size(200, 230), [kakao]);
-	const imageOption = useMemo(() => new kakao.maps.Point(18, 140), [kakao]);
+	const imageSize = useMemo(() => new kakao.maps.Size(400, 430), [kakao]);
+	const imageOption = useMemo(() => new kakao.maps.Point(230, 240), [kakao]);
 
 	const markerImage = useMemo(
 		() => new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
@@ -68,14 +68,8 @@ function Location() {
 			message += '경도 ' + center.getLng() + ' 이고 <br>';
 			message += '지도 레벨은 ' + level + ' 입니다 <br> <br>';
 			message += '지도 타입은 ' + mapTypeId + ' 이고 <br> ';
-			message +=
-				'지도의 남서쪽 좌표는 ' +
-				swLatLng.getLat() +
-				', ' +
-				swLatLng.getLng() +
-				' 이고 <br>';
-			message +=
-				'북동쪽 좌표는 ' + neLatLng.getLat() + ', ' + neLatLng.getLng() + ' 입니다';
+			message += '지도의 남서쪽 좌표는 ' + swLatLng.getLat() + ', ' + swLatLng.getLng() + ' 이고 <br>';
+			message += '북동쪽 좌표는 ' + neLatLng.getLat() + ', ' + neLatLng.getLng() + ' 입니다';
 		}
 
 		//지도 가운데 이동 함수
@@ -111,6 +105,7 @@ function Location() {
 		<Layout name={'Location'}>
 			<>
 				<div id='map' ref={container}></div>
+
 				<div className='traffic'>
 					<button onClick={showTraffic}>TRAFFIC</button>
 					<button onClick={closeTraffic}>OFF TRAFFIC </button>

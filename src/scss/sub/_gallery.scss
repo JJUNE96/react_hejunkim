@@ -75,9 +75,10 @@
 			font-family: 'Libre Baskerville', serif;
 			.inner {
 				width: 100%;
-				background: #fff;
+				//background: #fff;
+				border: 1px solid rgba(68, 46, 24, 1);
 				padding: 14px;
-				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+				//box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 				.pic {
 					width: 100%;
 					cursor: pointer;
@@ -87,7 +88,7 @@
 						//border-radius: 5%;
 						//filter: grayscale(100%);
 						transition: 0.3s;
-						border: 5px solid #fff;
+						//border: 5px solid #fff;
 						cursor: pointer;
 					}
 					&:hover {
@@ -99,7 +100,7 @@
 				}
 				h2 {
 					font: nornal 14px /1.2 'Lora';
-					color: #000;
+					color: rgba(68, 46, 24, 1);
 					margin-bottom: 30px;
 					margin-top: 10px;
 				}
@@ -146,17 +147,16 @@
 					width: 200px;
 					height: 28px;
 					padding: 10px;
-					border: 1px solid #bbb;
+					border: 1px solid rgba(68, 46, 24, 1);
 				}
 
 				button {
 					width: 80px;
 					height: 28px;
 					border: none;
-					background: #000;
-					font: 14px/1 'Lora';
-					color: #fff;
-					cursor: pointer;
+					background: rgba(68, 46, 24, 1);
+					font: 16px/1 'Libre Baskerville', serif;
+					color: rgba(241, 223, 199, 1);
 					margin-left: 0px;
 					margin-top: -2px;
 				}
@@ -168,61 +168,67 @@
 					width: 130px;
 					height: 28px;
 					border: none;
-					color: #fff;
+					color: rgba(68, 46, 24, 1);
 					margin-left: 10px;
-					background: #000;
-					font: 14px/1 'Lora';
+					background: rgba(252, 247, 236, 1);
+					text-decoration-line: underline;
+					text-underline-position: under;
+					font: 16px/1 'Libre Baskerville', serif;
 					cursor: pointer;
+					&:hover {
+						color: rgba(241, 223, 199, 1);
+					}
 				}
 			}
-		}
-		.frame {
-			opacity: 0;
-			transform: translateY(200px);
-			transition: opacity 0.5s, transform 0.5s;
+			.frame {
+				opacity: 0;
+				transform: translateY(200px);
+				transition: opacity 0.5s, transform 0.5s;
 
-			&.on {
-				opacity: 1;
-				transform: translateY(0px);
-			}
-			&::after {
-				content: '';
-				display: block;
-				clear: both;
-			}
-			article {
-				width: calc(100% / 2);
-				padding: 10px;
-				float: left;
+				&.on {
+					opacity: 1;
+					transform: translateY(0px);
+				}
+				&::after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+				article {
+					width: calc(100% / 2);
+					padding: 10px;
+					float: left;
+					font-family: 'Libre Baskerville', serif;
 
-				.inner {
-					width: 100%;
-					background: #000;
-					padding: 14px;
-					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-					.pic {
+					.inner {
 						width: 100%;
-
-						img {
+						//background: #fff;
+						border: 1px solid rgba(68, 46, 24, 1);
+						padding: 14px;
+						.pic {
 							width: 100%;
-							border-radius: 5%;
-							filter: grayscale(100%);
-							transition: 0.3s;
-							border: 5px solid #fff;
-							cursor: pointer;
-						}
-						&:hover {
-							> img {
-								filter: grayscale(0%);
-								transform: scale(1.1);
+
+							img {
+								width: 100%;
+								border-radius: 5%;
+								filter: grayscale(100%);
+								transition: 0.3s;
+								border: 5px solid #fff;
+								cursor: pointer;
+							}
+							&:hover {
+								> img {
+									//filter: grayscale(0%);
+									transform: scale(1.1);
+								}
 							}
 						}
-					}
-					h2 {
-						font: nornal 11px /1.2 'Lora';
-						color: #fff;
-						margin-bottom: 30px;
-						margin-top: 10px;
+						h2 {
+							font: nornal 11px /1.2 'Lora';
+							color: #fff;
+							margin-bottom: 30px;
+							margin-top: 10px;
+						}
 					}
 				}
 			}
@@ -249,16 +255,16 @@
 					width: 150px;
 					height: 28px;
 					padding: 10px;
-					border: 1px solid #bbb;
+					border: 1px solid rgba(68, 46, 24, 1);
 				}
 
 				button {
 					width: 60px;
 					height: 28px;
 					border: none;
-					background: #000;
-					font: 14px/1 'Lora';
-					color: #fff;
+					background: rgba(68, 46, 24, 1);
+					font: 16px/1 'Libre Baskerville', serif;
+					color: rgba(241, 223, 199, 1);
 					cursor: pointer;
 					margin-left: 0px;
 					margin-top: -2px;
@@ -297,23 +303,22 @@
 
 				.inner {
 					width: 100%;
-					background: #000;
+					border: 1px solid rgba(68, 46, 24, 1);
 					padding: 14px;
-					box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 					.pic {
 						width: 100%;
 
 						img {
 							width: 100%;
 							border-radius: 5%;
-							filter: grayscale(100%);
+							//filter: grayscale(100%);
 							transition: 0.3s;
 							border: 5px solid #fff;
 							cursor: pointer;
 						}
 						&:hover {
 							> img {
-								filter: grayscale(0%);
+								//filter: grayscale(0%);
 								transform: scale(1.1);
 							}
 						}

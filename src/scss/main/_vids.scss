@@ -35,7 +35,7 @@
 			width: 100%;
 
 			.inner {
-				width: 90%;
+				width: 100%;
 				height: 100%;
 				//background: #fff;
 				display: flex;
@@ -48,10 +48,10 @@
 				transform: scale(0.8);
 				transition: opacity 0.5s, transform 0.5s;
 				cursor: pointer;
-				box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
-				-webkit-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
-				-moz-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
-
+				// box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+				// -webkit-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+				// -moz-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+				border: 1px solid rgba(68, 46, 24, 1);
 				.pic {
 					width: 100%;
 					height: 60%;
@@ -129,8 +129,255 @@
 
 @media screen and (max-width: $tablet) {
 	#vids {
+		width: 100%;
+		height: 100vh;
+		background: rgba(243, 239, 227, 1);
+
 		.swiper {
-			padding: 12vw 10vw;
+			//margin-top: 150px;
+			height: 100%;
+			padding: 10vw 0px;
+
+			.controls {
+				position: absolute;
+				bottom: 50px;
+				left: 60px;
+				display: flex;
+				gap: 30px;
+				font-size: 24px;
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+
+				svg {
+					cursor: pointer;
+					opacity: 0.4;
+					transform: scale(1);
+					transition: opacity 0.5s, transform 0.5s;
+
+					&.on {
+						opacity: 1;
+						transform: scale(1.5);
+					}
+				}
+			}
+
+			.swiper-slide {
+				width: 100%;
+
+				.inner {
+					width: 100%;
+					height: 60%;
+					//background: #fff;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-content: flex-start;
+					color: #333;
+					padding: 30px;
+					opacity: 0.5;
+					transform: scale(0.8);
+					transition: opacity 0.5s, transform 0.5s;
+					cursor: pointer;
+					// box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+					// -webkit-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+					// -moz-box-shadow: 14px 7px 27px 3px rgba(187, 187, 187, 0.74);
+					border: 1px solid rgba(68, 46, 24, 1);
+					.pic {
+						width: 100%;
+						height: 60%;
+
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+
+					h2 {
+						font: 20px/1 'Libre Caslon Text', serif;
+						color: rgba(68, 46, 24, 1);
+						margin-top: 25px;
+						border-top: 2px solid rgba(68, 46, 24, 1);
+						padding-top: 13px;
+					}
+					a {
+						font: 11px/1.3 'Libre Baskerville';
+						color: rgba(68, 46, 24, 1);
+						margin-top: 30px;
+						position: absolute;
+						right: 30px;
+						top: 380px;
+						&:hover {
+							color: rgba(192, 127, 87, 1);
+						}
+					}
+				}
+			}
+
+			.swiper-slide-active {
+				.inner {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
+			.swiper-pagination {
+				bottom: 40px;
+
+				.swiper-pagination-bullet {
+					width: 10px;
+					height: 10px;
+					border-radius: 5px;
+					transition: width 0.5s;
+					background: rgba(173, 170, 155, 1);
+				}
+				.swiper-pagination-bullet-active {
+					background: rgba(68, 46, 24, 1);
+					width: 80px;
+				}
+			}
+
+			.swiper-button-next {
+				right: 50px;
+				top: auto;
+				bottom: 50px;
+				transform: scale(0.6);
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+			}
+			.swiper-button-prev {
+				left: auto;
+				right: 100px;
+				top: auto;
+				bottom: 50px;
+				transform: scale(0.6);
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	#vids {
+		width: 100%;
+		height: 80vh;
+		background: rgba(243, 239, 227, 1);
+		.swiper {
+			//margin-top: 150px;
+			height: 100%;
+			padding: 10px 0px;
+			margin: 0 0px;
+			padding-top: 200px;
+			.controls {
+				position: absolute;
+				bottom: 50px;
+				left: 60px;
+				display: flex;
+				gap: 10px;
+				font-size: 24px;
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+
+				svg {
+					cursor: pointer;
+					opacity: 0.4;
+					transform: scale(1);
+					transition: opacity 0.5s, transform 0.5s;
+
+					&.on {
+						opacity: 1;
+						transform: scale(1.5);
+					}
+				}
+			}
+
+			.swiper-slide {
+				width: 100%;
+				.inner {
+					width: 300%;
+					height: 70%;
+					//background: #fff;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					align-content: flex-start;
+					color: #333;
+					padding: 10px;
+					opacity: 0.5;
+					transform: scale(1.4);
+					transition: opacity 0.5s, transform 0.5s;
+					margin: 0 100px;
+					.pic {
+						width: 100%;
+						height: 60%;
+						img {
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+
+					h2 {
+						font: 20px/1 'Libre Caslon Text', serif;
+						color: rgba(68, 46, 24, 1);
+						margin-top: 25px;
+						border-top: 2px solid rgba(68, 46, 24, 1);
+						padding-top: 13px;
+					}
+					a {
+						font: 11px/1.3 'Libre Baskerville';
+						color: rgba(68, 46, 24, 1);
+						margin-top: 30px;
+						position: absolute;
+						right: 30px;
+						top: 380px;
+						&:hover {
+							color: rgba(192, 127, 87, 1);
+						}
+					}
+				}
+			}
+
+			.swiper-slide-active {
+				.inner {
+					opacity: 0.5;
+					transform: scale(1.4);
+				}
+			}
+
+			.swiper-pagination {
+				bottom: 40px;
+
+				.swiper-pagination-bullet {
+					width: 10px;
+					height: 10px;
+					border-radius: 5px;
+					transition: width 0.5s;
+					background: rgba(173, 170, 155, 1);
+				}
+				.swiper-pagination-bullet-active {
+					background: rgba(68, 46, 24, 1);
+					width: 80px;
+				}
+			}
+
+			.swiper-button-next {
+				right: 50px;
+				top: auto;
+				bottom: 50px;
+				transform: scale(0.6);
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+			}
+			.swiper-button-prev {
+				left: auto;
+				right: 100px;
+				top: auto;
+				bottom: 50px;
+				transform: scale(0.6);
+				color: rgba(68, 46, 24, 1);
+				z-index: 100;
+			}
 		}
 	}
 }
