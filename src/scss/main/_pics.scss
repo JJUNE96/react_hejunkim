@@ -1,18 +1,22 @@
 #pics {
 	width: 100%;
 	height: 100%;
-	background: rgba(243, 239, 227, 1);
+	background: #fff;
 	position: relative;
 	padding: 10vw;
 	overflow: hidden;
 	h1 {
 		text-align: left;
-		color: rgba(68, 46, 24, 1);
+
+		color: #111;
+
 		font: bold 60px/1 'Display+SC', serif;
 	}
 	h2 {
 		text-align: left;
-		color: rgba(68, 46, 24, 1);
+		color: #111;
+		// color: #fff;
+
 		font: normal 40px/1 'Display+SC', serif;
 		margin-bottom: 150px;
 	}
@@ -108,10 +112,10 @@
 		left: 580px;
 		text-decoration-line: underline;
 		text-underline-position: under;
-		color: rgba(68, 46, 24, 1);
+		color: #111;
 		font: bold 30px/1 'Display+SC', serif;
 		&:hover {
-			color: rgba(192, 127, 87, 1);
+			color: #8b8b8c;
 		}
 	}
 }

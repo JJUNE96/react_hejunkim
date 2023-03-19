@@ -1,12 +1,12 @@
 .Location {
-	background: rgba(252, 247, 236, 1);
+	background: #fff;
 	> .inner {
 		.contents {
 			padding-bottom: 20px;
 			h1 {
 				font: 50px 'Display+SC', serif;
 				margin-bottom: 50px;
-				color: rgba(68, 46, 24, 1);
+				color: #000;
 				animation: fadein 2s;
 			}
 			img {
@@ -16,7 +16,7 @@
 			}
 			h2 {
 				font: 20px 'Display+SC', serif;
-				color: rgba(68, 46, 24, 1);
+				color: #000;
 				padding: 10px;
 			}
 		}
@@ -44,11 +44,11 @@
 				display: block;
 				width: 200px;
 				height: 40px;
-				background: rgba(252, 247, 236, 1);
+				background: #fff;
 				font: 16px/1 'Libre Caslon Text', serif;
-				color: rgba(68, 46, 24, 1);
+				color: #111;
 				text-align: center;
-				border: 1px solid rgba(68, 46, 24, 1);
+				border: 1px solid #111;
 				margin-left: 20px;
 				margin-top: 20px;
 				cursor: pointer;

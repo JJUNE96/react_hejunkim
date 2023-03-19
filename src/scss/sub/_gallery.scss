@@ -1,5 +1,5 @@
 .Gallery {
-	background: rgba(252, 247, 236, 1);
+	background: #fff;
 
 	.loader {
 		position: absolute;
@@ -19,16 +19,16 @@
 				width: 200px;
 				height: 28px;
 				padding: 10px;
-				border: 1px solid rgba(68, 46, 24, 1);
+				border: 1px solid #111;
 			}
 
 			button {
 				width: 80px;
 				height: 28px;
 				border: none;
-				background: rgba(68, 46, 24, 1);
+				background: #111;
 				font: 16px/1 'Libre Baskerville', serif;
-				color: rgba(241, 223, 199, 1);
+				color: #fff;
 				cursor: pointer;
 				margin-left: 0px;
 				margin-top: -2px;
@@ -41,9 +41,9 @@
 				width: 130px;
 				height: 28px;
 				border: none;
-				color: rgba(68, 46, 24, 1);
+				color: #111;
 				margin-left: 10px;
-				background: rgba(252, 247, 236, 1);
+				background: #fff;
 				text-decoration-line: underline;
 				text-underline-position: under;
 				font: 16px/1 'Libre Baskerville', serif;
@@ -76,7 +76,7 @@
 			.inner {
 				width: 100%;
 				//background: #fff;
-				border: 1px solid rgba(68, 46, 24, 1);
+				border: 1px solid #111;
 				padding: 14px;
 				//box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 				.pic {
@@ -100,7 +100,7 @@
 				}
 				h2 {
 					font: nornal 14px /1.2 'Lora';
-					color: rgba(68, 46, 24, 1);
+					color: #111;
 					margin-bottom: 30px;
 					margin-top: 10px;
 				}

@@ -16,7 +16,6 @@ import Gallery from './components/sub/Gallery';
 import Location from './components/sub/Location';
 import Join from './components/sub/Join';
 import Youtube from './components/sub/Youtube';
-import Login from './components/sub/Login';
 
 //sass
 import './scss/style.scss';
@@ -74,10 +73,6 @@ function App() {
 
 			<Route path='/location'>
 				<Location />
-			</Route>
-
-			<Route path='/login'>
-				<Login />
 			</Route>
 
 			<Route path='/join'>

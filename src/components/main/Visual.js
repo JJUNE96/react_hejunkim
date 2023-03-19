@@ -7,8 +7,7 @@ import image3 from '../../image/main12.png';
 
 function Visual() {
 	const [activeTab, setActiveTab] = useState(0);
-	//const headerRef = useRef(null);
-	const boxRefs = useRef([]);
+	const changeDelay = 500;
 
 	const tabs = [
 		{
@@ -34,19 +33,18 @@ function Visual() {
 		},
 	];
 
-	//const frame = document.querySelector('.frame');
 	const bgs = document.querySelectorAll('.frame .bg');
 	const lines = document.querySelectorAll('.frame .line');
 
-	const btns = document.querySelectorAll('.btns span');
-	const boxs = document.querySelectorAll('article');
-	//const header = document.querySelector('header');
-	const changeDelay = 500;
+	const btns = document.querySelectorAll(' span');
+	const boxs = document.querySelectorAll('.frame article');
+
 	const num = 10;
-	//const newBoxs = [...boxs];
 
 	insertDivs(0.05);
 	insertLine();
+
+	setTimeout(() => boxs[0]?.classList.add('on'), changeDelay);
 
 	btns.forEach((btn, idx) => {
 		btn.addEventListener('click', (e) => {
@@ -54,13 +52,19 @@ function Visual() {
 			for (const el of btns) el.classList.remove('on');
 			for (const el of boxs) el.classList.remove('on');
 
-			btns[idx].classList.add('on');
-			setTimeout(() => boxs[idx].classList.add('on'), changeDelay);
+			btns[idx]?.classList.add('on');
+			//boxs[idx]?.classList.add('on');
+
+			//setTimeout(() => boxs[idx]?.classList.add('on'), changeDelay);
 		});
 	});
 
 	const handleClick = (index) => {
 		setActiveTab(index);
+		setTimeout(() => {
+			for (const el of boxs) el.classList.remove('on');
+			boxs[index]?.classList.add('on');
+		}, changeDelay);
 	};
 
 	function insertDivs(interval) {
@@ -93,7 +97,7 @@ function Visual() {
 		<figure>
 			<section className='frame'>
 				{tabs.map((tab, index) => (
-					<article key={index}>
+					<article className={activeTab === index ? 'on' : ''} key={index}>
 						{/* <div className='bg' style=></div> */}
 						<img className='bg' src={tab.backgroundImage} alt='' />
 						<aside className='line'></aside>
@@ -102,32 +106,26 @@ function Visual() {
 							<p>{tab.description}</p>
 
 							<div className='bar'>
-								<ul>
+								{/* <ul>
 									<li>
 										<span>reservation</span>
 									</li>
 									<li>
 										<span>tour guide</span>
 									</li>
-								</ul>
-								<button>{tab.buttonText}</button>
+								</ul> */}
+								{/* <button>{tab.buttonText}</button> */}
 							</div>
 						</div>
 					</article>
 				))}
 			</section>
-			<div className='boxs'>
+			{/* <div className='boxs'>
 				{tabs.map((tab, index) => (
-					<div
-						key={index}
-						ref={(ref) => (boxRefs.current[index] = ref)}
-						className={activeTab === index ? 'on' : ''}
-						style={{ transitionDelay: `${changeDelay}ms` }}
-					>
-						{tab.content}
-					</div>
+					<div key={index} className={activeTab === index ? 'on' : ''} style={{ transitionDelay: `${changeDelay}ms` }}></div>
 				))}
-			</div>
+			</div> */}
+
 			<nav className='btns'>
 				{tabs.map((tab, index) => (
 					<span key={index} className={activeTab === index ? 'on' : ''}>
@@ -135,31 +133,6 @@ function Visual() {
 					</span>
 				))}
 			</nav>
-
-			{/* <div className='tabs'>
-				<header ref={headerRef} style={{ transitionDelay: '400ms' }}>
-					{tabs[activeTab].title}
-				</header>
-				<div className='boxs'>
-					{tabs.map((tab, index) => (
-						<div
-							key={index}
-							ref={(ref) => (boxRefs.current[index] = ref)}
-							className={boxClass(index)}
-							style={{ transitionDelay: `${changeDelay}ms` }}
-						>
-							{tab.content}
-						</div>
-					))}
-				</div>
-				<nav className='btns'>
-					{tabs.map((tab, index) => (
-						<button key={index} className={boxClass(index)} onClick={() => handleClick(index)}>
-							{tab.title}
-						</button>
-					))}
-				</nav>
-			</div> */}
 		</figure>
 	);
 }

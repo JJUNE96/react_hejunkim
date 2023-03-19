@@ -3,7 +3,7 @@
 	> figure {
 		width: 100%;
 		height: 200px;
-		background: rgba(252, 247, 236, 1);
+		background: #fff;
 		opacity: 0;
 		transition-property: opacity;
 		transition-duration: 1s;
@@ -19,7 +19,7 @@
 		transition-duration: 1s;
 		> h1 {
 			font: normal 40px/1 'Libre Baskerville', serif;
-			color: rgba(68, 46, 24, 1);
+			color: #111;
 			margin-bottom: 50px;
 			text-decoration-line: underline;
 			text-underline-position: under;

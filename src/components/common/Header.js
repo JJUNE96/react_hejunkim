@@ -6,7 +6,7 @@ import { memo } from 'react';
 import Menu from './Menu';
 
 function Header(props) {
-	const active = { color: '#bd875e' };
+	const active = { color: '#8b8b8c' };
 
 	const menu = useRef(null);
 	//const active = { color: 'pink' };

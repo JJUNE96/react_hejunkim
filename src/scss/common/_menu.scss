@@ -4,7 +4,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: rgba(68, 46, 24, 1);
+	background: #fff;
 	//opacity: 1;
 	padding: 50px 30px;
 	z-index: 5;
@@ -19,7 +19,7 @@
 
 		a {
 			font: bold 30px/1 'Lora';
-			color: rgba(252, 247, 236, 1);
+			color: #111;
 			&:hover {
 				font: bold 30px/1 'Cinzel';
 			}
@@ -35,8 +35,8 @@
 				display: block;
 				height: 50px;
 				font: 16px/50px 'Lora';
-				color: rgba(252, 247, 236, 1);
-				border-bottom: 1px solid rgba(252, 247, 236, 1);
+				color: #111;
+				border-bottom: 1px solid#111;
 				padding-left: 10px;
 				&:hover {
 					font: normal 16px/50px 'Cinzel';
@@ -59,7 +59,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: rgba(252, 247, 236, 1);
+			color: #111;
 			font-size: 25px;
 		}
 	}

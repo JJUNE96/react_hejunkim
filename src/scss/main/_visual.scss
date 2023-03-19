@@ -88,7 +88,7 @@ figure {
 
 				h2 {
 					font: bold 6vw/1 'Display+SC', serif;
-					color: rgba(255, 255, 255, 0.9);
+					color: #fff;
 					transform: translateX(-100%);
 					text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 					transition: 0.5s 0s;
@@ -198,6 +198,7 @@ figure {
 					button {
 						height: 40px;
 						transition: 0.5s 3s;
+						color: #fff;
 					}
 				}
 			}
@@ -210,6 +211,7 @@ figure {
 		right: 10%;
 		font-size: 0;
 		z-index: 3;
+		color: #fff;
 
 		span {
 			display: inline-flex;

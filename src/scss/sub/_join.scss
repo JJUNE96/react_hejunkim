@@ -1,12 +1,12 @@
 .Join {
-	background: rgba(252, 247, 236, 1);
+	background: #fff;
 	.pic {
 		h2 {
 			position: relative;
 			right: 100px;
 			text-align: center;
 			font: bold 40px 'Display+SC', serif;
-			color: rgba(68, 46, 24, 1);
+			color: #111;
 			margin-bottom: 20px;
 		}
 		p {
@@ -16,7 +16,7 @@
 
 			text-align: center;
 			font: 17px 'Display+SC', serif;
-			color: rgba(68, 46, 24, 1);
+			color: #111;
 		}
 	}
 	> .inner {
@@ -44,8 +44,8 @@
 						height: 60px;
 						margin: 10px;
 						font: bold 18px/40px 'Libre Baskerville', serif;
-						color: rgba(241, 223, 199, 1);
-						background: rgba(68, 46, 24, 1);
+						color: #fff;
+						background: #111;
 						cursor: pointer;
 					}
 				}

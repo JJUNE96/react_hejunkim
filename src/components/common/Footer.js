@@ -1,14 +1,9 @@
 import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faTwitter,
-	faYoutube,
-	faSpotify,
-	faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faYoutube, faSpotify, faInstagram } from '@fortawesome/free-brands-svg-icons';
 function Footer(props) {
-	const active = { color: '#bd875e' };
+	const active = { color: '#8b8b8c' };
 	return (
 		<footer className={props.type}>
 			<>
@@ -67,8 +62,8 @@ function Footer(props) {
 				</div>
 				<div className='inner'>
 					<address>
-						address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, ipsam!
-						TEL : +82-010-2968-5070 FAX : +82-010-2968-5070
+						address: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, ipsam! TEL : +82-010-2968-5070 FAX :
+						+82-010-2968-5070
 					</address>
 					<p>Copyright &copy; 2023 HE JUN ALL Right reserved</p>
 				</div>
