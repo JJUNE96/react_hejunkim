@@ -144,12 +144,7 @@ function Board() {
 									<div className='txt'>
 										<input type='text' defaultValue={post.title} ref={inputEdit} />
 										<br />
-										<textarea
-											cols='30'
-											rows='3'
-											defaultValue={post.content}
-											ref={textareaEdit}
-										></textarea>
+										<textarea cols='30' rows='3' defaultValue={post.content} ref={textareaEdit}></textarea>
 									</div>
 
 									<div className='btnSet'>
@@ -182,12 +177,7 @@ function Board() {
 			<div className='inputBox'>
 				<input type='text' placeholder='Enter the title' ref={input} />
 				<br />
-				<textarea
-					cols='30'
-					rows='3'
-					placeholder='Enter the body'
-					ref={textarea}
-				></textarea>
+				<textarea cols='30' rows='3' placeholder='Enter the body' ref={textarea}></textarea>
 				<br />
 
 				<div className='btnSet'>

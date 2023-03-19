@@ -1,11 +1,15 @@
 import Layout from '../common/Layout';
-import { useRef, useEffect, useMemo } from 'react';
-
+import { useRef, useEffect, useMemo, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-icons';
 function Location() {
 	const container = useRef(null);
 	const mapInstance = useRef(null);
 	const option = useRef(null);
 	const { kakao } = window;
+	const imagesRef = useRef([]);
+
+	const [opacities, setOpacities] = useState([]);
 
 	option.current = {
 		center: new kakao.maps.LatLng(35.1631139, 129.1635509),
@@ -88,7 +92,26 @@ function Location() {
 			window.removeEventListener('resize', setCenter);
 		};
 	}, [kakao, marker]);
+	useEffect(() => {
+		const handleScroll = () => {
+			imagesRef.current.forEach((img, i) => {
+				const bottom_of_element = img.offsetTop + img.offsetHeight / 3;
+				const bottom_of_window = window.scrollY + window.innerHeight;
+				if (bottom_of_window > bottom_of_element && opacities[i] !== 1) {
+					setOpacities((prevOpacities) => {
+						const newOpacities = [...prevOpacities];
+						newOpacities[i] = 1;
+						return newOpacities;
+					});
+				}
+			});
+		};
 
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [opacities]);
 	function showTraffic() {
 		mapInstance.current = new kakao.maps.Map(container.current, option.current);
 		mapInstance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
@@ -100,16 +123,34 @@ function Location() {
 		mapInstance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
 		marker.setMap(mapInstance.current);
 	}
-
 	return (
 		<Layout name={'Location'}>
 			<>
+				<div className='contents'>
+					<h1>
+						GENERAL MODEL INQUIRY <br />
+						for clients only
+					</h1>
+					<img src={`${process.env.PUBLIC_URL}/img/location1.png`} alt='pic' />
+
+					<h2>Tel &nbsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 01029685070</h2>
+					<h2>Contact&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; hj09060906@naver.com</h2>
+					<h2>
+						Follow us&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <FontAwesomeIcon icon={faTwitter}>{faTwitter}</FontAwesomeIcon>
+						&emsp;
+						<FontAwesomeIcon icon={faYoutube}>{faYoutube}</FontAwesomeIcon>&emsp;
+						<FontAwesomeIcon icon={faSpotify}>{faSpotify}</FontAwesomeIcon>
+					</h2>
+					<h2>Address&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 11, Jungdong 2-ro, Haeundae-gu, Busan, Republic of Korea</h2>
+				</div>
 				<div id='map' ref={container}></div>
 
 				<div className='traffic'>
 					<button onClick={showTraffic}>TRAFFIC</button>
 					<button onClick={closeTraffic}>OFF TRAFFIC </button>
 				</div>
+
+				<div className='location'></div>
 			</>
 		</Layout>
 	);

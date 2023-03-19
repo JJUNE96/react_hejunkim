@@ -26,7 +26,7 @@
 		justify-content: center;
 		align-content: center;
 		color: rgba(68, 46, 24, 1);
-		font: 80px/1.3 'Libre Caslon Text', serif;
+		font: 80px/1.3 'Display+SC', serif;
 	}
 
 	> .inner {
@@ -49,9 +49,10 @@
 			height: 30px;
 			width: calc(100% / 3);
 			padding: 10px;
-			font-size: 15px;
 			transition: 0.5s;
 			border-radius: 10px 10px 0px 0px;
+			font: bold 15px/1.5 'Display+SC', serif;
+
 			&:hover {
 				color: rgba(241, 223, 199, 1);
 				text-decoration-line: underline;
@@ -87,7 +88,7 @@
 				padding: 20px;
 				color: rgba(68, 46, 24, 1);
 
-				font: 15px/1.5 'Libre Baskerville', serif;
+				font: bold 15px/1.5 'Display+SC', serif;
 				&:hover {
 					color: rgba(192, 127, 87, 1);
 				}

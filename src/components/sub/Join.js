@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function Join() {
+function Join({ Scrolled, Pos }) {
 	const history = useHistory();
 	// 회원가입 완료시 메인페이지로 이동시킴
 	const initVal = {
@@ -42,12 +42,7 @@ function Join() {
 		if (value.userid.length < 5) {
 			errs.userid = 'Please enter a id with at least 5 characters';
 		}
-		if (
-			value.pwd1.length < 5 ||
-			!eng.test(value.pwd1) ||
-			!num.test(value.pwd1) ||
-			!spc.test(value.pwd1)
-		) {
+		if (value.pwd1.length < 5 || !eng.test(value.pwd1) || !num.test(value.pwd1) || !spc.test(value.pwd1)) {
 			errs.pwd1 =
 				'Your password must be at least 5 characters long and include a combination of uppercase and lowercase letters, numbers, and special characters';
 		}
@@ -55,8 +50,7 @@ function Join() {
 			errs.pwd2 = 'Please enter the same password twice';
 		}
 		if (value.email.length < 8 || !/@/.test(value.email)) {
-			errs.email =
-				'Your email should be at least 8 characters long and include the @ symbol';
+			errs.email = 'Your email should be at least 8 characters long and include the @ symbol';
 		}
 		if (!value.gender) {
 			errs.gender = 'Select your gender';
@@ -122,224 +116,197 @@ function Join() {
 	}, [Err, history]);
 
 	return (
-		<Layout name={'Join'}>
-			<form onSubmit={handleSubmit}>
-				<fieldset>
-					<legend className='h'>회원가입 폼 양식</legend>
-					<table>
-						<tbody>
-							{/* user name */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='username'>Name</label>
-								</th>
-								<td>
-									<input
-										type='text'
-										name='username'
-										id='username'
-										placeholder='Enter your name.'
-										onChange={handleChange}
-										value={Val.username}
-									/>
-									<span className='err'>{Err.username}</span>
-								</td>
-							</tr>
+		<>
+			<Layout name={'Join'}>
+				<div className='pic'>
+					<h2>
+						SUNDAYMUSE is based in
+						<br /> SEOUL, founded in 2005.
+					</h2>
+					<p>
+						We have been working with world top models, agencies, clients around the world.
+						<br /> We are always looking for the most modern and unique models for the markets.
+						<br /> Our models will be the BEST you have EVER worked with.
+					</p>
+				</div>
+				<form onSubmit={handleSubmit}>
+					<fieldset>
+						<legend className='h'>회원가입 폼 양식</legend>
+						<table>
+							<tbody>
+								{/* user name */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='username'>Name</label>
+									</th>
+									<td>
+										<input
+											type='text'
+											name='username'
+											id='username'
+											placeholder='Enter your name.'
+											onChange={handleChange}
+											value={Val.username}
+										/>
+										<span className='err'>{Err.username}</span>
+									</td>
+								</tr>
 
-							{/* user id */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='userid'>Id</label>
-								</th>
-								<td>
-									<input
-										type='text'
-										name='userid'
-										id='userid'
-										placeholder='Enter your id.'
-										onChange={handleChange}
-										value={Val.userid}
-									/>
-									<span className='err'>{Err.userid}</span>
-								</td>
-							</tr>
+								{/* user id */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='userid'>Id</label>
+									</th>
+									<td>
+										<input
+											type='text'
+											name='userid'
+											id='userid'
+											placeholder='Enter your id.'
+											onChange={handleChange}
+											value={Val.userid}
+										/>
+										<span className='err'>{Err.userid}</span>
+									</td>
+								</tr>
 
-							{/* passowrd */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='pwd1'>Password</label>
-								</th>
-								<td>
-									<input
-										type='password'
-										name='pwd1'
-										id='pwd1'
-										placeholder='Enter your password.'
-										onChange={handleChange}
-										value={Val.pwd1}
-									/>
-									<span className='err'>{Err.pwd1}</span>
-								</td>
-							</tr>
+								{/* passowrd */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='pwd1'>Password</label>
+									</th>
+									<td>
+										<input
+											type='password'
+											name='pwd1'
+											id='pwd1'
+											placeholder='Enter your password.'
+											onChange={handleChange}
+											value={Val.pwd1}
+										/>
+										<span className='err'>{Err.pwd1}</span>
+									</td>
+								</tr>
 
-							{/* re passowrd */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='pwd2'>Password Check</label>
-								</th>
-								<td>
-									<input
-										type='password'
-										name='pwd2'
-										id='pwd2'
-										placeholder='Enter your password again.'
-										onChange={handleChange}
-										value={Val.pwd2}
-									/>
-									<span className='err'>{Err.pwd2}</span>
-								</td>
-							</tr>
+								{/* re passowrd */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='pwd2'>Password Check</label>
+									</th>
+									<td>
+										<input
+											type='password'
+											name='pwd2'
+											id='pwd2'
+											placeholder='Enter your password again.'
+											onChange={handleChange}
+											value={Val.pwd2}
+										/>
+										<span className='err'>{Err.pwd2}</span>
+									</td>
+								</tr>
 
-							{/* email */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='email'>E-mail</label>
-								</th>
-								<td>
-									<input
-										type='text'
-										name='email'
-										id='email'
-										placeholder='Enter your email.'
-										onChange={handleChange}
-										value={Val.email}
-									/>
-									<span className='err'>{Err.email}</span>
-								</td>
-							</tr>
+								{/* email */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='email'>E-mail</label>
+									</th>
+									<td>
+										<input
+											type='text'
+											name='email'
+											id='email'
+											placeholder='Enter your email.'
+											onChange={handleChange}
+											value={Val.email}
+										/>
+										<span className='err'>{Err.email}</span>
+									</td>
+								</tr>
 
-							{/* gender */}
-							<tr>
-								<th scope='row'>Gender</th>
-								<td>
-									<label htmlFor='male'>Male</label>
-									<input
-										type='radio'
-										name='gender'
-										value='male'
-										id='male'
-										onChange={handleRadio}
-									/>
+								{/* gender */}
+								<tr>
+									<th scope='row'>Gender</th>
+									<td>
+										<label htmlFor='male'>Male</label>
+										<input type='radio' name='gender' value='male' id='male' onChange={handleRadio} />
 
-									<label htmlFor='female'>Female</label>
-									<input
-										type='radio'
-										name='gender'
-										value='female'
-										id='female'
-										onChange={handleRadio}
-									/>
-									<span className='err'>{Err.gender}</span>
-								</td>
-							</tr>
+										<label htmlFor='female'>Female</label>
+										<input type='radio' name='gender' value='female' id='female' onChange={handleRadio} />
+										<span className='err'>{Err.gender}</span>
+									</td>
+								</tr>
 
-							{/* log */}
-							<tr>
-								<th scope='row'>Sign-up Method</th>
-								<td>
-									<label htmlFor='internet'>Internet</label>
-									<input
-										type='checkbox'
-										id='internet'
-										value='internet'
-										name='log'
-										onChange={handleCheck}
-									/>
+								{/* log */}
+								<tr>
+									<th scope='row'>Sign-up Method</th>
+									<td>
+										<label htmlFor='internet'>Internet</label>
+										<input type='checkbox' id='internet' value='internet' name='log' onChange={handleCheck} />
 
-									<label htmlFor='friend'>Friends</label>
+										<label htmlFor='friend'>Friends</label>
 
-									<input
-										type='checkbox'
-										id='friend'
-										value='friend'
-										name='log'
-										onChange={handleCheck}
-									/>
+										<input type='checkbox' id='friend' value='friend' name='log' onChange={handleCheck} />
 
-									<label htmlFor='advertisement'>Advertisement</label>
+										<label htmlFor='advertisement'>Advertisement</label>
 
-									<input
-										type='checkbox'
-										id='advertisement'
-										value='advertisement'
-										name='log'
-										onChange={handleCheck}
-									/>
+										<input type='checkbox' id='advertisement' value='advertisement' name='log' onChange={handleCheck} />
 
-									<label htmlFor='etc'>Etc</label>
+										<label htmlFor='etc'>Etc</label>
 
-									<input
-										type='checkbox'
-										id='etc'
-										value='etc'
-										name='log'
-										onChange={handleCheck}
-									/>
-									<span className='err'>{Err.log}</span>
-								</td>
-							</tr>
+										<input type='checkbox' id='etc' value='etc' name='log' onChange={handleCheck} />
+										<span className='err'>{Err.log}</span>
+									</td>
+								</tr>
 
-							{/* edu */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='edu'>Education</label>
-								</th>
-								<td>
-									<select name='edu' id='edu' onChange={handleSelect}>
-										<option value=''>Select your education level</option>
-										<option value='elementary-school'>Elementary school</option>
-										<option value='middle-school'>Middle school</option>
-										<option value='high-school'>High school</option>
-										<option value='college'>University</option>
-									</select>
-									<span className='err'>{Err.edu}</span>
-								</td>
-							</tr>
-							{/* comments */}
-							<tr>
-								<th scope='row'>
-									<label htmlFor='comments'>Comments</label>
-								</th>
-								<td>
-									<textarea
-										name='comments'
-										id='comments'
-										cols='30'
-										rows='5'
-										placeholder='leave a message.'
-										onChange={handleChange}
-										value={Val.comments}
-									></textarea>
-									<span className='err'>{Err.comments}</span>
-								</td>
-							</tr>
+								{/* edu */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='edu'>Education</label>
+									</th>
+									<td>
+										<select name='edu' id='edu' onChange={handleSelect}>
+											<option value=''>Select your education level</option>
+											<option value='elementary-school'>Elementary school</option>
+											<option value='middle-school'>Middle school</option>
+											<option value='high-school'>High school</option>
+											<option value='college'>University</option>
+										</select>
+										<span className='err'>{Err.edu}</span>
+									</td>
+								</tr>
+								{/* comments */}
+								<tr>
+									<th scope='row'>
+										<label htmlFor='comments'>Comments</label>
+									</th>
+									<td>
+										<textarea
+											name='comments'
+											id='comments'
+											cols='30'
+											rows='5'
+											placeholder='leave a message.'
+											onChange={handleChange}
+											value={Val.comments}
+										></textarea>
+										<span className='err'>{Err.comments}</span>
+									</td>
+								</tr>
 
-							{/* btnSet */}
-							<tr>
-								<th colSpan='2'>
-									{/* <input type='reset' value='cancel' onClick={() => setVal(initVal)} /> */}
-									<input
-										type='submit'
-										value='Create an account'
-										onClick={() => (Submit.current = true)}
-									/>
-								</th>
-							</tr>
-						</tbody>
-					</table>
-				</fieldset>
-			</form>
-		</Layout>
+								{/* btnSet */}
+								<tr>
+									<th colSpan='2'>
+										{/* <input type='reset' value='cancel' onClick={() => setVal(initVal)} /> */}
+										<input type='submit' value='Create an account' onClick={() => (Submit.current = true)} />
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</fieldset>
+				</form>
+			</Layout>
+		</>
 	);
 }
 

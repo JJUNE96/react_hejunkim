@@ -8,12 +8,12 @@
 	h1 {
 		text-align: left;
 		color: rgba(68, 46, 24, 1);
-		font: normal 60px/1 'Libre Caslon Text', serif;
+		font: bold 60px/1 'Display+SC', serif;
 	}
 	h2 {
 		text-align: left;
 		color: rgba(68, 46, 24, 1);
-		font: normal 40px/1 'Libre Caslon Text', serif;
+		font: normal 40px/1 'Display+SC', serif;
 		margin-bottom: 150px;
 	}
 
@@ -109,7 +109,7 @@
 		text-decoration-line: underline;
 		text-underline-position: under;
 		color: rgba(68, 46, 24, 1);
-		font: normal 30px/1 'Libre Caslon Text', serif;
+		font: bold 30px/1 'Display+SC', serif;
 		&:hover {
 			color: rgba(192, 127, 87, 1);
 		}

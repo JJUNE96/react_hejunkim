@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import image1 from '../../image/joy4.png';
-import image2 from '../../image/joy2.png';
-import image3 from '../../image/joy3.png';
-import image4 from '../../image/news1.png';
-import image5 from '../../image/news2.png';
-import image6 from '../../image/news3.png';
+import image1 from '../../image/mode1.png';
+import image2 from '../../image/mode2.png';
+import image3 from '../../image/mode3.png';
+import image4 from '../../image/joy2.png';
+import image5 from '../../image/joy3.png';
+import image6 from '../../image/joy4.png';
 import { NavLink } from 'react-router-dom';
 function Pic2() {
 	const [currentTab, clickTab] = useState(0);
@@ -16,7 +16,7 @@ function Pic2() {
 			image: image1,
 			image2: image4,
 			text1:
-				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do. This is a great opportunity to connect.',
+				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do.',
 		},
 		{
 			name: '02',
@@ -24,14 +24,14 @@ function Pic2() {
 			image2: image5,
 
 			text1:
-				'Got a hobby? Share that with your audience.This is an opportunity to show common ground with your audience and allow them to fall in love with you and say "Yes! I totally resonate." Connection matters.',
+				'Got a hobby? Share that with your audience.This is an opportunity to show common ground with your audience and allow them to fall in love with you and say "Yes! I totally resonate." ',
 		},
 		{
 			name: '03',
 			image: image3,
 			image2: image6,
 			text1:
-				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do. This is a great opportunity to connect.',
+				'Here you can add another fun or interesting fact about yourself. Tell your audience something interesting that relates to your line of work such as why you love doing what you do. ',
 		},
 	];
 
@@ -63,9 +63,7 @@ function Pic2() {
 					<div className='inner2'>
 						<NavLink to='/about'>
 							get to know me &nbsp;
-							<FontAwesomeIcon icon={faArrowRightLong}>
-								{faArrowRightLong}
-							</FontAwesomeIcon>
+							<FontAwesomeIcon icon={faArrowRightLong}>{faArrowRightLong}</FontAwesomeIcon>
 						</NavLink>
 						<img src={menuArr[currentTab].image2} alt='' />
 						<p>{menuArr[currentTab].text1}</p>
@@ -73,10 +71,10 @@ function Pic2() {
 
 					<img src={menuArr[currentTab].image} alt='' />
 				</div>
-				<h1>
+				{/* <h1>
 					The Dreamer Behind
 					<br /> The Magic
-				</h1>
+				</h1> */}
 			</div>
 		</>
 	);

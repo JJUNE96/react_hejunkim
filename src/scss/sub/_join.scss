@@ -1,6 +1,24 @@
 .Join {
 	background: rgba(252, 247, 236, 1);
+	.pic {
+		h2 {
+			position: relative;
+			right: 100px;
+			text-align: center;
+			font: bold 40px 'Display+SC', serif;
+			color: rgba(68, 46, 24, 1);
+			margin-bottom: 20px;
+		}
+		p {
+			position: relative;
+			right: 100px;
+			margin-bottom: 20px;
 
+			text-align: center;
+			font: 17px 'Display+SC', serif;
+			color: rgba(68, 46, 24, 1);
+		}
+	}
 	> .inner {
 		margin-right: 100px;
 		table {

@@ -87,7 +87,7 @@ figure {
 				z-index: 2;
 
 				h2 {
-					font: bold 6vw/1 'arial';
+					font: bold 6vw/1 'Display+SC', serif;
 					color: rgba(255, 255, 255, 0.9);
 					transform: translateX(-100%);
 					text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
@@ -95,7 +95,7 @@ figure {
 				}
 				p {
 					width: 40%;
-					font: 16px/1.2 'arial';
+					font: 16px/1.2 'Display+SC', serif;
 					color: #fff;
 					padding: 10px;
 					opacity: 0.7;
@@ -130,7 +130,7 @@ figure {
 							height: 100%;
 							display: flex;
 							align-items: center;
-							font: bold 12px/1 'arial';
+							font: bold 12px/1 'Lora';
 							color: #fff;
 							padding-left: 5px;
 							overflow: hidden;
@@ -151,7 +151,7 @@ figure {
 						bottom: 0;
 						right: 0;
 						border: none;
-						font: bold 10px/1 'arial';
+						font: bold 10px/1 'Lora';
 						color: #555;
 						cursor: pointer;
 						overflow: hidden;
@@ -216,8 +216,9 @@ figure {
 			align-items: center;
 			width: calc(100% / 3);
 			height: 50px;
-			font: bold 14px/1 'arial';
+			font: bold 14px/1 'Lora';
 			padding-left: 5px;
+			cursor: pointer;
 
 			a {
 				display: inline-block;

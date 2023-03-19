@@ -1,31 +1,32 @@
 import { memo } from 'react';
 // import video from '../../image/main.mp4';
-import React, { useState, useEffect } from 'react';
-import image1 from '../../image/main1.png';
-import image2 from '../../image/main2.png';
-import image3 from '../../image/main3.png';
+import { useState, useEffect, useRef } from 'react';
+import image1 from '../../image/main13.png';
+import image2 from '../../image/main3.png';
+import image3 from '../../image/main12.png';
 
 function Visual() {
 	const [activeTab, setActiveTab] = useState(0);
-	const [activeBoxIndex, setActiveBoxIndex] = useState(0);
+	//const headerRef = useRef(null);
+	const boxRefs = useRef([]);
 
 	const tabs = [
 		{
-			title: 'BRAND NEW\nEXPERIENCE',
+			title: 'Become a Model',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptates molestiae deleniti velit officia, voluptatem sequi quis temporibus accusantium dicta aut, similique modi enim recusandae? Ducimus architecto at voluptatibus quisquam.',
 			buttonText: 'VIEW DETAIL',
 			backgroundImage: image1,
 		},
 		{
-			title: 'EXPLORE OUR\nBRANDS',
+			title: 'Portfolio',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas reprehenderit atque laboriosam error? Nam iure assumenda iusto doloribus quis veniam, minima quas perspiciatis, quo ex molestias id accusamus. Laboriosam, recusandae.',
 			buttonText: 'VIEW DETAIL',
 			backgroundImage: image2,
 		},
 		{
-			title: 'BECOME VIP\nMEMBER',
+			title: 'Contact Us',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, laudantium. Asperiores sint vel dicta tempora placeat suscipit saepe cupiditate repudiandae assumenda corporis? Velit eveniet soluta dicta excepturi culpa saepe amet?',
 			buttonText: 'VIEW DETAIL',
@@ -39,26 +40,28 @@ function Visual() {
 
 	const btns = document.querySelectorAll('.btns span');
 	const boxs = document.querySelectorAll('article');
-	const header = document.querySelector('header');
-
-	const num = 10;
+	//const header = document.querySelector('header');
 	const changeDelay = 500;
+	const num = 10;
+	//const newBoxs = [...boxs];
 
 	insertDivs(0.05);
 	insertLine();
 
-	// btns.forEach((btn, idx) => {
-	// 	btn.addEventListener('click', (e) => {
-	// 		e.preventDefault();
-	// 		for (const el of btns) el.classList.remove('on');
-	// 		for (const el of boxs) el.classList.remove('on');
+	btns.forEach((btn, idx) => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			for (const el of btns) el.classList.remove('on');
+			for (const el of boxs) el.classList.remove('on');
 
-	// 		//btns[idx].classList.add('on');
-	// 		//setTimeout(() => boxs[idx].classList.add('on'), changeDelay);
+			btns[idx].classList.add('on');
+			setTimeout(() => boxs[idx].classList.add('on'), changeDelay);
+		});
+	});
 
-	// 		setTimeout(() => setActiveBoxIndex(0), changeDelay);
-	// 	});
-	// });
+	const handleClick = (index) => {
+		setActiveTab(index);
+	};
 
 	function insertDivs(interval) {
 		bgs.forEach((bg) => {
@@ -79,22 +82,6 @@ function Visual() {
 			line.innerHTML = tags;
 		});
 	}
-
-	const handleClick = (index) => {
-		setActiveTab(index);
-		setActiveBoxIndex(index);
-		const newBoxs = [...boxs];
-		newBoxs.forEach((box) => box.classList.remove('on'));
-		newBoxs[index].classList.add('on');
-	};
-
-	useEffect(() => {
-		setTimeout(() => setActiveBoxIndex(0), changeDelay);
-		setTimeout(() => {
-			const header = document.querySelector('header');
-			header.classList.add('on');
-		}, 400);
-	}, []);
 
 	return (
 		// <figure id='visual' className='myScroll'>
@@ -129,7 +116,18 @@ function Visual() {
 					</article>
 				))}
 			</section>
-
+			<div className='boxs'>
+				{tabs.map((tab, index) => (
+					<div
+						key={index}
+						ref={(ref) => (boxRefs.current[index] = ref)}
+						className={activeTab === index ? 'on' : ''}
+						style={{ transitionDelay: `${changeDelay}ms` }}
+					>
+						{tab.content}
+					</div>
+				))}
+			</div>
 			<nav className='btns'>
 				{tabs.map((tab, index) => (
 					<span key={index} className={activeTab === index ? 'on' : ''}>
@@ -137,6 +135,31 @@ function Visual() {
 					</span>
 				))}
 			</nav>
+
+			{/* <div className='tabs'>
+				<header ref={headerRef} style={{ transitionDelay: '400ms' }}>
+					{tabs[activeTab].title}
+				</header>
+				<div className='boxs'>
+					{tabs.map((tab, index) => (
+						<div
+							key={index}
+							ref={(ref) => (boxRefs.current[index] = ref)}
+							className={boxClass(index)}
+							style={{ transitionDelay: `${changeDelay}ms` }}
+						>
+							{tab.content}
+						</div>
+					))}
+				</div>
+				<nav className='btns'>
+					{tabs.map((tab, index) => (
+						<button key={index} className={boxClass(index)} onClick={() => handleClick(index)}>
+							{tab.title}
+						</button>
+					))}
+				</nav>
+			</div> */}
 		</figure>
 	);
 }
