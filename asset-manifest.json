@@ -1,21 +1,24 @@
 {
   "files": {
-    "main.css": "/react_hejunkim/static/css/main.051ebbeb.css",
-    "main.js": "/react_hejunkim/static/js/main.3be5980e.js",
-    "static/media/main.mp4": "/react_hejunkim/static/media/main.f0247eb6ecc2073b70de.mp4",
+    "main.css": "/react_hejunkim/static/css/main.0c758b5a.css",
+    "main.js": "/react_hejunkim/static/js/main.36efbcfe.js",
     "static/media/joy1.png": "/react_hejunkim/static/media/joy1.a4c1f5d1ecc4588db788.png",
-    "static/media/news3.png": "/react_hejunkim/static/media/news3.ce7a955b329eaba12893.png",
+    "static/media/main3.png": "/react_hejunkim/static/media/main3.d5aed6650e63f30d7dd7.png",
+    "static/media/main13.png": "/react_hejunkim/static/media/main13.0926ebf62e066b8c70f6.png",
+    "static/media/main2.png": "/react_hejunkim/static/media/main2.4c09e2d8ec7b971b7090.png",
+    "static/media/main12.png": "/react_hejunkim/static/media/main12.28e5ce91c27dd61a41e4.png",
     "static/media/joy4.png": "/react_hejunkim/static/media/joy4.838dfb0f9c52daff3fe7.png",
     "static/media/joy2.png": "/react_hejunkim/static/media/joy2.b7e0ff35964c3bcd767c.png",
-    "static/media/news2.png": "/react_hejunkim/static/media/news2.63319aa178c4fc76f938.png",
-    "static/media/news1.png": "/react_hejunkim/static/media/news1.4fad8f640b587bc7cacd.png",
+    "static/media/mode3.png": "/react_hejunkim/static/media/mode3.4e377566ad7d09ae03a9.png",
+    "static/media/mode1.png": "/react_hejunkim/static/media/mode1.e56e60894f1911ea501b.png",
+    "static/media/mode2.png": "/react_hejunkim/static/media/mode2.fc9ec31a0e0f33952877.png",
     "static/media/joy3.png": "/react_hejunkim/static/media/joy3.ad0f4a108f0e60e64862.png",
     "index.html": "/react_hejunkim/index.html",
-    "main.051ebbeb.css.map": "/react_hejunkim/static/css/main.051ebbeb.css.map",
-    "main.3be5980e.js.map": "/react_hejunkim/static/js/main.3be5980e.js.map"
+    "main.0c758b5a.css.map": "/react_hejunkim/static/css/main.0c758b5a.css.map",
+    "main.36efbcfe.js.map": "/react_hejunkim/static/js/main.36efbcfe.js.map"
   },
   "entrypoints": [
-    "static/css/main.051ebbeb.css",
-    "static/js/main.3be5980e.js"
+    "static/css/main.0c758b5a.css",
+    "static/js/main.36efbcfe.js"
   ]
 }

@@ -1,52 +1,88 @@
 {
     "members": [
         {
-            "name": "JENNIE / 제니",
-            "pic": "제니.png"
+            "name": "JENNIE",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model1.png"
         },
         {
-            "name": "JISOO / 지수",
-            "pic": "지수.jpg"
+            "name": "JISOO",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model2.png"
         },
         {
-            "name": "ROSE / 로제",
-            "pic": "로제.jpg"
+            "name": "ROSE",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model3.png"
         },
         {
-            "name": "LISA / 리사",
-            "pic": "리사.jpeg"
+            "name": "LISA ",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model4.png"
         },
         {
-            "name": "V / 뷔",
-            "pic": "뷔.jpg"
+            "name": "V",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model5.png"
         },
         {
-            "name": "SUGAR / 슈가",
-            "pic": "슈가.jpeg"
+            "name": "SUGAR",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model6.png"
         },
         {
-            "name": "JUNGKOK / 정국",
-            "pic": "정국.jpg"
+            "name": "JUNGKOK",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model7.png"
         },
         {
-            "name": "JIN / 진",
-            "pic": "진.jpg"
+            "name": "JIN",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model8.png"
         },
         {
-            "name": "JIMIN / 지민",
-            "pic": "지민.jpg"
+            "name": "JIMIN",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model9.png"
         },
         {
-            "name": "JAEBUM / 재범",
-            "pic": "박재범.jpg"
+            "name": "JAEBUM",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model9.png"
         },
         {
-            "name": "GRAY / 그레이",
-            "pic": "그레이.jpg"
+            "name": "GRAY",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model10.png"
         },
         {
-            "name": "LOCO / 로꼬",
-            "pic": "로꼬.jpg"
+            "name": "LOCO",
+            "height": "Height: 167",
+            "Shoes": "Shoes: 255mm",
+            "hair": "Hair: Brown",
+            "pic": "model1.png"
         }
     ]
 }
