@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import image1 from '../../image/main13.png';
 import image2 from '../../image/main3.png';
-import image3 from '../../image/main12.png';
+import image3 from '../../image/main10.png';
 
 function Visual() {
 	const [activeTab, setActiveTab] = useState(0);

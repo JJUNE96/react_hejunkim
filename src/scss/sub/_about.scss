@@ -1,5 +1,24 @@
 .About {
 	background: #fff;
+
+	h2 {
+		font: 40px/1 'Libre Caslon Text', serif;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	h3 {
+		font: 15px/1.4 'Libre Caslon Text', serif;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	.icon {
+		width: 100%;
+		margin-bottom: 80px;
+		img {
+			width: 100%;
+		}
+	}
+
 	> .inner {
 		&::after {
 			content: '';
@@ -37,20 +56,20 @@
 						height: 300px;
 						position: absolute;
 						opacity: 0;
-						background: pink;
+						background: #8b8b8c;
 						color: #111;
 						transform: translateX(-5%) translateY(5%);
 						transition: all 1.3s;
 						text-align: center;
 						padding: 130px 0;
-						font: bold 17px 'Display+SC', serif;
+						font: bold 17px 'Libre Caslon Text', serif;
 					}
 				}
 				h3 {
 					//background: #000;
 					//border-left: 2px solid rgba(68, 46, 24, 1);
 					padding: 20px;
-					font: bold 20px 'Display+SC', serif;
+					font: bold 20px 'Libre Caslon Text', serif;
 					padding-left: 20px;
 					color: #111;
 				}
@@ -61,6 +80,23 @@
 
 @media screen and (max-width: $tablet) {
 	.About {
+		h2 {
+			font: 40px/1 'Libre Caslon Text', serif;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		h3 {
+			font: 15px/1.4 'Libre Caslon Text', serif;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.icon {
+			width: 100%;
+			margin-bottom: 80px;
+			img {
+				width: 100%;
+			}
+		}
 		> .inner {
 			&::after {
 				content: '';
@@ -103,6 +139,24 @@
 }
 @media screen and (max-width: $mobile) {
 	.About {
+		h2 {
+			font: 40px/1 'Libre Caslon Text', serif;
+			margin-bottom: 20px;
+			text-align: center;
+			margin-top: 60px;
+		}
+		h3 {
+			font: 15px/1.4 'Libre Caslon Text', serif;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.icon {
+			width: 100%;
+			margin-bottom: 80px;
+			img {
+				width: 100%;
+			}
+		}
 		> .inner {
 			&::after {
 				content: '';

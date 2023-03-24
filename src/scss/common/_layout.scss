@@ -1,12 +1,20 @@
 .content {
 	overflow: hidden;
+
 	> figure {
 		width: 100%;
-		height: 200px;
+		height: 10px;
 		background: #fff;
 		opacity: 0;
 		transition-property: opacity;
 		transition-duration: 1s;
+		position: relative;
+		top: 110px;
+		margin-bottom: 200px;
+		// img {
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
 	}
 	> .inner {
 		width: 1180px;
@@ -18,11 +26,10 @@
 		transition-property: transform, opacity;
 		transition-duration: 1s;
 		> h1 {
-			font: normal 40px/1 'Libre Baskerville', serif;
+			font: normal 40px/1 'Libre Caslon Text', serif;
 			color: #111;
-			margin-bottom: 50px;
-			text-decoration-line: underline;
-			text-underline-position: under;
+			margin-bottom: 20px;
+			// text-align: center;
 		}
 	}
 	&.on {
@@ -39,7 +46,7 @@
 @media screen and (max-width: $tablet) {
 	.content {
 		> figure {
-			height: 200px;
+			height: 0px;
 		}
 		> .inner {
 			width: 100%;

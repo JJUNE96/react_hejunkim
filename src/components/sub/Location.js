@@ -133,15 +133,17 @@ function Location() {
 					</h1>
 					<img src={`${process.env.PUBLIC_URL}/img/location1.png`} alt='pic' />
 
-					<h2>Tel &nbsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 01029685070</h2>
+					<h2>Tel &nbsp;&nbsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 01029685070</h2>
 					<h2>Contact&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; hj09060906@naver.com</h2>
 					<h2>
-						Follow us&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <FontAwesomeIcon icon={faTwitter}>{faTwitter}</FontAwesomeIcon>
+						Follow us&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp; <FontAwesomeIcon icon={faTwitter}>{faTwitter}</FontAwesomeIcon>
 						&emsp;
 						<FontAwesomeIcon icon={faYoutube}>{faYoutube}</FontAwesomeIcon>&emsp;
 						<FontAwesomeIcon icon={faSpotify}>{faSpotify}</FontAwesomeIcon>
 					</h2>
-					<h2>Address&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 11, Jungdong 2-ro, Haeundae-gu, Busan, Republic of Korea</h2>
+					<h2>
+						Address&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 11, Jungdong 2-ro, Haeundae-gu, Busan, Republic of Korea
+					</h2>
 				</div>
 				<div id='map' ref={container}></div>
 

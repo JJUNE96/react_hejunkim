@@ -118,7 +118,7 @@ function Join({ Scrolled, Pos }) {
 	return (
 		<>
 			<Layout name={'Join'}>
-				<div className='pic'>
+				{/* <div className='pic'>
 					<h2>
 						SUNDAYMUSE is based in
 						<br /> SEOUL, founded in 2005.
@@ -128,7 +128,7 @@ function Join({ Scrolled, Pos }) {
 						<br /> We are always looking for the most modern and unique models for the markets.
 						<br /> Our models will be the BEST you have EVER worked with.
 					</p>
-				</div>
+				</div> */}
 				<form onSubmit={handleSubmit}>
 					<fieldset>
 						<legend className='h'>회원가입 폼 양식</legend>

@@ -23,9 +23,10 @@ function Layout(props) {
 	}, []);
 	return (
 		<section className={`content ${props.name}`} ref={frame}>
-			<figure></figure>
+			<figure>{/* <img src={`${process.env.PUBLIC_URL}/img/magazine2.jpg`} alt='pic' /> */}</figure>
 			<div className='inner'>
 				<h1>{props.name}</h1>
+
 				{props.children}
 			</div>
 		</section>

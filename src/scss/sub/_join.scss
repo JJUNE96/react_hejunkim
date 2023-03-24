@@ -15,7 +15,7 @@
 			margin-bottom: 20px;
 
 			text-align: center;
-			font: 17px 'Display+SC', serif;
+			font: 17px 'Libre Caslon Text', serif;
 			color: #111;
 		}
 	}
@@ -43,7 +43,7 @@
 						width: 80%;
 						height: 60px;
 						margin: 10px;
-						font: bold 18px/40px 'Libre Baskerville', serif;
+						font: bold 18px/40px 'Libre Caslon Text', serif;
 						color: #fff;
 						background: #111;
 						cursor: pointer;
@@ -65,6 +65,8 @@
 					padding: 10px;
 					border: 1px solid #fff;
 					resize: none;
+					font: 12px/1 'Libre Caslon Text', serif;
+
 					// background: rgb(232, 238, 238);
 				}
 				span.err {
@@ -103,8 +105,8 @@
 							height: 60px;
 							margin: 10px;
 							font: bold 18px/40px 'Libre Caslon Text', serif;
-							color: rgba(241, 223, 199, 1);
-							background: rgba(68, 46, 24, 1);
+							color: #fff;
+							background: #111;
 							cursor: pointer;
 						}
 					}
@@ -161,8 +163,8 @@
 							height: 60px;
 							margin: 10px;
 							font: bold 18px/40px 'Libre Caslon Text', serif;
-							color: rgba(241, 223, 199, 1);
-							background: rgba(68, 46, 24, 1);
+							color: #fff;
+							background: #111;
 							cursor: pointer;
 						}
 					}

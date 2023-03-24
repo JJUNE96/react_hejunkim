@@ -100,7 +100,7 @@ footer {
 @media screen and (max-width: $tablet) {
 	footer {
 		width: 100%;
-		background: rgba(68, 46, 24, 1);
+		background: #111;
 		overflow: hidden;
 		#gnb {
 			display: none;
@@ -114,12 +114,12 @@ footer {
 				color: rgba(252, 247, 236, 1);
 				padding: 20px;
 				text-align: center;
-				font: normal 30px 'Libre Baskerville', serif;
+				font: normal 30px ' Libre Caslon Text ', serif;
 			}
 			h2 {
 				padding: 10px;
 				text-align: center;
-				font: normal 40px 'Libre Baskerville', serif;
+				font: normal 40px ' Libre Caslon Text ', serif;
 				color: rgba(252, 247, 236, 1);
 			}
 			img {
@@ -169,7 +169,7 @@ footer {
 @media screen and (max-width: $mobile) {
 	footer {
 		width: 100%;
-		background: rgba(68, 46, 24, 1);
+		background: #111;
 		//padding: 100px 0px;
 		overflow: hidden;
 		#gnb {
@@ -184,12 +184,12 @@ footer {
 				color: rgba(252, 247, 236, 1);
 				padding: 20px;
 				text-align: center;
-				font: normal 30px 'Libre Baskerville', serif;
+				font: normal 30px ' Libre Caslon Text ', serif;
 			}
 			h2 {
 				padding: 10px;
 				text-align: center;
-				font: normal 40px 'Libre Baskerville', serif;
+				font: normal 40px ' Libre Caslon Text ', serif;
 				color: rgba(252, 247, 236, 1);
 			}
 			img {
