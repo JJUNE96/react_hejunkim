@@ -4,7 +4,7 @@ import Joy from './Joy';
 import Pics from './Pics';
 import Pic2 from './Pic2';
 import Visual from './Visual';
-import News from './News';
+// import News from './News';
 import Btns from './Btns';
 import { useState } from 'react';
 /*
@@ -24,7 +24,7 @@ function Main(props) {
 		<main>
 			{/* 특정 값을 직계자식이 아닌 자손 컴포넌트에 전달하기 위해 불필요하게 중간 컴포넌트에 props를 전달 : prop drilling */}
 			<Header type={'main'} menu={props.menu} />
-			<Visual />
+			<Visual Scrolled={Scrolled} Pos={Pos[1]} />
 
 			<Pics />
 			<Vids />

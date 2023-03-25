@@ -6,7 +6,7 @@ import { faTwitter, faYoutube, faSpotify } from '@fortawesome/free-brands-svg-ic
 
 const Menu = forwardRef((props, ref) => {
 	const [Open, setOpen] = useState(false);
-	const active = { color: 'palevioletred' };
+	const active = { color: '#8b8b8c' };
 
 	useImperativeHandle(ref, () => {
 		return { setToggle: () => setOpen(!Open) };
@@ -28,7 +28,7 @@ const Menu = forwardRef((props, ref) => {
 					exit={{ x: -270, opacity: 0 }}
 					onClick={() => setOpen(false)}
 				>
-					<ul id='gnbMo'>
+					<ul className='link'>
 						<li>
 							<NavLink to='/about' activeStyle={active}>
 								About

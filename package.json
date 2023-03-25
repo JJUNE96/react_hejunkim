@@ -27,6 +27,7 @@
     "redux-saga": "^1.2.2",
     "sass": "^1.58.0",
     "swiper": "^8.4.7",
+    "toolkit": "^1.5.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

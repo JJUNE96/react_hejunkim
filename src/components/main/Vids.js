@@ -46,6 +46,8 @@ function Vids() {
 					<br /> the templates can be used and tailored to any business, in any industry.
 				</p> */}
 				<Swiper
+					observer={true}
+					observeParents={true}
 					slidesPerView={3}
 					spaceBetween={50}
 					loop={true}
@@ -55,6 +57,17 @@ function Vids() {
 					autoplay={{
 						delay: 2000,
 						disableOnInteraction: true,
+					}}
+					breakpoints={{
+						0: {
+							slidesPerView: 1,
+						},
+						640: {
+							slidesPerView: 2,
+						},
+						1024: {
+							slidesPerView: 3,
+						},
 					}}
 					modules={[Autoplay, Pagination, Navigation]}
 					// breakpoints={{

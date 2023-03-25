@@ -21,12 +21,25 @@ function Pics() {
 				<h2> Best decision you've Ever had</h2>
 				<>
 					<Swiper
-						slidesPerView={4}
+						observer={true}
+						observeParents={true}
+						slidesPerView={1}
 						spaceBetween={50}
 						loop={true}
 						centeredSlides={true}
 						navigation={true}
 						pagination={{ clickable: true }}
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+							},
+							640: {
+								slidesPerView: 2,
+							},
+							1024: {
+								slidesPerView: 4,
+							},
+						}}
 						modules={[Keyboard, Pagination, Navigation]}
 					>
 						<nav className='controls'></nav>

@@ -6,8 +6,8 @@ header {
 	justify-content: space-between;
 	padding-top: 20px;
 	padding-bottom: 30px;
-
-	> .inner {
+	overflow: hidden;
+	> .innerH {
 		width: 100%;
 		margin: 5px auto;
 		padding-bottom: 10px;
@@ -16,18 +16,17 @@ header {
 			left: 50px;
 			bottom: 15px;
 			margin: 0 20px;
-			> a {
+			a {
 				letter-spacing: -5px;
 				font: normal 40px 'Libre Caslon Text', serif;
 				color: #fff;
 			}
 		}
-		> #gnb {
+		#gnb {
 			position: absolute;
 			bottom: 0px;
 			right: 0px;
 			color: #fff;
-			font: normal 20px 'Libre Caslon Text', serif;
 			> li {
 				float: left;
 				position: relative;
@@ -38,7 +37,7 @@ header {
 					display: block;
 					width: 100%;
 					height: 100%;
-					font: normal 14px/50px 'arial';
+					font: normal 20px 'Libre Caslon Text', serif;
 					color: #fff;
 
 					text-align: center;
@@ -54,10 +53,9 @@ header {
 			position: absolute;
 			bottom: 44px;
 			right: 40px;
-			display: block;
+			display: none;
 			color: #fff;
 			cursor: pointer;
-			z-index: 100;
 		}
 	}
 	&.main {
@@ -70,22 +68,22 @@ header {
 		display: flex;
 		// opacity: 0;
 
-		> .inner {
+		.innerH {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 0px;
-			> h1 {
-				margin: 0px 45px;
-
-				> a {
-					letter-spacing: -5rem;
-					font: normal 50px 'Libre Caslon Text', serif;
-					color: #fff;
+			h1 {
+				position: absolute;
+				left: 50px;
+				bottom: 15px;
+				margin: 0 20px;
+				a {
 					letter-spacing: -5px;
+					font: normal 40px 'Libre Caslon Text', serif;
+					color: #fff;
 				}
 			}
 			> #gnb {
-				z-index: 100;
 				right: 5vw;
 				> li {
 					> a {
@@ -100,8 +98,13 @@ header {
 				}
 			}
 			.fa-bars-staggered {
-				color: #fff;
+				font-size: 30px;
+				position: absolute;
+				bottom: 44px;
+				right: 40px;
 				display: none;
+				color: #fff;
+				cursor: pointer;
 			}
 		}
 	}
@@ -113,13 +116,22 @@ header {
 		padding-bottom: 90px;
 		top: 0;
 		left: 0;
-		z-index: 2;
 
-		> .inner {
+		> .innerH {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 0px;
-
+			> h1 {
+				position: absolute;
+				left: 50px;
+				bottom: 15px;
+				margin: 0 20px;
+				> a {
+					letter-spacing: -5px;
+					font: normal 40px 'Libre Caslon Text', serif;
+					color: #fff;
+				}
+			}
 			> #gnb {
 				right: 5vw;
 				> li {
@@ -133,21 +145,15 @@ header {
 						}
 					}
 				}
-
-				> h1 {
-					margin: 0px 45px;
-
-					> a {
-						letter-spacing: -5rem;
-						font: normal 50px 'Libre Caslon Text', serif;
-						color: #fff;
-						letter-spacing: -5px;
-					}
-				}
 			}
 			.fa-bars-staggered {
-				color: #fff;
+				font-size: 30px;
+				position: absolute;
+				bottom: 44px;
+				right: 40px;
 				display: none;
+				color: #fff;
+				cursor: pointer;
 			}
 		}
 	}
@@ -156,7 +162,13 @@ header {
 @media screen and (max-width: $tablet) {
 	header {
 		width: 100%;
-		> .inner {
+		text-align: center;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 20px;
+		padding-bottom: 30px;
+
+		> .innerH {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 10px;
@@ -164,7 +176,7 @@ header {
 				position: absolute;
 				left: 50px;
 				bottom: 15px;
-				margin: 0 20px;
+				margin: 0px;
 				> a {
 					letter-spacing: -5px;
 					font: normal 40px 'Libre Caslon Text', serif;
@@ -173,28 +185,11 @@ header {
 			}
 			> #gnb {
 				display: none;
-				position: absolute;
-				bottom: 0px;
-				right: 0px;
-				color: #fff;
-				font: normal 20px 'Libre Caslon Text', serif;
-				> li {
-					float: left;
-					position: relative;
-					width: 120px;
-					height: 50px;
 
+				> li {
 					> a {
-						display: block;
 						width: 100%;
 						height: 100%;
-						font: normal 14px/50px 'arial';
-						color: #fff;
-
-						text-align: center;
-						&:hover {
-							color: #bbb;
-						}
 					}
 				}
 			}
@@ -202,12 +197,11 @@ header {
 			.fa-bars-staggered {
 				font-size: 30px;
 				position: absolute;
-				bottom: 44px;
+				bottom: 34px;
 				right: 40px;
 				display: block;
 				color: #fff;
 				cursor: pointer;
-				z-index: 100;
 			}
 		}
 		&.main {
@@ -218,24 +212,69 @@ header {
 			top: 0;
 			left: 0;
 			display: flex;
-			// opacity: 0;
 
-			> .inner {
+			> .innerH {
 				width: 100%;
 				margin: 5px auto;
 				padding-bottom: 0px;
 				> h1 {
-					margin: 0px;
+					position: absolute;
+					left: 50px;
+					bottom: 15px;
+					margin: 0 20px;
 
 					> a {
-						letter-spacing: -5rem;
-						font: normal 50px 'Libre Caslon Text', serif;
-						color: #fff;
 						letter-spacing: -5px;
+						font: normal 40px 'Libre Caslon Text', serif;
+						color: #fff;
 					}
 				}
 				> #gnb {
+					right: 5vw;
+					> li {
+						> a {
+							display: block;
+						}
+					}
+				}
+				.fa-bars-staggered {
+					font-size: 30px;
+					position: absolute;
+					bottom: 24px;
+					right: 40px;
+					display: block;
+					color: #fff;
+					cursor: pointer;
 					z-index: 100;
+				}
+			}
+		}
+		&.sub {
+			background: #111;
+			width: 100%;
+			height: 80px;
+			position: absolute;
+			padding-bottom: 90px;
+			top: 0;
+			left: 0;
+			z-index: 2;
+
+			> .innerH {
+				width: 100%;
+				margin: 5px auto;
+				padding-bottom: 0px;
+				> h1 {
+					position: absolute;
+					left: 50px;
+					bottom: 15px;
+					margin: 0 20px;
+					> a {
+						letter-spacing: -5px;
+						font: normal 40px 'Libre Caslon Text', serif;
+						color: #fff;
+					}
+				}
+				> #gnb {
 					right: 5vw;
 					> li {
 						> a {
@@ -244,49 +283,20 @@ header {
 							text-align: center;
 							font: normal 20px 'Libre Caslon Text', serif;
 							&:hover {
-								color: #8b8b8c;
+								color: #ddd;
 							}
 						}
 					}
 				}
 				.fa-bars-staggered {
-					color: #fff;
-					display: block;
-				}
-			}
-		}
-
-		&.sub {
-			background: #000;
-			width: 100%;
-			height: 80px;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 2;
-			> figure {
-				display: none;
-			}
-			> .inner {
-				width: 100%;
-				height: 100%;
-				h1 {
-					margin: 0;
-
-					a {
-						font: bold 40px/1 'Libre Caslon Text', serif;
-						color: #fff;
-						letter-spacing: 5px;
-					}
-				}
-				.fa-bars-staggered {
-					display: block;
-					font-size: 25px;
+					font-size: 30px;
 					position: absolute;
 					bottom: 24px;
 					right: 40px;
+					display: block;
 					color: #fff;
 					cursor: pointer;
+					z-index: 1;
 				}
 			}
 		}
@@ -295,7 +305,7 @@ header {
 @media screen and (max-width: $mobile) {
 	header {
 		width: 100%;
-		> .inner {
+		> .innerH {
 			width: 100%;
 			margin: 5px auto;
 			padding-bottom: 10px;
@@ -346,7 +356,6 @@ header {
 				display: block;
 				color: #fff;
 				cursor: pointer;
-				z-index: 100;
 			}
 		}
 		&.main {
@@ -359,7 +368,7 @@ header {
 			display: flex;
 			// opacity: 0;
 
-			> .inner {
+			> .innerH {
 				width: 100%;
 				margin: 5px auto;
 				padding-bottom: 0px;
@@ -373,7 +382,6 @@ header {
 					}
 				}
 				> #gnb {
-					z-index: 100;
 					right: 5vw;
 					> li {
 						> a {
@@ -407,7 +415,7 @@ header {
 			z-index: 2;
 			background: #111;
 
-			> .inner {
+			> .innerH {
 				width: 100%;
 				height: 100%;
 				h1 {

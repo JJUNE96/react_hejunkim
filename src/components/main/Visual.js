@@ -1,6 +1,6 @@
 import { memo } from 'react';
 // import video from '../../image/main.mp4';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import image1 from '../../image/main13.png';
 import image2 from '../../image/main3.png';
 import image3 from '../../image/main10.png';

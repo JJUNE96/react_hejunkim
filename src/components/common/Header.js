@@ -7,15 +7,13 @@ import Menu from './Menu';
 
 function Header(props) {
 	const active = { color: '#8b8b8c' };
-
 	const menu = useRef(null);
-	//const active = { color: 'pink' };
 	return (
 		<>
 			<header className={props.type}>
-				<div className='inner'>
+				<div className='innerH'>
 					<h1>
-						<NavLink to='/'>SUNDAYMUSE</NavLink>
+						<Link to='/'>SUNDAYMUSE</Link>
 					</h1>
 					<ul id='gnb'>
 						<li>
@@ -49,25 +47,8 @@ function Header(props) {
 								Location
 							</NavLink>
 						</li>
-						{/* <li>
-							<NavLink to='/login' activeStyle={active}>
-								Login
-							</NavLink>
-						</li> */}
 					</ul>
 
-					{/* <ul id='util'>
-						<li>
-							<NavLink to='/location' activeStyle={active}>
-								Location
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to='/login' activeStyle={active}>
-								Login
-							</NavLink>
-						</li>
-					</ul> */}
 					<FontAwesomeIcon icon={faBarsStaggered} onClick={() => props.menu.current.setToggle()} />
 				</div>
 			</header>
