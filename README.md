@@ -11,7 +11,7 @@
 
 
 <br/><br/>
-프로젝트 설명서 링크:[Uploading 리액트 설명서.pdf…]()
+프로젝트 설명서 링크:
 <br/>
 [![Solved.ac프로필](http://mazassumnida.wtf/api/mini/generate_badge?boj=JJUNE96)](https://solved.ac/JJUNE96)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FJJUNE96&count_bg=%23C83D9C&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)<br/>
