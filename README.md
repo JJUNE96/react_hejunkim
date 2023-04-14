@@ -26,7 +26,7 @@ skill :
 <br/><br/>
 
 -------------------------------------
-프로젝트 설명서 링크:[리액트 설명서.pdf](https://github.com/JJUNE96/react_hejunkim/files/11227971/default.pdf)
+프로젝트 설명서 링크:[리액트 설명서.pdf](https://github.com/JJUNE96/react_hejunkim/files/11227971/default.pdf)<br/>
 React 릴리즈 주소:[https://jjune96.github.io/react_hejunkim/](https://jjune96.github.io/react_hejunkim/)
 <br/><br/>
 
